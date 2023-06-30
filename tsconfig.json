@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"jsx": "react-jsx",
+		"outDir": "./dist",
+		"strict": true,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"lib": [
+            "dom",
+            "es2016"
+        ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+	},
+	"include": [
+		"./src/**/*"
+	]
+}
+  
