@@ -145,7 +145,7 @@ const VerticalTimeline = ({ data }) => {
 											href={link}
 											target="_blank"
 											rel="noreferrer"
-											hreflang="en-us"
+											hrefLang="en-us"
 											className="text-[16px] text-secondary italic font-normal m-0"
 										>
 											<i className="text-blue-200">@</i>{company_name}

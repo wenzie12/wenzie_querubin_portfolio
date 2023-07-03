@@ -77,7 +77,7 @@ const ProjectCards = ({ data, className }) => {
                       href={website}
                       target="_blank"
                       rel="noreferrer"
-                      hreflang="en-us"
+                      hrefLang="en-us"
                       clasName="px-2"
                     >
                       <img src={link} alt="live-server" className=""/>
@@ -96,7 +96,7 @@ const ProjectCards = ({ data, className }) => {
                       href={source_code_link}
                       target="_blank"
                       rel="noreferrer"
-                      hreflang="en-us"
+                      hrefLang="en-us"
                       clasName="px-2"
                     >
                       <img src={github} alt="source-code" className=""/>

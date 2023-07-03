@@ -42,7 +42,7 @@ const ProjectLinks = ({
         href={website}
         target="_blank"
         rel="noreferrer"
-        hreflang="en-us"
+        hrefLang="en-us"
         clasName="px-2"
       >
         <motion.img variants={raiseUp} src={link} alt="live-server" className=""/>
@@ -64,7 +64,7 @@ const ProjectLinks = ({
           href={playstore}
           target="_blank"
           rel="noreferrer"
-          hreflang="en-us"
+          hrefLang="en-us"
           clasName="px-2"
         >
           <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={playStore} alt="live-server" className="" />
@@ -109,7 +109,7 @@ const ProjectLinks = ({
           href={source_code_link}
           target="_blank"
           rel="noreferrer"
-          hreflang="en-us"
+          hrefLang="en-us"
           clasName="px-2"
         >
           <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={github} alt="source-code" className=""/>

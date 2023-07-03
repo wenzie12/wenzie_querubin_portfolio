@@ -14,17 +14,18 @@ const MenuButton = ({
 	}) => {
 		const variant = isOpen ? "opened" : "closed";
 		const top = {
-			closed: { rotate: 0, translateY: 0 },
-			opened: { rotate: 45, translateY: 2 }
+			closed: { rotate: 0, translateY: 0, transformorigin: "0px 0px"},
+			opened: { rotate: 45, translateY: 2, transformorigin: "3.80952px 0px"}
 		};
 		const center = {
 			closed: { opacity: 1 },
 			opened: { opacity: 0 }
 		};
 		const bottom = {
-			closed: { rotate: 0, translateY: 0 },
-			opened: { rotate: -45, translateY: -2 }
+			closed: { rotate: 0, translateY: 0,  transformorigin: "0px 0px"},
+			opened: { rotate: -45, translateY: -2, transformorigin: "3.80952px 4px" }
 		};
+
 		lineProps = {
 			stroke: color,
 			strokeWidth: strokeWidth,
@@ -40,6 +41,7 @@ const MenuButton = ({
 	return (
 		<motion.svg
 			viewBox={`0 0 ${unitWidth} ${unitHeight}`}
+			// viewBox="0 0 7.619047619047619 5"
 			overflow="visible"
 			preserveAspectRatio="none"
 			width={width}
@@ -49,7 +51,7 @@ const MenuButton = ({
 		>
 			{/* <motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} /> */}
 			<motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} />
-			<motion.line x1="2"x2={unitWidth}y1="2"y2="2"variants={center}{...lineProps} />
+			<motion.line x1="2" x2={unitWidth} y1="2" y2="2" variants={center} {...lineProps} />
 			<motion.line x1="0" x2={unitWidth} y1="4" y2="4" variants={bottom} {...lineProps} />
 		</motion.svg>
 	)
