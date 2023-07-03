@@ -1,7 +1,6 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter } from "react-router-dom"
-import { motion, useScroll, useTransform } from 'framer-motion'
 
 // import CustomCursor from './components/custom-mouse-cursor/CustomCursor.component'
 

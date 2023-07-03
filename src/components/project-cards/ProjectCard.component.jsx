@@ -15,37 +15,6 @@ const ProjectCard = ({data=[], className="" }) => {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
 
-  const hoverImageVariants = {
-    // show: (height = 1000) => ({
-		// 	clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
-		// 	transition: {
-		// 		type: "spring",
-		// 		stiffness: 20,
-		// 		restDelta: 2,
-		// 	}
-		// }),
-    show: {
-			clipPath: `circle(${1000 * 2 + 200}px at 100% 0)`,
-			transition: {
-				type: "spring",
-        ease: "easeInOut",
-        delay: .4,
-				stiffness: 20,
-				restDelta: 2,
-			}
-		},
-		hidden: {
-			clipPath: "circle(0% at 95% 0)",
-			transition: {
-				type: "spring",
-        ease: "easeInOut",
-        delay: .4,
-				stiffness: 400,
-				damping: 40,
-			}
-		}
-  }
-
   return (
     <>
       {
@@ -121,7 +90,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     whileInView="show"
                     className="flex items-center w-full h-full"
                   >
-                    <a href={website} target="_blank" rel="noreferrer" hreflang="en-us" className="h-full">
+                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="">
                       <motion.img
                         onMouseEnter={() => enterHover("anchorBlended", {
                           ...cursorText,

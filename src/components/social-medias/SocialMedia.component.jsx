@@ -57,7 +57,7 @@ const SocialMedia = ({ loading }) => {
 								href={link}
 								target="_blank"
 								rel="noreferrer"
-								hreflang="en-us"
+								hrefLang="en-us"
 								onMouseEnter={() => enterHover("anchor", {
 									...cursorText,
 									offset: 15,

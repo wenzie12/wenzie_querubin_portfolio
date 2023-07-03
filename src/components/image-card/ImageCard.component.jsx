@@ -96,7 +96,7 @@ const ImageCard = ({
 						onMouseEnter={onMouseEnter}
 						onMouseLeave={onMouseLeave}
 						href={href}
-						hreflang="en-us"
+						hrefLang="en-us"
 						target={target}
 						rel="noreferrer"
 					>
