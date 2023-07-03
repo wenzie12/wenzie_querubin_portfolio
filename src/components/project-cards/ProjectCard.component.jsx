@@ -90,7 +90,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     whileInView="show"
                     className="flex items-center w-full h-full"
                   >
-                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="">
+                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="lg:h-full">
                       <motion.img
                         onMouseEnter={() => enterHover("anchorBlended", {
                           ...cursorText,
