@@ -1,12 +1,12 @@
 /* eslint-disable */
 import { useEffect } from 'react';
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { SectionWrapper } from '../../hoc'
-import { useInView } from 'react-intersection-observer';
 
 import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import HighlightedText from '../custom-text/HighlightedText.component';
+import { ImageContainer } from '../image-container/'
 
 import { profile, chevronDown } from '../../assets'
 
@@ -85,7 +85,8 @@ const About = ({ opacity, scale }) => {
             variants={fadeIn("", "", 0.2, 1)}
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
-            <motion.img
+            <ImageContainer
+              motion={motion}
               initial={{ transform: "rotate(-90deg)", }}
               whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
               // animate={[
@@ -131,7 +132,8 @@ const About = ({ opacity, scale }) => {
             // className="overflow-hidden hidden md:flex"
             className="overflow-hidden flex justify-center w-48 md:w-auto"
           >
-            <motion.img
+            <ImageContainer
+              motion={motion}
               variants={scaleImageVariant}
               src={profile}
               alt="profile"

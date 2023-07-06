@@ -12,7 +12,7 @@ import {
   About,
   Tech,
   Experience,
-  Works,
+  Projects,
   Feedbacks,
   Contact,
   Footer,
@@ -50,7 +50,7 @@ const App = () => {
               <About />
               <Tech />
               <Experience />
-              <Works />
+              <Projects />
               {/* <Feedbacks /> */}
               <Contact />
               <Footer />

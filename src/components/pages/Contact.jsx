@@ -1,8 +1,7 @@
 /* eslint-disable */
 import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { SectionWrapper } from '../../hoc'
-import { useInView } from 'react-intersection-observer';
 
 import { textVariant, fadeIn, raiseUp, swivelVariants } from '../../utils/motion'
 import { styles } from '../../styles'

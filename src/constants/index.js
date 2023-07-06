@@ -43,7 +43,7 @@
     },
     {
       id: "experience",
-      title: "Works",
+      title: "Experience",
     },
     {
       id: "projects",
@@ -189,11 +189,11 @@
   ];
 
   const social_links = [
-    {
-      name: "facebook",
-      icon: facebook,
-      link: "https://www.facebook.com/wenzie.querubin/",
-    },
+    // {
+    //   name: "facebook",
+    //   icon: facebook,
+    //   link: "",
+    // },
     {
       name: "linkedin",
       icon: linkedin,
