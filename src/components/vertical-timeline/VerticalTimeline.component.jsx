@@ -5,7 +5,6 @@ import { textVariant, raiseUp, fadeIn, zoomIn, scaleHeight, swivelVariants } fro
 import { styles } from "../../styles"
 
 import HighlightedText from '../custom-text/HighlightedText.component'
-import { tripleDot } from '../../assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -16,45 +15,6 @@ const VerticalTimeline = ({ data }) => {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
 
-	const showContext = {
-		hidden: {
-			height: "0px",
-			margin: "0",
-			overflow: "hidden",
-			opacity: 0,
-			transition: {
-				ease: "easeInOut",
-				duration: .4,
-			}
-		},
-		show: {
-			height: "max-content",
-			margin: "0.5rem 0",
-			overflow: "hidden",
-			opacity: 1,
-			transition: {
-				ease: "easeInOut",
-			}
-		},
-	}
-
-	const hideDots = {
-		// todo, pag palitan mo nalng ung id ng "initial" at "animate"
-		hidden: {
-			opacity: 1,
-			height: "auto",
-			transition: {
-				ease: "easeInOut",
-			}
-		},
-		show: { 
-			opacity: 0,
-			height: "0px",
-			transition: {
-				ease: "easeInOut",
-			}
-		}
-	}
 
 	return (
 		<>
@@ -108,13 +68,14 @@ const VerticalTimeline = ({ data }) => {
 									initial="initial"
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className="relative p-4 md:p-8 mb-10 bg-blue-100 rounded-md"	
-									// className="relative p-4 md:p-8 mb-10 border-blue-100 border-2 rounded-md" // border only
+									className="relative p-4 md:p-8 mb-10 bg-blue-100/40 rounded-md"	
 								>
 									{/* pointer */}
 									<span
-										className="hidden md:block absolute -left-2 top-2 bg-blue-100 w-10 h-4 rotate-180"
-										style={{ clipPath: 'polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)',}}
+										className="hidden md:block absolute -left-5 top-2 bg-blue-100/40 w-10 h-4"
+										style={{
+											clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)',
+										}}
 									/>
 
 									{/* content-container */}
@@ -125,7 +86,6 @@ const VerticalTimeline = ({ data }) => {
 									>
 										<motion.h3
 											variants={textVariant()}
-											// className="text-[1.25rem] text-white-100 font-normal uppercase pb-2 md:pb-0"
 											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-normal uppercase pb-2 md:pb-0"
 										>
 											{title}
@@ -160,21 +120,10 @@ const VerticalTimeline = ({ data }) => {
 											{points?.map((point, i) => (
 												<motion.div key={i} variants={swivelVariants} className="relative text-tertiary pl-1 leading-[25px]">
 													<motion.span variants={scaleHeight("spring", .4 * i, .5)} className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full bg-secondary/40" />
-													{/* <motion.span variants={scaleHeight("spring", .4 * i, .5)} className="absolute top-0 -left-3 w-1 h-full bg-secondary/40" /> */}
 													{point}
 												</motion.div>
 						 					))}
 										</div>
-
-
-
-										{/* <ul className="list-experience list-disc ml-5 mt-4 space-y-3">
-											{points?.map((point, i) => (
-												<motion.li key={i} variants={swivelVariants} className="text-tertiary pl-1 leading-[25px]">
-													{point}
-												</motion.li>
-						 					))}
-										</ul> */}
 									</motion.div>
 								</motion.div>
 							</motion.div>

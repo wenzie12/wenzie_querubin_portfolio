@@ -28,11 +28,11 @@ const ProjectCard = ({data=[], className="" }) => {
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-blue-100 rounded-md`}
+                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-blue-100/40 rounded-md`}
               >
                 {/* <motion.section className={`${isOdd ? 'pl-8 md:pl-10' : 'pr-8 md:pr-10'} section-1 flex justify-center w-1/2`}> */}
                 <motion.section
-                  className="p-6 md:px-4 my-4 md:my-0 bg-blue-100 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
+                  className="p-6 md:px-4 my-4 md:my-0 bg-blue-100/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
                   {/* content */}
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
