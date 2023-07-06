@@ -3,11 +3,10 @@
 
 /* eslint-disable */
 import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 // import Lottie, { LottieRefCurrentProps } from "lottie-react"
 import Lottie, { useLottie, useLottieInteractivity } from "lottie-react"
 import { SectionWrapper } from '../../hoc'
-import { useInView } from 'react-intersection-observer';
 
 import { textVariant, fadeIn, raiseUp } from '../../utils/motion'
 import { styles } from '../../styles'

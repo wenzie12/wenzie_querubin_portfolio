@@ -1,13 +1,14 @@
 /* eslint-disable */
-import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
-import { fadeIn } from '../../utils/motion'
+import { fadeIn, staggerContainer } from '../../utils/motion'
+import { useMediaQuery } from 'react-responsive'
 
 import { MenuButton } from '../custom-buttons'
- 
+import SocialLinks from '../social-medias/SocialLinks.component'
+
 const MenuContainer = ({
 		toggle,
 		setToggle,
@@ -15,7 +16,7 @@ const MenuContainer = ({
 		setActive,
 		tagVariants,
 	}) => {
-	
+		const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 	
 	// menu (mobile) open/close animation
 	const menuContainerVariants = {
@@ -40,18 +41,19 @@ const MenuContainer = ({
 
 	return (
 		<motion.div
-			className="md:hidden flex flex-1 justify-end items-center"
 			initial={false}
 			animate={toggle ? "show" : "hidden"}
+			className="md:hidden flex flex-1 justify-end items-center"
 		>
-			<MenuButton
-				isOpen={toggle}
-				onClick={() => setToggle(!toggle)}
-				strokeWidth={3.1}
-				color="#D4494C" // secondary
-				transition={{ ease: "easeOut", duration: 0.2 }}
-				className="z-40 cursor-pointer"
-			/>
+			{isTabletOrMobile && (
+				<MenuButton
+					isOpen={toggle}
+					onClick={() => setToggle(!toggle)}
+					color="#D4494C" // secondary
+					transition={{ ease: "easeOut", duration: 0.2 }}
+					className="z-40 cursor-pointer"
+				/>
+			)}
 			<motion.div
 				variants={menuContainerVariants}
 				initial="hidden"
@@ -78,7 +80,7 @@ const MenuContainer = ({
 									href={`#${link.id}`}
 									initial="initial"
 									animate={active === link.title ? "selected": "initial"}
-									className="relative"
+									className="relative text-xl"
 								>
 									{link.title}
 									<motion.i
@@ -94,9 +96,21 @@ const MenuContainer = ({
 							)}
 						)}
 					</ul>
-				</div> 
+				</div>
+				{/* update social links component later */}
+				<motion.div className="w-full py-2 text-blue-100">
+					<motion.div
+						variants={staggerContainer(.2)}
+						initial="hidden"
+						whileInView="show"
+						className="flex justify-end w-full gap-x-4 pr-6"
+					>
+						<SocialLinks resumeLinkOrientation="horizontal" />
+					</motion.div>
+				</motion.div>
+				
 			</motion.div>
-		</motion.div>
+		</motion.div>	
 	)
 }
 

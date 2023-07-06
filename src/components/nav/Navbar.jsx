@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive'
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
@@ -16,8 +17,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Navbar = ({ loading }) => {
-  // const [toggle, setToggle] = useCycle("hidden", "show"); // todo: use this in replacement to useState toggle 
-
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const { hoverEvents: { enterHover, leaveHover } } = useCursorContext()
   const {
     activeState: { active, setActive },
@@ -31,7 +31,7 @@ const Navbar = ({ loading }) => {
   })
 
   const backgroundColor = useTransform(scrollYProgress, [0, 1], ["transparent", "#101B29"])
-  const paddingTop = useTransform(scrollYProgress, [0, 1], ["2.5rem","1.8rem"])
+  const paddingTop = useTransform(scrollYProgress, [0, 1], [`${!isTabletOrMobile ? '2.5rem' : '1.5rem'}`,"1.2rem"])
 
   const handleOnClick = () => {
     setActive("")
@@ -72,11 +72,12 @@ const Navbar = ({ loading }) => {
         ref={ targetRef }
         style={{
           backgroundColor,
-          paddingTop,
+          paddingTop, 
+          transition: "200ms ease-in-out",
         }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
+        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20`}
         // className={`${styles.paddingX} pt-10 w-full flex items-center py-5 fixed top-0 z-20 bg-primary bg-gradient-to-tl to-primary from-blue-100`}
       >
         {/* web */}
@@ -87,10 +88,10 @@ const Navbar = ({ loading }) => {
           >
           <Link 
             to="/"
-            className='flex items-center gap-2 z-40'
             onMouseEnter={() => enterHover("anchor")}
 						onMouseLeave={leaveHover}
             onClick={handleOnClick}
+            className='flex items-center gap-2 py-4 z-40'
           >
             <img src={logo} alt="logo" className="w-[32px] h-[21px] object-contain z-40"/>
             <p className="text-white-100 text-[18px] cursor-pointer hidden md:flex text-sm">
@@ -105,16 +106,17 @@ const Navbar = ({ loading }) => {
                 <motion.li
                   variants={fadeIn("down", "spring", .1 * index)}
                   key={link.id}
-                  className="text-white-100 text-[16px] custom-pointer relative text-sm"
                   onClick={() => setActive(link.title)}
                   onMouseEnter={() => enterHover("anchor")}
                   onMouseLeave={leaveHover}
+                  className="text-white-100 text-[16px] custom-pointer relative text-sm"
                 >
                   <motion.a
                     whileHover="hover"
                     initial="initial"
                     href={`#${link.id}`}
                     animate={active === link.title ? "selected": "initial"}
+                    className="py-4"
                   >
                     {link.title}
                     <motion.i

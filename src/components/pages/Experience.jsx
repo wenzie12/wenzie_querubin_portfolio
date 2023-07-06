@@ -1,11 +1,10 @@
 /* eslint-disable */
 import { useEffect } from 'react';
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 import { textVariant, fadeIn } from '../../utils/motion'
 import { styles } from '../../styles'
 import { experiences } from '../../constants'
-import { useInView } from 'react-intersection-observer';
 
 import VerticalTimeline from '../vertical-timeline/VerticalTimeline.component'
 import { SectionWrapper } from '../../hoc'

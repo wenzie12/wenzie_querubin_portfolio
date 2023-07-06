@@ -1,5 +1,5 @@
 
-// TODO: no need for this, #delete this
+// TODO: no need for ImageCard, #delete this
 /* eslint-disable */
 import { motion } from 'framer-motion'
 import { textVariant, fadeIn, raiseUp, perspectiveVariant, perspectiveVariantImage } from '../../utils/motion'

@@ -6,7 +6,7 @@ import { styles } from '../../styles'
 import { scaleHeight, staggerContainer, fadeIn, zoomIn, swivelVariants } from '../../utils/motion'
 import { chevronDown } from '../../assets'
 import { ScrollButton } from '../custom-buttons'
-import SocialMedia from '../social-medias/SocialMedia.component'
+import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalContainer.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -122,7 +122,7 @@ const Hero = ({ loading }) => {
         {/* toggle to section button (animated) */}
       <ScrollButton href="#about" loading={loading} />
       </motion.section>
-      <SocialMedia loading={loading} />
+      <SocialMediaVerticalContainer loading={loading} />
     </>
   )
 }

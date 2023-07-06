@@ -1,9 +1,7 @@
 /* eslint-disable */
-
 import { motion } from 'framer-motion'
 
-import { zoomIn, raiseUp, fadeIn } from '../../utils/motion'
-import { styles } from '../../styles'
+import { raiseUp, fadeIn } from '../../utils/motion'
 import { appStore, playStore, link, github } from '../../assets'
 
 // context
@@ -24,7 +22,7 @@ const ProjectLinks = ({
   return (
     <motion.div
       variants={fadeIn("", "", 0.2, 0.4)}
-      className={`${styles.cardSpacing} ${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex justify-start text-sm leading-[25px] py-3 gap-x-8`}
+      className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex justify-start text-sm leading-[25px] gap-x-2`}
     >
       <motion.a
         initial="initial"
@@ -43,7 +41,7 @@ const ProjectLinks = ({
         target="_blank"
         rel="noreferrer"
         hrefLang="en-us"
-        clasName="px-2"
+        className="p-3"
       >
         <motion.img variants={raiseUp} src={link} alt="live-server" className=""/>
       </motion.a>
@@ -65,7 +63,7 @@ const ProjectLinks = ({
           target="_blank"
           rel="noreferrer"
           hrefLang="en-us"
-          clasName="px-2"
+          className="p-3"
         >
           <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={playStore} alt="live-server" className="" />
         </motion.a>
@@ -87,7 +85,7 @@ const ProjectLinks = ({
           href={appstore}
           target="_blank"
           rel="noreferrer"
-          clasName="px-2"
+          className="p-3"
         >
           <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={appStore} alt="live-server" className=""/>
         </motion.a>
@@ -110,7 +108,7 @@ const ProjectLinks = ({
           target="_blank"
           rel="noreferrer"
           hrefLang="en-us"
-          clasName="px-2"
+          className="p-3"
         >
           <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={github} alt="source-code" className=""/>
         </motion.a>
