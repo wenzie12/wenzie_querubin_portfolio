@@ -16,7 +16,6 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
     <motion.div className="flex flex-col lg:w-1/3 mb-4 md:mb-0">
       <motion.p
         variants={fadeIn("", "", 0.2, 1)}
-        // className="flex flex-row gap-2 items-center"
         className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal text-tertiary`}
       >
         <motion.img
@@ -90,10 +89,6 @@ const Tech = ({ opacity, scale }) => {
         </motion.p>
       </div>
       <motion.div
-        // variants={staggerContainer()}
-        // initial="hidden"
-        // whileInView={"show"}
-        // viewport={{ once: false, amount: 0.30 }}
        className="flex flex-col lg:flex-row justify-center mt-4"
       >
         <TechStack

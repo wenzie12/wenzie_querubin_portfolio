@@ -1,9 +1,9 @@
-/* eslint-disable */
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { SectionWrapper } from '../../hoc'
+import { useInView } from 'react-intersection-observer' 
 
-import { textVariant, fadeIn, raiseUp, swivelVariants } from '../../utils/motion'
+import { textVariant, raiseUp, swivelVariants } from '../../utils/motion'
 import { styles } from '../../styles'
 
 // context
@@ -11,31 +11,29 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 
+// eslint-disable-next-line react/prop-types
 const Contact = ({ opacity, scale }) => {
 
   const {
-    cursorTextState: { cursorText, setCursorText },
-    cursorVariantState : { setCursorVariant },
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
-  const { activeState: { setActive }, } = useGlobalStateContext()
-
+  const { activeState: { active, setActive }, } = useGlobalStateContext()
 
   // intersection observer
   const { ref, inView } = useInView({
-    // rootMargin: "-200px 0px",
-    // threshold: [0, 1],
-    threshold: 1,
+    rootMargin: "-200px 0px",
+    threshold: [0, 1],
+    // threshold: 1,
   })
 
   useEffect(() => {
     if(inView) setActive("Contact")
-    if(inView === false) setActive("")
-  }, [inView])
+    if (!inView && active === "Contact") setActive("")
+  }, [inView, active, setActive])
 
   return (
     <>
-      <motion.div inView={inView} ref={ref} className={`${styles.contentContainer}`} style={{ opacity, scale }}>
+      <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`} style={{ opacity, scale }}>
         <motion.div variants={textVariant()}>
           <p className={`${styles.sectionSubText} text-tertiary text-center`} >SEND ME A MESSAGE</p>
           <h2 className={`${styles.sectionHeadText} text-secondary text-center`}>Contact</h2>
@@ -59,8 +57,7 @@ const Contact = ({ opacity, scale }) => {
             initial="initial"
             className="flex justify-center w-full p-4 text-secondary"
           >
-            {/* update later */}
-            {/* TODO: make this custom-button later */}
+            {/* TODO: make this custom-button later same with 'Projects -> "view more" button */}
             <motion.button
               variants={raiseUp}
               whileHover="animate"
@@ -69,10 +66,8 @@ const Contact = ({ opacity, scale }) => {
               onClick={() => console.log("modal here!")}
               onMouseEnter={() => enterHover("hideHover")}
               onMouseLeave={leaveHover} 
-              className={`${styles.borderBox} h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
-              // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
+              className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
             >
-              {/* <i className="text-secondary text-bold mr-1">#</i> */}
               <span className="text-white-100">Say Hello!</span>
             </motion.button>
           </motion.div>

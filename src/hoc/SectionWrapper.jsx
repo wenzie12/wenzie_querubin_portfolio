@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from 'framer-motion'
 
@@ -6,9 +5,7 @@ import { styles } from '../styles'
 import { staggerContainer, slideRightVariant, scaleHeight } from '../utils/motion'
 
 const SectionWrapper = (Component, idName) => 
-  function HOC() {
-    // const { activeState: { active, setActive }, } = useGlobalStateContext()
-    
+  function HOC() {    
     // scroll
     const targetRef = useRef(null)
     const { scrollYProgress } = useScroll({

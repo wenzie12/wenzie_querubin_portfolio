@@ -2,8 +2,6 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter } from "react-router-dom"
 
-// import CustomCursor from './components/custom-mouse-cursor/CustomCursor.component'
-
 import { CursorWrapper } from './hoc'
 
 import {
@@ -13,7 +11,7 @@ import {
   Tech,
   Experience,
   Projects,
-  Feedbacks,
+  // Feedbacks,
   Contact,
   Footer,
 } from './components/pages'
@@ -66,7 +64,8 @@ const App = () => {
 // Wrapped APP in HOC named CursorWrapper
 const AppHOC = CursorWrapper(App, "")
 
-export default AppHOC
+// export default AppHOC
+export default App
 
 /*
 TODOs 

@@ -179,7 +179,6 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
   };
 };
 
-// wala pa ko maipangalan dito, so yan muna
 export const swivelVariants = {
   hidden: {
     transform: "perspective(550px) rotateY(-25deg) rotateX(-15deg)",
@@ -200,6 +199,8 @@ export const swivelVariants = {
   },
 }
 
+// used once
+
 export const scaleImageVariant = (delay, duration) => {
   return {
     hidden: {
@@ -215,5 +216,54 @@ export const scaleImageVariant = (delay, duration) => {
     }
   }
 }
+
+
+export const tagVariants = (direction) => {
+  return {
+    initial: { 
+      x: direction === "left" ? "4px" : direction === "right" ? "-4px" : 0,
+      opacity: 0,
+      ease: "easeOut",
+      duration: 0.2,
+      type: "sprint"
+    },
+    selected: { 
+      x: 0,
+      opacity: 1,
+      color: "#D4494C", // secondary
+    },
+    hover: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        type: "sprint",
+        ease: "easeIn"
+      }
+    }
+  }
+};
+
+export const menuContainerVariants = {
+  show: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    }
+  }),
+  hidden: {
+    clipPath: "circle(0% at 95% 0)",
+    transition: {
+      delay: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    }
+  }
+};
+
+
 
 

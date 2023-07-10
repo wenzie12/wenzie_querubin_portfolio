@@ -29,15 +29,8 @@ const Hero = ({ loading }) => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   return (
-    // <section className="relative w-full h-screen mx-auto flex items-center">
     <>
       <motion.section
-        // exit={{
-        //   backgroundColor: "#1D2639",
-        //   scaleX: .92,
-        //   scaleY: .80,
-        //   delay: ,
-        // }}
         ref={ targetRef }
         style={{ opacity, scale, y }}
         className={` relative w-full h-screen flex items-center`}
@@ -76,9 +69,6 @@ const Hero = ({ loading }) => {
           >
             <motion.h1
               variants={swivelVariants}
-              // variants={headerVariants}
-              // initial="hidden"
-              // animate="show"
               className={`${styles.heroSubText} text-tertiary`}
             >
               <motion.span variants={swivelVariants}>Hi, I&apos;m</motion.span>
@@ -88,9 +78,6 @@ const Hero = ({ loading }) => {
             </motion.h1>
             <motion.p
               variants={swivelVariants}
-              // variants={headerVariants}
-              // initial="hidden"
-              // animate="show"
               className={`${styles.heroSubText} text-blue-200 font-normal`}
             >
               Frontend Software Engineer @
@@ -106,10 +93,6 @@ const Hero = ({ loading }) => {
             </motion.p>
             <motion.p
               variants={swivelVariants}
-              // variants={headerVariants}
-              // initial="hidden"
-              // animate="show"
-              // className={`${styles.heroSubText} mt-2 text-tertiary lg:w-3/5 md:w-2/3`}
               className={`${styles.heroSubText} mt-2 text-tertiary md:w-3/4`}
             >
               Experienced Frontend Developer with a passion

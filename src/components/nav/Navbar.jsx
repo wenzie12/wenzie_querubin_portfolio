@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -7,15 +6,14 @@ import { useMediaQuery } from 'react-responsive'
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
 import { logo } from '../../assets'
-
-import { fadeIn } from '../../utils/motion'
-
+import { fadeIn, tagVariants } from '../../utils/motion'
 import MenuContainer from './MenuContainer.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
+// eslint-disable-next-line react/prop-types
 const Navbar = ({ loading }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const { hoverEvents: { enterHover, leaveHover } } = useCursorContext()
@@ -36,35 +34,8 @@ const Navbar = ({ loading }) => {
   const handleOnClick = () => {
     setActive("")
     window.scrollTo(0,0)
-
     setToggle(false) 
   }
-
-  const tagVariants = (direction) => {
-    return {
-      initial: { 
-        x: direction === "left" ? "4px" : direction === "right" ? "-4px" : 0,
-        opacity: 0,
-        ease: "easeOut",
-        duration: 0.2,
-        type: "sprint"
-      },
-      selected: { 
-        x: 0,
-        opacity: 1,
-        color: "#D4494C", // secondary
-      },
-      hover: {
-        x: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.2,
-          type: "sprint",
-          ease: "easeIn"
-        }
-      }
-    }
-  };
 
   return (
     <>
@@ -78,10 +49,8 @@ const Navbar = ({ loading }) => {
         initial="hidden"
         animate={loading ? "hidden" : "show"}
         className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20`}
-        // className={`${styles.paddingX} pt-10 w-full flex items-center py-5 fixed top-0 z-20 bg-primary bg-gradient-to-tl to-primary from-blue-100`}
       >
         {/* web */}
-        {/* <div className="w-full flex justify-between items-center max-w-7xl mx-auto"> // with border */} 
         <div className="w-full flex justify-between items-center mx-auto"> 
           <motion.div
             variants={fadeIn("down", "spring", .1)}
@@ -102,6 +71,8 @@ const Navbar = ({ loading }) => {
           <motion.ul
             className="list-none hidden md:flex flex-row gap-14">
             {navLinks?.map((link, index) => {
+
+              console.log("isActive:", active === link.title)
               return (
                 <motion.li
                   variants={fadeIn("down", "spring", .1 * index)}
@@ -137,9 +108,6 @@ const Navbar = ({ loading }) => {
         <MenuContainer
           toggle={toggle}
           setToggle={setToggle}
-          active={active}
-          setActive={setActive}
-          tagVariants={tagVariants}
         />
         </div>
       </motion.nav>
