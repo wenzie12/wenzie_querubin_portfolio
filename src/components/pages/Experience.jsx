@@ -1,6 +1,6 @@
-/* eslint-disable */
 import { useEffect } from 'react';
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import { textVariant, fadeIn } from '../../utils/motion'
 import { styles } from '../../styles'
@@ -10,20 +10,20 @@ import VerticalTimeline from '../vertical-timeline/VerticalTimeline.component'
 import { SectionWrapper } from '../../hoc'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
-const Experience = ({ opacity, scale }) => { // ref from sectionWrapper
-  const { activeState: { setActive }, } = useGlobalStateContext()
+const Experience = () => {
+  const { activeState: {active, setActive }, } = useGlobalStateContext()
 
   // intersection observer
   const { ref, inView } = useInView({
-    // rootMargin: "-200px 0px",
+  // rootMargin: "-200px 0px",
     threshold: .3,
   })
 
   useEffect(() => {
-    if(inView) setActive("Works")
-    if(!inView) setActive("")
-  }, [inView])
-
+    if(inView) setActive("Experience")
+    if (!inView && active === "Experience") setActive("")
+  }, [inView, active, setActive])
+    
   return (
     <motion.div
       inView={inView}
@@ -36,7 +36,6 @@ const Experience = ({ opacity, scale }) => { // ref from sectionWrapper
         <h2 className={`${styles.sectionHeadText} text-secondary`}>Experience</h2>
       </motion.div>
 
-      {/* testing lang variant netong div, palitan mo later lg:w-4/5 */}
       <motion.div variants={fadeIn("", "", 0.2, 1)} className={`${styles.contentSpacing} mt-4 flex flex-col`}> 
         <VerticalTimeline data={experiences} />
       </motion.div>

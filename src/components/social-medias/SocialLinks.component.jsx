@@ -1,14 +1,15 @@
-// todo: separate mo nalng per social <a /> tapos gawa ka ng component para sa vertical social media links at horizontal social media links, need magkaiba ung animations
 /* eslint-disable */
 import { motion } from 'framer-motion'
 import { resumeFile } from '../../assets'
 import { fadeIn, zoomIn } from '../../utils/motion'
 import { social_links } from '../../constants/index'
+import { useMediaQuery } from 'react-responsive'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 
 const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
+	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 	const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -25,11 +26,11 @@ const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
   return (
     <>
 			{social_links?.map((item, index) => {
-				const { name, icon, link  } = item
+				const { name, icon, link  } = item	
 				return (
 					<motion.a
 						key={`name-${index}`}
-						variants={fadeIn("up", "spring", .1 * index)}
+						variants={!isTabletOrMobile ? fadeIn("up", "spring", .1 * index) : fadeIn("", "", .1 * index)}
 						href={link}
 						target="_blank"
 						rel="noreferrer"
@@ -46,8 +47,8 @@ const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
 					</motion.a>)	
 			})}
 			{/* resume */}
-			<motion.a
-				variants={zoomIn(.5,.5)}
+			<motion.a 
+				variants={!isTabletOrMobile ? fadeIn("up", "spring", .3) : fadeIn("", "", .3)}
 				href={resumeFile}
 				target="_blank"
 				rel="noreferrer"

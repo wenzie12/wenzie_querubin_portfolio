@@ -1,22 +1,19 @@
 /* eslint-disable */
 import { motion } from "framer-motion";
-
-import { fadeIn } from "../../utils/motion";
+import { fadeIn } from "../../utils/motion"
 
 const MenuButton = ({
-		isOpen = false,
-		width = 32,
-		height = 21,
-		strokeWidth = 3.1,
-		color = "#000",
-		transition = null,
-		lineProps = null,
-		className = "",
-		...props
-	}) => {
+	isOpen = false,
+	width = 32,
+	height = 21,
+	strokeWidth = 3.1,
+	color = "#000",
+	transition = null,
+	lineProps = null,
+	className = "",
+	...props
+}) => {
 		const variant = isOpen ? "opened" : "closed";
-		// close: transform: none; transform-origin: 3.80952px 0px;
-		// open: transform: translateY(2px) rotate(45deg); transform-origin: 3.80952px 0px;
 		const top = {
 			closed: { rotate: 0, translateY: 0, transformorigin: "0px 0px"},
 			opened: { rotate: 45, translateY: 2, transformorigin: "3.80952px 0px"}

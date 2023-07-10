@@ -30,7 +30,7 @@
   multisysBg,
 
   // social
-  facebook,
+  // facebook,
   linkedin,
   github,
 

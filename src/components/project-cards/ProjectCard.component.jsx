@@ -18,7 +18,7 @@ const ProjectCard = ({data=[], className="" }) => {
     <>
       {
         data?.map((item, index) => {
-          const { name, description, tags, image, imageMobile,  source_code_link, playstore, appstore, website } = item
+          const { name, description, tags, image, imageMobile, source_code_link, playstore, appstore, website } = item
           const isOdd = index % 2 !== 0
           
           return (
@@ -108,7 +108,7 @@ const ProjectCard = ({data=[], className="" }) => {
         })
       }
       
-      {/* TOOD: move in a custom component */}
+      {/* TOOD: move in a custom component (button) */}
       <motion.div
         variants={fadeIn("", "", 0, 0.8)}
         initial="hidden"
@@ -116,18 +116,23 @@ const ProjectCard = ({data=[], className="" }) => {
         className="flex justify-center w-full mt-12 md:mt-20"
       >
         <motion.button
-          variants={raiseUp}
-          whileHover="animate"
-          initial="initial"
+          // variants={raiseUp}
+          // whileHover="animate"
+          // initial="initial"
           type="button"
           onClick={() => console.log("more projects!")}
-          onMouseEnter={() => enterHover("hideHover")}
-          onMouseLeave={leaveHover} 
-          className={`${styles.borderBox} h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
+          onMouseEnter={() => enterHover("", {
+            ...cursorText,
+            text: "More to come soon! :D",
+            // offset: 0, 
+            // color: "#000000",
+          })}
+          onMouseLeave={leaveHover}
+          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-gray-600 px-3 text-[12px] cursor-not-allowed`}
           // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
         >
           {/* <i className="text-secondary text-bold mr-1">#</i> */}
-          <span className="text-white-100">More Projects</span>
+          <span className="text-white-100">// More Projects</span>
         </motion.button>
       </motion.div>
     </>

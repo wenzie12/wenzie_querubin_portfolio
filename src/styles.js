@@ -1,4 +1,4 @@
-const styles = {
+export const styles = {
     paddingXHero: "sm:px-20 px-8",
     paddingX: "sm:px-12 px-6",
     paddingY: "sm:py-16 py-6",
@@ -50,6 +50,3 @@ const styles = {
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500
       `
   };
-
-  
-  export { styles };
