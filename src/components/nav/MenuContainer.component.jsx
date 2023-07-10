@@ -31,7 +31,7 @@ const MenuContainer = ({ toggle, setToggle }) => {
 					onClick={() => setToggle(!toggle)}
 					color="#D4494C" // secondary
 					transition={{ ease: "easeOut", duration: 0.2 }}
-					className="z-40 cursor-pointer"
+					className="z-40 cursor-pointer py-2"
 				/>
 			)}
 			<motion.div
