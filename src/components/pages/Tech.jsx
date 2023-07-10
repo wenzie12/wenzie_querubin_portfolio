@@ -45,8 +45,9 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
                 // color: "#f3f3f3",
               })}
               onMouseLeave={leaveHover} 
-              className={`${className} flex items-center justify-center px-4 md:px-3`}
+              className={`${className} flex flex-col gap-y-2 md:flex-row md:gap-y-0 items-center justify-center px-4 md:px-3`}
             >
+              <span className="text-xs text-blue-200 md:hidden">{item.name}</span>
               <motion.img
                 variants={raiseUp}
                 whileHover="animate"
