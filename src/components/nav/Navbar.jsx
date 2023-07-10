@@ -71,8 +71,6 @@ const Navbar = ({ loading }) => {
           <motion.ul
             className="list-none hidden md:flex flex-row gap-14">
             {navLinks?.map((link, index) => {
-
-              console.log("isActive:", active === link.title)
               return (
                 <motion.li
                   variants={fadeIn("down", "spring", .1 * index)}

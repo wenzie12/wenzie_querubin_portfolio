@@ -54,7 +54,7 @@ const ScrollButton = ({ href='', loading })  => {
       animate={loading ? "hidden" : "show"}
       ref={ targetRef }
       style={{ opacity, scale }} 
-      className="absolute bottom-10 w-full flex justify-center items-center"
+      className="absolute bottom-12 md:bottom-10 w-full flex justify-center items-center"
     >
       <a
         href={href}
@@ -68,16 +68,8 @@ const ScrollButton = ({ href='', loading })  => {
         <motion.div
           whileHover="hover"
           animate="initial"
-          // className="w-[24px] h-[50px] rounded-3xl border-2 border-secondary flex justify-center items-start py-2"
-          className="w-[24px] h-[50px] border-none flex justify-center items-start py-2" // class for chevron
-        >
-          {/* scroll ball */}
-          {/* <motion.div
-          variants={toggleVariant}
-          className="w-2 h-2 rounded-full bg-secondary mb-1"
-          /> */}
-          
-          {/* scroll chevron */}
+          className="w-[24px] h-[50px] border-none flex justify-center items-start py-2"
+        >          
           <motion.img
             src={chevronDown}
             alt="scroll down"

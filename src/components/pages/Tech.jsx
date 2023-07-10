@@ -85,7 +85,7 @@ const Tech = ({ opacity, scale }) => {
           // variants={fadeIn("", "", 0.2, 1)}
           className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
         >
-          Here are a few technologies I’ve been working with recently:
+          Here are some technologies I&apos;m ve recently worked with.
         </motion.p>
       </div>
       <motion.div
