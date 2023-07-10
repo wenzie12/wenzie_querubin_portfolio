@@ -54,7 +54,7 @@ const ScrollButton = ({ href='', loading })  => {
       animate={loading ? "hidden" : "show"}
       ref={ targetRef }
       style={{ opacity, scale }} 
-      className="absolute bottom-12 md:bottom-10 w-full flex justify-center items-center"
+      className="absolute bottom-14 md:bottom-10 w-full flex justify-center items-center"
     >
       <a
         href={href}

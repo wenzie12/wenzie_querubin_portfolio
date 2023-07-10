@@ -40,24 +40,28 @@ const MenuButton = ({
 		const unitWidth = (unitHeight * (width)) / (height);
 
 	return (
-		<motion.svg
-			variants={fadeIn("down", "spring", .1)}
-			animate="show"
-			initial="hidden"
-			viewBox={`0 0 ${unitWidth} ${unitHeight}`}
-			// viewBox="0 0 7.619047619047619 5"
-			overflow="visible"
-			preserveAspectRatio="none"
-			width={width}
-			height={height}
+		<button
+			type="button"
 			{...props}
 			className={className}
 		>
-			{/* <motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} /> */}
-			<motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} />
-			<motion.line x1="2" x2={unitWidth} y1="2" y2="2" variants={center} {...lineProps} />
-			<motion.line x1="0" x2={unitWidth} y1="4" y2="4" variants={bottom} {...lineProps} />
-		</motion.svg>
+			<motion.svg
+				variants={fadeIn("down", "spring", .1)}
+				animate="show"
+				initial="hidden"
+				viewBox={`0 0 ${unitWidth} ${unitHeight}`}
+				// viewBox="0 0 7.619047619047619 5"
+				overflow="visible"
+				preserveAspectRatio="none"
+				width={width}
+				height={height}
+			>
+				{/* <motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} /> */}
+				<motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} />
+				<motion.line x1="2" x2={unitWidth} y1="2" y2="2" variants={center} {...lineProps} />
+				<motion.line x1="0" x2={unitWidth} y1="4" y2="4" variants={bottom} {...lineProps} />
+			</motion.svg>
+		</button>
 	)
 }
 
