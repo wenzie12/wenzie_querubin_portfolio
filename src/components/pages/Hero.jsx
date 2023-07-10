@@ -33,7 +33,7 @@ const Hero = ({ loading }) => {
       <motion.section
         ref={ targetRef }
         style={{ opacity, scale, y }}
-        className={` relative w-full h-screen flex items-center`}
+        className="relative w-full h-screen flex items-center select-none"
         // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-blue-100`}
       > 
         <motion.div

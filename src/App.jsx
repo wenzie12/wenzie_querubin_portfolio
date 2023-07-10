@@ -33,13 +33,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      {/* select-none - temporary added: TODO: lagay mo lang ung 'select-none' sa ibang component na kelangan :D  */}
-        <div className="relative bg-primary subpixel-antialiased font-extralight select-none">
+        <div className="relative subpixel-antialiased font-extralight">
           <LandingPageLoader loading={loading} />
           {!loading && (
             <>
             {/* landing page */}
-            <div className="bg-cover bg-no-repeat bg-center">
+            <div className="">
               <Navbar loading={loading} />
               <Hero loading={loading}/>
             </div>
@@ -64,8 +63,7 @@ const App = () => {
 // Wrapped APP in HOC named CursorWrapper
 const AppHOC = CursorWrapper(App, "")
 
-// export default AppHOC
-export default App
+export default AppHOC
 
 /*
 TODOs 

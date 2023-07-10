@@ -132,7 +132,7 @@ const About = ({ opacity, scale }) => {
         data={interests}
         enterHover={enterHover}
         leaveHover={leaveHover}
-        className={`${styles.contentSpacing} lg:hidden flex flex-wrap gap-4`}
+        className="lg:hidden flex flex-wrap gap-4"
         // className="md:hidden flex flex-wrap gap-4"
       />
     </motion.div>
