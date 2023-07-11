@@ -41,7 +41,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
 							text: name,
 						})}
 						onMouseLeave={leaveHover}
-						className="py-3 flex justify-center items-center"
+						className="py-3 px-2 md:px-0 flex justify-center items-center"
 					>
 						<motion.img whileHover={hover} src={icon} alt={name} className="w-4 h-4" />
 					</motion.a>)	

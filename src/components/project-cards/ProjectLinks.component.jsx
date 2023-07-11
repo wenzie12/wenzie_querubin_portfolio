@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 
 import { raiseUp, fadeIn } from '../../utils/motion'
-import { appStore, playStore, link, github } from '../../assets'
+import { appStore, playStore, link, www, github } from '../../assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -22,7 +22,7 @@ const ProjectLinks = ({
   return (
     <motion.div
       variants={fadeIn("", "", 0.2, 0.4)}
-      className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex justify-start text-sm leading-[25px] gap-x-2`}
+      className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex justify-start items-center text-sm leading-[25px] gap-x-2`}
     >
       <motion.a
         initial="initial"
@@ -43,7 +43,7 @@ const ProjectLinks = ({
         hrefLang="en-us"
         className="p-3"
       >
-        <motion.img variants={raiseUp} src={link} alt="live-server" className=""/>
+        <motion.img variants={raiseUp} src={www} alt="live-server" className=""/>
       </motion.a>
       {playstore && (
         <motion.a

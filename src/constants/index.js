@@ -26,8 +26,6 @@
   canstarLandingPage,
   manilaZooLandingPage,
   manilaZooLandingPageMobile,
-  // bg
-  multisysBg,
 
   // social
   // facebook,
@@ -54,29 +52,24 @@
       title: "Contact",
     },
   ];
-  
-  const services = [
+
+  const social_links = [
+    // {
+    //   name: "facebook",
+    //   icon: facebook,
+    //   link: "",
+    // },
     {
-      title: "Web Developer",
-      // icon: web,
-      icon: "",
+      name: "linkedin",
+      icon: linkedin,
+      link: "https://www.linkedin.com/in/wenzie-querubin/",
     },
     {
-      title: "React Native Developer",
-      // icon: mobile,
-      icon: "",
+      name: "github",
+      icon: github,
+      link: "https://github.com/wenzie12/",
     },
-    {
-      title: "Backend Developer",
-      // icon: backend,
-      icon: "",
-    },
-    {
-      title: "Content Creator",
-      // icon: creator,
-      icon: "",
-    },
-  ];
+  ]
 
   const interests = [
     "UI Design",
@@ -89,7 +82,7 @@
     "Pasta",
     "Coffee",
   ]
-  
+    
   const technologies = {
   tech: [
       { name: "HTML5", icon: html5, },
@@ -137,7 +130,7 @@
       title: "Fullstack Developer",
       company_name: "August 99, Inc.",
       company_summary: "August 99 is a startup incubator and business accelerator. With headquarters in Singapore and operational teams based in Manila, Philippines, we provide the hands-on mentorship, resources, network, and environment entrepreneurs need to launch, fund, and grow their startups globally and in the region.",
-      img_bg: multisysBg,
+      img_bg: "",
       date: "Aug 2019 - Dec 2020",
       link: "https://august99.com/",
       points: [
@@ -150,7 +143,7 @@
       title: "Associate Software Developer (Internship)",
       company_name: "Accenture Inc",
       company_summary: "Accenture , inc. is a multinational professional services company that provides services in strategy, consulting, digital, technology and operations.",
-      img_bg: multisysBg,
+      img_bg: "",
       link: "https://www.accenture.com/ph-en",
       date: "Nov 2018 - Feb 2019",
       points: [
@@ -159,53 +152,7 @@
       ],
     },
   ];
-  
-  // not in use yet
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
-
-  const social_links = [
-    // {
-    //   name: "facebook",
-    //   icon: facebook,
-    //   link: "",
-    // },
-    {
-      name: "linkedin",
-      icon: linkedin,
-      link: "https://www.linkedin.com/in/wenzie-querubin/",
-    },
-    {
-      name: "github",
-      icon: github,
-      link: "https://github.com/wenzie12/",
-    },
-  ]
-  
+    
   const projects = [
     {
       name: "GoManila App",
@@ -289,4 +236,4 @@
     },
   ];
   
-  export { social_links, services, interests, technologies, experiences, testimonials, projects };
+  export { social_links, interests, technologies, experiences, projects };

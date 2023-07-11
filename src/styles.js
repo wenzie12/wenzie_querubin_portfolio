@@ -36,7 +36,7 @@ export const styles = {
       //  h-[160px] xs:h-[280px] lg:h-[360px]
       //  pt-4 pb-2 md:pt-0 lg:pb-0 mx-auto
 
-    borderBox: "rounded-md border-secondary border-2 px-3",
+    borderBox: "rounded-md border-2 px-3",
 
     // forms
     formInput: `

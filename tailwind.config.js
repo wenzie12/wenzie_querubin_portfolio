@@ -24,6 +24,7 @@ export const theme = {
     screens: {
       xs: "450px",
     },
+    // not used
     backgroundImage: {
       "hero-pattern": "url('/src/assets/herobg.png')",
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

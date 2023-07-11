@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { textVariant, swivelVariants, raiseUp, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import ProjectLinks from './ProjectLinks.component'
+import { ImageContainer } from '../image-container'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -30,7 +31,6 @@ const ProjectCard = ({data=[], className="" }) => {
                 whileInView="show"
                 className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-blue-100/40 rounded-md`}
               >
-                {/* <motion.section className={`${isOdd ? 'pl-8 md:pl-10' : 'pr-8 md:pr-10'} section-1 flex justify-center w-1/2`}> */}
                 <motion.section
                   className="p-6 md:px-4 my-4 md:my-0 bg-blue-100/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
@@ -38,7 +38,6 @@ const ProjectCard = ({data=[], className="" }) => {
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
                     <motion.div initial="hidden" whileInView="show" className={`${styles.cardContainer}`}>
                       <motion.h3
-                        // variants={swivelVariants}
                         variants={textVariant(.2)}
                         className={`${isOdd && 'md:text-right'} text-[1.25rem] lg:text-[1.5rem] text-secondary font-semibold italic`}
                       >
@@ -77,7 +76,6 @@ const ProjectCard = ({data=[], className="" }) => {
                     </div>
                   </div>
                 </motion.section>
-
                 <motion.section
                   initial="hidden"
                   whileHover="show" 
@@ -90,10 +88,11 @@ const ProjectCard = ({data=[], className="" }) => {
                     className="flex items-center w-full h-full"
                   >
                     <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="lg:h-full">
-                      <motion.img
+                      <ImageContainer
+                        isMotion
                         onMouseEnter={() => enterHover("anchorBlended", {
                           ...cursorText,
-                          text: "View Live Server",
+                          text: "live server",
                           // offset: 0, 
                           // color: "#000000",
                         })}
@@ -123,12 +122,12 @@ const ProjectCard = ({data=[], className="" }) => {
           onClick={() => console.log("more projects!")}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
-            text: "More to come soon! :D",
+            text: "comming soon! :D",
             // offset: 0, 
             // color: "#000000",
           })}
           onMouseLeave={leaveHover}
-          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-gray-600 px-3 text-[12px] cursor-not-allowed`}
+          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-blue-100 px-3 text-[12px] cursor-not-allowed`}
           // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
         >
           {/* <i className="text-secondary text-bold mr-1">#</i> */}
