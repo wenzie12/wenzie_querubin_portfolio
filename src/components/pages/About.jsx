@@ -80,7 +80,7 @@ const About = ({ opacity, scale }) => {
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
             <ImageContainer
-              motion={motion}
+              isMotion
               initial={{ transform: "rotate(-90deg)", }}
               whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
               src={chevronDown}
@@ -118,7 +118,7 @@ const About = ({ opacity, scale }) => {
             className="overflow-hidden flex justify-center w-48 md:w-auto"
           >
             <ImageContainer
-              motion={motion}
+              isMotion
               variants={scaleImageVariant}
               src={profile}
               alt="profile"

@@ -47,7 +47,6 @@ const Projects = ({ opacity, scale }) => {
         </motion.div>
 
         <div className="">
-          {/* description */}
           <div className="flex flex-col md:w-2/3 mb-2 md:mb-8">
             <motion.p
               variants={swivelVariants}

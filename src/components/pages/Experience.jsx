@@ -15,7 +15,7 @@ const Experience = () => {
 
   // intersection observer
   const { ref, inView } = useInView({
-  // rootMargin: "-200px 0px",
+    // rootMargin: "-200px 0px",
     threshold: .3,
   })
 

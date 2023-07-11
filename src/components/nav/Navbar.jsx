@@ -28,7 +28,7 @@ const Navbar = ({ loading }) => {
     offset: ["start start", "end start"],
   })
 
-  const backgroundColor = useTransform(scrollYProgress, [0, 1], ["transparent", "#101B29"])
+  // const backgroundColor = useTransform(scrollYProgress, [0, 1], ["101B29", "#101B29"]) // for gradient bg, currently not in used
   const paddingTop = useTransform(scrollYProgress, [0, 1], [`${!isTabletOrMobile ? '2.5rem' : '1.5rem'}`,"1.2rem"])
 
   const handleOnClick = () => {
@@ -42,13 +42,13 @@ const Navbar = ({ loading }) => {
       <motion.nav
         ref={ targetRef }
         style={{
-          backgroundColor,
+          // backgroundColor,
           paddingTop, 
           transition: "200ms ease-in-out",
         }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20`}
+        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 bg-primary`}
       >
         {/* web */}
         <div className="w-full flex justify-between items-center mx-auto"> 
