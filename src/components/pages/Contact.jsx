@@ -3,8 +3,11 @@ import { motion } from 'framer-motion'
 import { SectionWrapper } from '../../hoc'
 import { useInView } from 'react-intersection-observer' 
 
-import { textVariant, raiseUp, swivelVariants } from '../../utils/motion'
+import { textVariant, raiseUp, fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
 import { styles } from '../../styles'
+import { contacts } from '../../constants'
+
+import SocialLinks from '../social-medias/SocialLinks.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -31,6 +34,13 @@ const Contact = ({ opacity, scale }) => {
     if (!inView && active === "Contact") setActive("")
   }, [inView, active, setActive])
 
+  const handleContact = e => { 
+    const {email, subject, body} = contacts
+    window.location.href = `mailto:${email || ""}?subject=${subject || ""}&body=${body}`;
+    console.log(window.location)
+    e.preventDefault();
+  }
+
   return (
     <>
       <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`} style={{ opacity, scale }}>
@@ -52,25 +62,39 @@ const Contact = ({ opacity, scale }) => {
             </motion.p>
           </div>
         </motion.div>
-          <motion.div
+        {/* <hr className="border-blue-200 mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
+        {/* links */}
+        <motion.div
+          variants={staggerContainer(.2)}
+          initial="hidden"
+          whileInView="show"
+          className="w-full text-blue-100">
+					<div className="flex flex-row justify-center w-full gap-x-4 -mt-2">
+						<SocialLinks resumeLinkOrientation="horizontal" isResumeIcon />
+					</div>
+				</motion.div>
+        <motion.div
+        // todo mali animation neto, lagyan mo ng fadein on view
+          variants={fadeIn("", "", 0.2, 1)}
+          className="flex justify-center w-full p-4 text-secondary"
+        >
+          {/* TODO: 
+            - make this custom-button later same with 'Projects -> "view more" button 
+            - convert to forms modal instead (of ease of use)
+          */}
+          <motion.button
+            variants={raiseUp}
             whileHover="animate"
             initial="initial"
-            className="flex justify-center w-full p-4 text-secondary"
+            type="button"
+            onClick={handleContact}
+            onMouseEnter={() => enterHover("hideHover")}
+            onMouseLeave={leaveHover} 
+            className={`${styles.borderBox} flex items-center justify-center rounded-md border-secondary h-[40px] text-xs`}
           >
-            {/* TODO: make this custom-button later same with 'Projects -> "view more" button */}
-            <motion.button
-              variants={raiseUp}
-              whileHover="animate"
-              initial="initial"
-              type="button"
-              onClick={() => console.log("modal here!")}
-              onMouseEnter={() => enterHover("hideHover")}
-              onMouseLeave={leaveHover} 
-              className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
-            >
-              <span className="text-white-100">Say Hello!</span>
-            </motion.button>
-          </motion.div>
+            <span className="text-white-100">Say Hello!</span>
+          </motion.button>
+        </motion.div>
       </motion.div>
     </>
   )

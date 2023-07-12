@@ -49,7 +49,7 @@ const VerticalTimeline = ({ data }) => {
 									{/* circle */}
 									<motion.div
 										variants={zoomIn(.2, .4)}
-										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-blue-100 border-4 border-blue-200 rounded-full`}
+										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-blue-200 border-4 border-blue-200 rounded-full`}
 										className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-blue-100 rounded-full`}
 									/>
 									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 bg-blue-100 rounded-full`}/>} 

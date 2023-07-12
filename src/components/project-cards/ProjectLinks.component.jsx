@@ -4,6 +4,10 @@ import { motion } from 'framer-motion'
 import { raiseUp, fadeIn } from '../../utils/motion'
 import { appStore, playStore, link, www, github } from '../../assets'
 
+import { WwwIcon, AppStoreIcon, PlayStoreIcon, SourceCodeLink } from '../icons/'
+
+import { SECONDARY_COLOR } from '../../themes/constants'
+
 // context
 import { useCursorContext } from '../../context/HOCContext'
 
@@ -43,7 +47,14 @@ const ProjectLinks = ({
         hrefLang="en-us"
         className="p-3"
       >
-        <motion.img variants={raiseUp} src={www} alt="live-server" className=""/>
+        <WwwIcon
+          variants={raiseUp}
+          title="live-server"
+          role="icon"
+          classSVG=""
+          classPath=""
+          fill={SECONDARY_COLOR}
+        />
       </motion.a>
       {playstore && (
         <motion.a
@@ -65,7 +76,14 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-          <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={playStore} alt="live-server" className="" />
+        <PlayStoreIcon
+          variants={raiseUp}
+          title="playstore"
+          classSVG=""
+          classPath=""
+          fill={SECONDARY_COLOR}
+          role="icon"
+        />
         </motion.a>
       )}
       {appstore && (
@@ -87,9 +105,17 @@ const ProjectLinks = ({
           rel="noreferrer"
           className="p-3"
         >
-          <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={appStore} alt="live-server" className=""/>
+        <AppStoreIcon
+          variants={raiseUp}
+          title="appstore"
+          classSVG=""
+          classPath=""
+          fill={SECONDARY_COLOR}
+          role="icon"
+        />
         </motion.a>
       )}
+      {/* for github links */}
       {source_code_link && (
         <motion.a
           initial="initial"
@@ -110,7 +136,14 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-          <motion.img variants={raiseUp} initial="initial" whileHover="animate" src={github} alt="source-code" className=""/>
+          <SourceCodeLink
+            variants={raiseUp}
+            title="source-code"
+            classSVG=""
+            classPath=""
+            fill={SECONDARY_COLOR}
+            role="icon"
+          />
         </motion.a>
       )}
     </motion.div>

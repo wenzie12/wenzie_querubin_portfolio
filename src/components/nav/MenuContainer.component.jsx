@@ -11,6 +11,8 @@ import { MenuButton } from '../custom-buttons'
 import MenuLinks from './MenuLinks.component'
 import SocialLinks from '../social-medias/SocialLinks.component'
 
+import { SECONDARY_COLOR } from '../../themes/constants'
+
 // eslint-disable-next-line react/prop-types
 const MenuContainer = ({ toggle, setToggle }) => {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -29,7 +31,7 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				<MenuButton
 					isOpen={toggle}
 					onClick={() => setToggle(!toggle)}
-					color="#D4494C" // secondary
+					color={SECONDARY_COLOR} // secondary
 					transition={{ ease: "easeOut", duration: 0.2 }}
 					className="z-40 cursor-pointer py-2"
 				/>
@@ -50,9 +52,9 @@ const MenuContainer = ({ toggle, setToggle }) => {
 						variants={staggerContainer(.2)}
 						initial="hidden"
 						whileInView="show"
-						className="flex justify-end w-full gap-x-4 pr-6"
+						className="flex justify-end w-full gap-x-4 pr-2"
 					>
-						<SocialLinks resumeLinkOrientation="horizontal" />
+						<SocialLinks resumeLinkOrientation="horizontal" isResumeIcon />
 					</motion.div>
 				</motion.div>
 			</motion.div>

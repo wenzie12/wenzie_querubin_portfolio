@@ -5,13 +5,14 @@ import { useMediaQuery } from 'react-responsive'
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
-import { logo } from '../../assets'
 import { fadeIn, tagVariants } from '../../utils/motion'
+import { ProfileLogo } from '../icons'
 import MenuContainer from './MenuContainer.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
+import { SECONDARY_COLOR } from '../../themes/constants'
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ loading }) => {
@@ -62,7 +63,12 @@ const Navbar = ({ loading }) => {
             onClick={handleOnClick}
             className='flex items-center gap-2 py-4 z-40'
           >
-            <img src={logo} alt="logo" className="w-[32px] h-[21px] object-contain z-40"/>
+            <ProfileLogo
+              classSVG="w-[32px] h-[21px] object-contain z-40"
+              classPath=""
+              fill={SECONDARY_COLOR}
+              role="icon"
+            />
             <p className="text-white-100 text-[18px] cursor-pointer hidden md:flex text-sm">
               Wenzie Querubin 
             </p>
@@ -90,11 +96,11 @@ const Navbar = ({ loading }) => {
                     {link.title}
                     <motion.i
                       variants={tagVariants("left")}
-                      className="text-blue-200 absolute top-1 -left-5 font-semibold">{`<`}
+                      className="text-blue-200 absolute top-1 -left-4 font-semibold">{`<`}
                     </motion.i>
                     <motion.i
                       variants={tagVariants("right")}
-                      className="text-blue-200 absolute top-1 -right-6 font-semibold">{`/>`}
+                      className="text-blue-200 absolute top-1 -right-5 font-semibold">{`/>`}
                     </motion.i>
                   </motion.a>
                 </motion.li>

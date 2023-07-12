@@ -10,12 +10,14 @@ import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalCo
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Hero = ({ loading }) => {
   const {
     cursorTextState: { cursorText, setCursorText },
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
+  const { activeState: { active }, } = useGlobalStateContext()
 
   const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -105,7 +107,15 @@ const Hero = ({ loading }) => {
         {/* toggle to section button (animated) */}
       <ScrollButton href="#about" loading={loading} />
       </motion.section>
-      <SocialMediaVerticalContainer loading={loading} />
+      <AnimatePresence>
+        {active !== "Contact" && (
+          <motion.div exit={{ opacity: 0, }}>
+            <SocialMediaVerticalContainer loading={loading} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      
     </>
   )
 }

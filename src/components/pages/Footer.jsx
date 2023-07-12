@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion'
-import { logo, } from "../../assets"
 import { Link } from 'react-router-dom'
 // import { styles } from "../../styles"
 
 import { fadeIn } from '../../utils/motion'
+import { SECONDARY_COLOR } from '../../themes/constants'
 
+// context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
+
 import HighlightedText from "../custom-text/HighlightedText.component"
+import { ProfileLogo } from '../icons'
 
 const Footer = () => {
 	const { hoverEvents: { enterHover, leaveHover } } = useCursorContext()
@@ -33,7 +36,12 @@ const Footer = () => {
 						setActive("")
 					}}
 				>
-					<img src={logo} alt="logo" className=" w-7 h-7" />
+					<ProfileLogo
+						classSVG="w-7 h-7"
+						classPath=""
+						fill={SECONDARY_COLOR}
+						role="icon"
+					/>
 				</Link>
 
 

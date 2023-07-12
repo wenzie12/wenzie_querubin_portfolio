@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export const content = ["./src/**/*.{js,jsx}"];
 export const mode = "jit";
+
 export const theme = {
   extend: {
     colors: {
       primary: "#101B29", // dark blue
       // primary: "#e5e5e5", // for light mode
-      secondary: "#D4494C", // red
-      "secondary-100": "#BF0603", // dark red
+      // secondary: "#D4494C", // red
+      secondary: "#b12a29", // darker red
       tertiary: "#7B8CA6", // blue-gray
       "blue-200": "#3F4F69", // lighter
       "blue-100": "#1D2639", // darker
-      "yellow-100": "#EFD696",
       "white-100": "#f3f3f3",
       // "white-100": "#101B29", // light mode
 

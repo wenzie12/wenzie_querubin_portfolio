@@ -28,7 +28,7 @@ const About = ({ opacity, scale }) => {
   // intersection observer
   const { ref, inView } = useInView({
     // rootMargin: "-200px 0px",
-    threshold: 1,
+    // threshold: 1,
   })
 
   useEffect(() => {
@@ -47,10 +47,7 @@ const About = ({ opacity, scale }) => {
         <h2 className={`${styles.sectionHeadText} text-secondary`}>About Me</h2>
       </motion.div>
       
-      <motion.div
-        ref={ref}
-        className="flex-col-reverse md:flex-row flex gap-x-10"
-      >
+      <div ref={ref} className="flex-col-reverse md:flex-row flex gap-x-10">
         {/* left section */}
         <div className="flex flex-col md:w-1/2 text-justify">
           <motion.p
@@ -127,7 +124,7 @@ const About = ({ opacity, scale }) => {
           </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
       <InterestsGroup
         data={interests}
         enterHover={enterHover}
