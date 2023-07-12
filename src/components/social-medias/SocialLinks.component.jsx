@@ -1,14 +1,15 @@
 /* eslint-disable */
 import { motion } from 'framer-motion'
-import { resumeFile } from '../../assets'
-import { fadeIn, zoomIn } from '../../utils/motion'
-import { social_links } from '../../constants/index'
+import { fadeIn } from '../../utils/motion'
+import { social_links, downloadables } from '../../constants/index'
 import { useMediaQuery } from 'react-responsive'
+
+import { resume } from '../../assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 
-const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
+const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) => {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 	const {
     cursorTextState: { cursorText },
@@ -41,31 +42,36 @@ const SocialLinks = ({ resumeLinkOrientation="vertical" }) => {
 							text: name,
 						})}
 						onMouseLeave={leaveHover}
-						className="py-3 px-2 md:px-0 flex justify-center items-center"
+						className="py-3 w-10 flex justify-center items-center"
 					>
-						<motion.img whileHover={hover} src={icon} alt={name} className="w-4 h-4" />
+						<motion.img whileHover={hover} src={icon} alt={name} className="aspect-auto w-5 h-5" />
 					</motion.a>)	
 			})}
 			{/* resume */}
 			<motion.a 
 				variants={!isTabletOrMobile ? fadeIn("up", "spring", .3) : fadeIn("", "", .3)}
-				href={resumeFile}
+				href={downloadables?.resume}
 				target="_blank"
 				rel="noreferrer"
 				onMouseEnter={() => enterHover("anchor", {
 					...cursorText,
 					offset: 15,
-					text: "download me!",
+					text: "download resume",
 				})}
 				onMouseLeave={leaveHover}
 				download
-				className="py-3"
+				className={`${isResumeIcon ? 'flex flex-col gap-y-2 justify-center items-center py-0 w-10' : 'py-3'}`}
 			>
-				<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-9"} flex justify-center items-center rounded border-secondary border `}>
-					<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block text-tertiary  text-center text-[16px] custom-pointer relative text-sm`}>
-						Resume
-					</span>
-				</motion.div>
+				{
+					isResumeIcon ? 
+						<motion.img whileHover={hover} src={resume} alt="resume" className="aspect-auto w-5 h-5" /> :
+						<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md border-secondary border-2`}>
+							<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block text-white-100  text-center custom-pointer relative text-xs`}>
+								Resume
+							</span>
+						</motion.div>
+					}
+
 			</motion.a>
     </>
   )

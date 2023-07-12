@@ -1,3 +1,5 @@
+import { SECONDARY_COLOR } from "../themes/constants";
+
 export const textVariant = (delay) => {
   return {
     hidden: {
@@ -16,7 +18,6 @@ export const textVariant = (delay) => {
   };
 };
 
-// TODO: FIX perspective issue on safari browser
 export const perspectiveVariant = (degree='0deg', perspective='400px') => {
   return {
     initial: {
@@ -230,7 +231,7 @@ export const tagVariants = (direction) => {
     selected: { 
       x: 0,
       opacity: 1,
-      color: "#D4494C", // secondary
+      color: SECONDARY_COLOR, // secondary
     },
     hover: {
       x: 0,

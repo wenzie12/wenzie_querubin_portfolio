@@ -31,6 +31,8 @@
   // facebook,
   linkedin,
   github,
+  // downloadables,
+  resumeFile,
 
   } from "../assets";
   
@@ -52,24 +54,6 @@
       title: "Contact",
     },
   ];
-
-  const social_links = [
-    // {
-    //   name: "facebook",
-    //   icon: facebook,
-    //   link: "",
-    // },
-    {
-      name: "linkedin",
-      icon: linkedin,
-      link: "https://www.linkedin.com/in/wenzie-querubin/",
-    },
-    {
-      name: "github",
-      icon: github,
-      link: "https://github.com/wenzie12/",
-    },
-  ]
 
   const interests = [
     "UI Design",
@@ -174,7 +158,7 @@
       ],
       image: gomanilaLandingPage, // temporary image placeholder
       imageMobile: gomanilaLoginPageMobile, 
-      source_code_link: "",
+      source_code_link: "https://github.com/",
       appstore: "https://apps.apple.com/us/app/gomanila/id1533414915",
       playstore: "https://play.google.com/store/apps/details?id=net.gomanila.app&hl=en&gl=US",
       website: "https://www.gomanila.com/"
@@ -235,5 +219,49 @@
       website: "https://www.canstar.com.au/"
     },
   ];
-  
-  export { social_links, interests, technologies, experiences, projects };
+
+  const contacts = {
+    email: "wenzie12sg@gmail.com",
+    subject: "Hello Wenzie!" ,
+    body: "",
+    links: {
+      linkedin: "https://www.linkedin.com/in/wenzie-querubin/",
+      github: "https://github.com/wenzie12/",
+      codepen: "https://codepen.io/wenzie12",
+      facebook: "",
+      instagram: "",
+      twitter: "",
+    },
+  }
+
+  const downloadables = {
+    resume: resumeFile
+  }
+
+  const social_links = [
+    // {
+    //   name: "facebook",
+    //   icon: facebook,
+    //   link: contacts?.links.facebook,
+    // },
+    {
+      name: "linkedin",
+      icon: linkedin,
+      link: contacts?.links.linkedin,
+    },
+    {
+      name: "github",
+      icon: github,
+      link: contacts?.links.github,
+    },
+  ]
+
+  export {
+    social_links,
+    interests,
+    technologies,
+    experiences,
+    projects,
+    contacts,
+    downloadables,
+  };
