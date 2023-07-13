@@ -41,14 +41,14 @@ const Hero = ({ loading }) => {
         <motion.div
           variants={staggerContainer(.2)}
           initial={false}
-          animate="show"
+          whileInView="show"
           className={`${styles.paddingXHero} absolute top-[180px] xs:top-[200px] md:relative md:top-0 lg:max-w-5xl mx-auto flex flex-row items-start justify-center gap-5`}
         >
           {/* vertical icons */}
           <motion.div className="flex flex-col justify-center items-center">
             <motion.img
               initial={{ opacity: 0,  transform: "rotate(-90deg)", }}
-              animate={loading ? "initial" : [
+              whileInView={loading ? "initial" : [
                 { opacity: 1, transition: { delay: .4, duration: .4 }},
                 { transform: "rotate(0)", transition: { delay: .8, }}
               ]}
@@ -59,7 +59,7 @@ const Hero = ({ loading }) => {
             <motion.div
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"
-              animate={loading ? "hidden" : "show"}
+              whileInView={loading ? "hidden" : "show"}
               className="w-1 md:mt-2 sm:h-64 h-48 bg-gradient-to-b from-blue-200 to-primary"
             />
           </motion.div>
@@ -67,7 +67,7 @@ const Hero = ({ loading }) => {
           <motion.div
             variants={swivelVariants}
             initial="hidden"
-            animate="show"
+            whileInView="show"
           >
             <motion.h1
               variants={swivelVariants}
@@ -78,9 +78,9 @@ const Hero = ({ loading }) => {
                 Wenzie
               </motion.span>
             </motion.h1>
-            <motion.p
+            <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} text-blue-200 font-normal`}
+              className={`${styles.heroSubText} inline-block text-blue-200 font-normal`}
             >
               Frontend Software Engineer @
               <a
@@ -92,15 +92,15 @@ const Hero = ({ loading }) => {
                 onMouseLeave={leaveHover}
                 href="https://www.multisyscorp.com/" target="_blank" className="text-secondary italic font-semibold">Multisys
               </a>
-            </motion.p>
-            <motion.p
+            </motion.span>
+            <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} mt-2 text-tertiary md:w-3/4`}
+              className={`${styles.heroSubText} inline-block mt-2 text-tertiary md:w-3/4`}
             >
               Experienced Frontend Developer with a passion
               for creating dynamic, user-friendly web
               applications using <HighlightedText className="text-white-100" delay={0.6}>ReactJs</HighlightedText>.
-            </motion.p>
+            </motion.span>
           </motion.div>
         </motion.div>
  

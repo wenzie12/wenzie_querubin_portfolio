@@ -28,6 +28,7 @@ const Footer = () => {
 			>
 				<Link 
 					to="/"
+					aria-label="home"
 					className='flex items-center gap-2 z-10'
 					onMouseEnter={() => enterHover("anchor")}
 					onMouseLeave={leaveHover}
@@ -40,7 +41,7 @@ const Footer = () => {
 						classSVG="w-7 h-7"
 						classPath=""
 						fill={SECONDARY_COLOR}
-						role="icon"
+						role="img"
 					/>
 				</Link>
 				<span className="flex flex-col xs:flex-row text-xs md:text-sm text-tertiary">

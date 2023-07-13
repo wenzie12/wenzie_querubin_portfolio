@@ -58,6 +58,7 @@ const Navbar = ({ loading }) => {
           >
           <Link 
             to="/"
+            aria-label="home"
             onMouseEnter={() => enterHover("anchor")}
 						onMouseLeave={leaveHover}
             onClick={handleOnClick}
@@ -67,7 +68,7 @@ const Navbar = ({ loading }) => {
               classSVG="w-[32px] h-[21px] object-contain z-40"
               classPath=""
               fill={SECONDARY_COLOR}
-              role="icon"
+              role="img"
             />
             <p className="text-white-100 text-[18px] cursor-pointer hidden md:flex text-sm">
               Wenzie Querubin 

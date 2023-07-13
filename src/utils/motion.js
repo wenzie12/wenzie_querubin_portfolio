@@ -119,7 +119,7 @@ export const zoomIn = (delay, duration) => {
       opacity: 0,
       transition: {
         scale: {
-          duration: .3,
+          duration: .2,
         },
       }
     },
