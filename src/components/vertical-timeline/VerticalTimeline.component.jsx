@@ -112,7 +112,7 @@ const VerticalTimeline = ({ data }) => {
 											<i className="text-blue-200">@</i>{company_name}
 										</motion.a>
 										<motion.p variants={swivelVariants} className="lg:hidden font-normal">
-											<HighlightedText className="" color="#7B8CA6" delay={.8} duration={0.4}>
+											<HighlightedText className="px-1" color="#7B8CA6" delay={.8} duration={0.4}>
 												{date}
 											</HighlightedText>
 										</motion.p>

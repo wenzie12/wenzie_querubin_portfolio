@@ -56,9 +56,9 @@ const Contact = ({ opacity, scale }) => {
               variants={swivelVariants}
               className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary text-center px-0 md:px-10 lg:px-20`}
             >
-              {`Although I’m not currently looking for any new 
-              opportunities, my inbox is always open. Whether you have a 
-              question or just want to say hi, I’ll try my best to get back to you!`}
+              {`While I'm not actively seeking new opportunities at the moment, 
+              I'm always available in my inbox. Whether you have any inquiries or simply want to greet, 
+              I'll make an effort to respond as promptly as possible.`}
             </motion.p>
           </div>
         </motion.div>
@@ -69,9 +69,9 @@ const Contact = ({ opacity, scale }) => {
           initial="hidden"
           whileInView="show"
           className="w-full text-blue-100">
-					<div className="flex flex-row justify-center w-full gap-x-4 -mt-2">
+					<motion.div className="flex flex-row justify-center w-full gap-x-4 -mt-2">
 						<SocialLinks resumeLinkOrientation="horizontal" isResumeIcon />
-					</div>
+					</motion.div>
 				</motion.div>
         <motion.div
         // todo mali animation neto, lagyan mo ng fadein on view

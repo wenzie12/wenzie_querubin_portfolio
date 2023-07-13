@@ -1,12 +1,18 @@
-// TODO: ilipat mo dito lahat ng may hastag na text para reusable
- // note: baka di na kelangan neto...
-import React from 'react'
+import { motion } from "framer-motion"
 
-function HashtagText() {
+import { raiseUp, } from '../../utils/motion'
+
+// eslint-disable-next-line react/prop-types
+const HashtagText = ({ label }) => {
   return (
-    <div>
-      
-    </div>
+      <motion.div
+        variants={raiseUp}
+        whileHover="animate"  
+        initial="initial"
+      >
+        <i className="text-secondary mr-1">#</i>
+        <span className="text-blue-200">{label}</span>
+      </motion.div>
   )
 }
 

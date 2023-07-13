@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-// import { styles } from "../../styles"
+import { styles } from "../../styles"
 
 import { fadeIn } from '../../utils/motion'
 import { SECONDARY_COLOR } from '../../themes/constants'
@@ -18,13 +18,13 @@ const Footer = () => {
 
 
   return (
-    <footer className="flex flex-col gap-4 items-center justify-end pb-10 h-80 w-full">
+    <footer className={`${styles.paddingX} flex flex-col gap-4 items-center justify-end pb-10 h-80 w-full`}>
 			<motion.div
 				variants={fadeIn("", "tween", .2 , .4)}
 				initial="hidden"
 				whileInView="show"
 				viewport={{ once: true }}
-				className="flex flex-row items-center gap-4"
+				className="flex items-center justify-center gap-2 md:gap-4"
 			>
 				<Link 
 					to="/"
@@ -43,19 +43,10 @@ const Footer = () => {
 						role="icon"
 					/>
 				</Link>
-
-
-				<p className="text-sm text-tertiary">
-					Design & Developed by 
-					<HighlightedText className="text-tertiary" delay={0.6}>
-						Wenzie Querubin
-					</HighlightedText>
-				</p>
+				<span className="flex flex-col xs:flex-row text-xs md:text-sm text-tertiary">
+					Design & Developed by <HighlightedText className="text-tertiary xs:px-1" delay={0.6}>Wenzie Querubin</HighlightedText>
+				</span>
 			</motion.div>
-			<div className="flex flex-row items-center gap-4">
-				{/* testing lang to */}
-				{/* <img src={github} alt="logo" className=" w-5 h-5" /> */}
-			</div>
     </footer>
   )
 }

@@ -61,9 +61,6 @@
     "Gaming",
     "Wood Working",
     "Aquascaping",
-    "Sleeping",
-    "Burger",
-    "Pasta",
     "Coffee",
   ]
     
@@ -97,16 +94,16 @@
   
   const experiences = [
     {
-      title: "Front End Software Engineer",
+      title: "Frontend Software Engineer",
       company_name: "Multisys Technologies Corp.",
       company_summary: "Multisys is a software engineering solutions firm that provides a wide range, cost- effective, and full scale service to tailor-fit and empower businesses",
       img_bg: gomanilaLandingPage,
       date: "Jan 2021 - Present",
       link: 'https://www.multisyscorp.com/',
       points: [
-        "Improving system quality by identifying issues and common patierns, and developing standard operating procedures.",
-        "Enhancing applications by identifying opportunities for improvement, making recommendations and designing and implementing systems.",
-        "Maintaining, creating new modules, and improving existing codebases & peer review code changes.",
+        "Enhancing system quality by identifying issues and common patterns, and establishing standard operating procedures.",
+        "Identifying opportunities for improvement, providing recommendations, and designing/implementing systems to enhance applications.",
+        "Maintaining and creating new modules, as well as improving existing codebases through code reviews and changes.",
       ],
  
     },
@@ -118,9 +115,9 @@
       date: "Aug 2019 - Dec 2020",
       link: "https://august99.com/",
       points: [
-        "Work with SEO & Digital team to continuesly improve and develop features that will help drive traffic and corversion to the project.",
-        "Contribute to strategic planning and delivery of projects and engagement with the team and product owners.",
-        "Provides added features, support/fixes for bugs, Code Revievws & business as usual (BAU) requests.",
+        "Collaborating with the SEO and Digital team to continuously improve and develop features that drive project traffic and conversion.",
+        "Contributing to strategic planning, project delivery, and engagement with the team and product owners.",
+        "Delivering added features, providing support and bug fixes, conducting code reviews, and handling business-as-usual (BAU) requests.",
       ],
     },
     {
@@ -131,8 +128,8 @@
       link: "https://www.accenture.com/ph-en",
       date: "Nov 2018 - Feb 2019",
       points: [
-        "Provided assistance in daily monitoring of client’s database record.",
-        "Contributed in updating, debugging and programming tracking codes and stage testing.",
+        "Assisted in the daily monitoring of the client's database records.",
+        "Contributed to updating, debugging, and programming tracking codes, and participated in stage testing.",
       ],
     },
   ];
@@ -145,20 +142,20 @@
       tags: [
         {
           name: "react",
-          color: "blue-text-gradient",
+          color: "",
         },
         {
           name: "bootstrap",
-          color: "green-text-gradient",
+          color: "",
         },
         {
           name: "redux",
-          color: "pink-text-gradient",
+          color: "",
         },
       ],
       image: gomanilaLandingPage, // temporary image placeholder
       imageMobile: gomanilaLoginPageMobile, 
-      source_code_link: "https://github.com/",
+      source_code_link: "",
       appstore: "https://apps.apple.com/us/app/gomanila/id1533414915",
       playstore: "https://play.google.com/store/apps/details?id=net.gomanila.app&hl=en&gl=US",
       website: "https://www.gomanila.com/"
@@ -170,20 +167,15 @@
       tags: [
         {
           name: "react",
-          // color: "blue-text-gradient",
-          color: "#61DBFB"
+          color: "",
         },
         {
           name: "tailwind",
-          color: "green-text-gradient",
+          color: "",
         },
         {
           name: "redux",
-          color: "pink-text-gradient",
-        },
-        {
-          name: "context API",
-          color: "blue-text-gradient",
+          color: "",
         },
       ],
       image: manilaZooLandingPage, // temporary image placeholder
@@ -200,15 +192,15 @@
       tags: [
         {
           name: "angular",
-          color: "blue-text-gradient",
+          color: "",
         },
         {
           name: "bootstrap",
-          color: "green-text-gradient",
+          color: "",
         },
         {
           name: "wordpress",
-          color: "pink-text-gradient",
+          color: "",
         },
       ],
       image: canstarLandingPage,
