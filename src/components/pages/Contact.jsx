@@ -37,7 +37,6 @@ const Contact = ({ opacity, scale }) => {
   const handleContact = e => { 
     const {email, subject, body} = contacts
     window.location.href = `mailto:${email || ""}?subject=${subject || ""}&body=${body}`;
-    console.log(window.location)
     e.preventDefault();
   }
 

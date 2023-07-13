@@ -50,7 +50,7 @@ const ProjectLinks = ({
         <WwwIcon
           variants={raiseUp}
           title="live-server"
-          role="icon"
+          role="img"
           classSVG=""
           classPath=""
           fill={SECONDARY_COLOR}
@@ -82,7 +82,7 @@ const ProjectLinks = ({
           classSVG=""
           classPath=""
           fill={SECONDARY_COLOR}
-          role="icon"
+          role="img"
         />
         </motion.a>
       )}
@@ -111,7 +111,7 @@ const ProjectLinks = ({
           classSVG=""
           classPath=""
           fill={SECONDARY_COLOR}
-          role="icon"
+          role="img"
         />
         </motion.a>
       )}
@@ -142,7 +142,7 @@ const ProjectLinks = ({
             classSVG=""
             classPath=""
             fill={SECONDARY_COLOR}
-            role="icon"
+            role="img"
           />
         </motion.a>
       )}

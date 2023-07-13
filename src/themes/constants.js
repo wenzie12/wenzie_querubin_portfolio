@@ -1,10 +1,19 @@
+import { theme } from '../../tailwind.config'
+const { primary, secondary, tertiary, "blue-200":blue200 , "blue-100":blue100, "white-100":white100 } = theme.extend.colors
+
 // themes (dark)
-export const PRIMARY_COLOR = "#101B29"
-export const SECONDARY_COLOR = "#b12a29"
-export const TERTIARY_COLOR = "#7B8CA6"
-export const BLUE_200_COLOR = "#3F4F69"
-export const BLUE_100_COLOR = "#1D2639"
-export const WHITE_100_COLOR = "#f3f3f3"
+export const PRIMARY_COLOR = primary
+export const SECONDARY_COLOR = secondary
+export const TERTIARY_COLOR = tertiary
+export const BLUE_200_COLOR = blue200
+export const BLUE_100_COLOR = blue100
+export const WHITE_100_COLOR = white100
 
 
 // themes (light)
+// export const PRIMARY_COLOR = primary
+// export const SECONDARY_COLOR = secondary
+// export const TERTIARY_COLOR = tertiary
+// export const BLUE_200_COLOR = blue200
+// export const BLUE_100_COLOR = blue100
+// export const WHITE_100_COLOR = white100

@@ -35,6 +35,7 @@ const App = () => {
       <BrowserRouter>
         <LandingPageLoader loading={loading} /> 
         <div className="relative subpixel-antialiased font-extralight overflow-hidden">
+        {/* <div className="relative subpixel-antialiased font-light overflow-hidden"> */}
           {!loading && (
             <>
             {/* landing page */}

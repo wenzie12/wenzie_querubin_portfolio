@@ -54,15 +54,12 @@ const About = ({ opacity, scale }) => {
             variants={swivelVariants}
             className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
           >
-            <motion.span className="inline-block" variants={swivelVariants}>
-              
-              {/* TODO: maybe move this to a separate container later */}
+            <motion.span className="inline-block mb-3" variants={swivelVariants}>
               I&apos;m Wenzie, a Frontend Software Developer currently working at
-              <i className='text-secondary'> Multisys Technologies Corp </i>
+              <i className='text-secondary'> Multisys Technologies Corporation</i>.
             </motion.span>
-            <br />
-            <br />
-            <motion.span className="inline-block" variants={swivelVariants}>
+            <motion.span className="inline-block mb-3" variants={swivelVariants}>
+              {/* TODO: move text to spans, para separate animation */}
               {/* With a passion for crafting exceptional user experiences, 
               I thrive in the world of frontend web development. */}
               As a frontend developer, I find joy in blending creativity and functionality. 
@@ -72,13 +69,12 @@ const About = ({ opacity, scale }) => {
               <HighlightedText className="text-white-100 px-1" delay={0.6}>Javascript</HighlightedText> and
               <HighlightedText className="text-white-100" delay={0.6}>TypeScript</HighlightedText>, 
               enabling me to bring innovative and intuitive designs to life.
-              <br />
-              <br />
-              Beyond work, I indulge in woodworking to unleash my creativity and create tangible 
-              objects from scratch. Aquascaping is another passion, providing serenity and inspiration 
-              through beautiful underwater landscapes.
-              <br />
-              <br />
+            </motion.span>
+            <motion.span className="inline-block mb-3" variants={swivelVariants}>
+            Outside of work, I enjoy woodworking as a creative outlet where I craft tangible objects from scratch.
+            Another passion of mine is aquascaping, which brings serenity and inspiration through the creation of stunning underwater landscapes.
+            </motion.span>
+            <motion.span className="inline-block" variants={swivelVariants}>
               I am always eager to take on new challenges, collaborate with like-minded individuals,
               and push the boundaries of what is possible in frontend development. 
               {/* Let&apos;s connect and bring your ideas to life! */}
@@ -88,6 +84,7 @@ const About = ({ opacity, scale }) => {
             variants={fadeIn("", "", 0.2, 1)}
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
+            {/* TODO: update to svg component later */}
             <ImageContainer
               isMotion
               initial={{ transform: "rotate(-90deg)", }}
@@ -129,6 +126,8 @@ const About = ({ opacity, scale }) => {
             <ImageContainer
               isMotion
               variants={scaleImageVariant}
+              onMouseEnter={() => enterHover("hideHover")}
+              onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
               className="aspect-auto max-h-[24rem] lg:max-h-[28rem] rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0"
@@ -158,7 +157,6 @@ const InterestsGroup = ({ className,  enterHover, leaveHover, data }) => {
         // eslint-disable-next-line react/prop-types
         data?.map((item, i) => {
           return (
-            // TODO: move mo to sa hashtagText component later
             <motion.div
               key={i}
               variants={zoomIn(0.1 * i,)}
