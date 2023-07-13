@@ -5,7 +5,7 @@ import { SectionWrapper } from '../../hoc'
 
 import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant } from '../../utils/motion'
 import { styles } from '../../styles'
-import HighlightedText from '../custom-text/HighlightedText.component';
+import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container/'
 
 import { profile, chevronDown } from '../../assets'
@@ -58,18 +58,30 @@ const About = ({ opacity, scale }) => {
               
               {/* TODO: maybe move this to a separate container later */}
               I&apos;m Wenzie, a Frontend Software Developer currently working at
-              <i className='text-secondary'> Multisys Technologies Corp </i>on 
-              their e-government application platforms.
+              <i className='text-secondary'> Multisys Technologies Corp </i>
             </motion.span>
             <br />
             <br />
             <motion.span className="inline-block" variants={swivelVariants}>
-              This is just a placeholder...I&apos;m a skilled software developer with experience in 
-              <HighlightedText className="text-white-100" delay={0.6}>TypeScript</HighlightedText> and 
-              <HighlightedText className="text-white-100" delay={0.8}>Javascript</HighlightedText>, and expertise in frameworks like
-              <HighlightedText className="text-white-100" delay={0.7}>React</HighlightedText>, Node.js, 
-              and Three.js. I&apos;m a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that 
-              solve real-world problems. Let&apos;s work together to bring your ideas to life!
+              {/* With a passion for crafting exceptional user experiences, 
+              I thrive in the world of frontend web development. */}
+              As a frontend developer, I find joy in blending creativity and functionality. 
+              My expertise lies in creating seamless interactions and visually appealing interfaces 
+              through UI/UX design. My expertise lies in 
+              <HighlightedText className="text-white-100 px-1" delay={0.6}>ReactJS</HighlightedText>,
+              <HighlightedText className="text-white-100 px-1" delay={0.6}>Javascript</HighlightedText> and
+              <HighlightedText className="text-white-100" delay={0.6}>TypeScript</HighlightedText>, 
+              enabling me to bring innovative and intuitive designs to life.
+              <br />
+              <br />
+              Beyond work, I indulge in woodworking to unleash my creativity and create tangible 
+              objects from scratch. Aquascaping is another passion, providing serenity and inspiration 
+              through beautiful underwater landscapes.
+              <br />
+              <br />
+              I am always eager to take on new challenges, collaborate with like-minded individuals,
+              and push the boundaries of what is possible in frontend development. 
+              {/* Let&apos;s connect and bring your ideas to life! */}
             </motion.span>
           </motion.p>
           <motion.p
@@ -83,7 +95,7 @@ const About = ({ opacity, scale }) => {
               src={chevronDown}
               alt="chevron"
             />
-            INTERESTS
+            HOBBIES & INTERESTS
           </motion.p>
           <InterestsGroup
             data={interests}
@@ -146,23 +158,15 @@ const InterestsGroup = ({ className,  enterHover, leaveHover, data }) => {
         // eslint-disable-next-line react/prop-types
         data?.map((item, i) => {
           return (
+            // TODO: move mo to sa hashtagText component later
             <motion.div
               key={i}
               variants={zoomIn(0.1 * i,)}
               onMouseEnter={() => enterHover("hideHover")}
-              onMouseLeave={leaveHover} 
+              onMouseLeave={leaveHover}
               className="inline-block"
-              // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
             >
-              <motion.div
-                variants={raiseUp}
-                whileHover="animate"
-                initial="initial"
-                // className={`${styles.borderBox} h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
-              >
-                <i className="text-secondary text-bold mr-1">#</i>
-                <span className="text-blue-200">{item}</span>
-              </motion.div>
+              <HashtagText label={item}/>
             </motion.div>
           )
         })

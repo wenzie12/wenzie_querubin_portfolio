@@ -15,9 +15,6 @@ const SectionWrapper = (Component, idName) =>
       // param 2 - bottom of section, bottom of window  
     })
 
-    // args: useTransform(transformFrom, array of values you wanna map from, ...wanna map to)
-    // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-    // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
     const opacity = useTransform(scrollYProgress, [0.5, 1], [1, 0])
     const scale = useTransform(scrollYProgress, [0.5, 1], [1, 0.8])
 

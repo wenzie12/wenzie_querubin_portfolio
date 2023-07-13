@@ -7,7 +7,7 @@ import { scaleHeight, staggerContainer, fadeIn, zoomIn, swivelVariants } from '.
 import { chevronDown } from '../../assets'
 import { ScrollButton } from '../custom-buttons'
 import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalContainer.component'
-
+import { HighlightedText } from '../custom-text'
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
@@ -99,7 +99,7 @@ const Hero = ({ loading }) => {
             >
               Experienced Frontend Developer with a passion
               for creating dynamic, user-friendly web
-              applications using React.
+              applications using <HighlightedText className="text-white-100" delay={0.6}>ReactJs</HighlightedText>.
             </motion.p>
           </motion.div>
         </motion.div>

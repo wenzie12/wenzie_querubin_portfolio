@@ -1,10 +1,11 @@
 /* eslint-disable */
 import { motion } from 'framer-motion'
 
-import { textVariant, swivelVariants, raiseUp, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
+import { textVariant, swivelVariants, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import ProjectLinks from './ProjectLinks.component'
 import { ImageContainer } from '../image-container'
+import { HashtagText } from '../custom-text'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -62,14 +63,17 @@ const ProjectCard = ({data=[], className="" }) => {
                         source_code_link={source_code_link}
                       />
                       <hr className="border-blue-200 border-1 rounded my-1" />
-                      {/* todo: move mo to sa hashtagText later.. same dun sa about section */}
-                      <motion.div variants={swivelVariants} className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap hashtags text-sm leading-[25px]`}>
+                      <motion.div variants={swivelVariants} className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
                         {tags?.map((tag, i) => (
-                          <motion.i variants={zoomIn(0.1 * i)}key={`${tag.name}-${i}`} className="text-secondary pr-3">#
-                            <span className="text-blue-200">
-                              {`${tag.name}`}
-                            </span>
-                          </motion.i>
+                          <motion.div
+                            key={i}
+                            variants={zoomIn(0.1 * i,)}
+                            onMouseEnter={() => enterHover("hideHover")}
+                            onMouseLeave={leaveHover} 
+                            className="inline-block"
+                          >
+                            <HashtagText label={tag.name}/>
+                          </motion.div>
                         ))}
                       </motion.div>
 

@@ -40,7 +40,7 @@ const HighlightedText = ({
 			initial="initial"
 			whileInView="animate"
 			viewport={{ once: false, amount: 0.25 }}
-			className={`${className} inline-block px-1`}
+			className={`${className} inline-block`}
 			// bg-gradient-to-r bg-no-repeat from-secondary-100 to-secondary
     >
      {children}

@@ -43,7 +43,7 @@ export const GithubIcon = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ...pro
 
 // Projects
 export const WwwIcon = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ...props}) => (
-  <motion.svg width="56" height="13" className={classSVG} viewBox="0 0 56 13" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <motion.svg width="56" height="15" className={classSVG} viewBox="0 0 56 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M17.5377 0.134033L12.1147 12H9.30969L8.57869 3.55103L4.77069 12L1.98269 12.017L0.877686 0.134033H3.42769L3.90369 9.34803L7.93269 0.134033H10.5847L11.2307 9.29703L14.9707 0.134033H17.5377Z"
       fillRule="evenodd"

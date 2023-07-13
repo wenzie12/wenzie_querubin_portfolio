@@ -31,7 +31,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-wrap justify-center gap-y-8 gap-x-2 md:gap-x-6 lg:gap-6 xl:gap-8 my-4"
+        className="flex flex-wrap justify-center gap-y-6 md:gap-y-8 gap-x-2 md:gap-x-6 lg:gap-6 xl:gap-8 my-4"
       >
         {techItems?.map((item, index) => {
           return (
@@ -86,7 +86,7 @@ const Tech = ({ opacity, scale }) => {
           // variants={fadeIn("", "", 0.2, 1)}
           className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
         >
-          Here are some technologies I&apos;m ve recently worked with.
+          Here are some technologies I&apos;ve recently worked with.
         </motion.p>
       </div>
       <motion.div
