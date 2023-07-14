@@ -123,6 +123,7 @@ const ProjectCard = ({data=[], className="" }) => {
           // whileHover="animate"
           // initial="initial"
           type="button"
+          name="more projects"
           onClick={() => console.log("more projects!")}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
