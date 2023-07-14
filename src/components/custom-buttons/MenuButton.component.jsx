@@ -42,7 +42,7 @@ const MenuButton = ({
 	return (
 		<button
 			type="button"
-			name="menu"
+			id="menu"
 			{...props}
 			className={className}
 		>
