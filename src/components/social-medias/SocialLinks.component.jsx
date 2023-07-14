@@ -52,7 +52,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 				variants={!isTabletOrMobile ? fadeIn("up", "spring", .3) : fadeIn("", "", .3)}
 				href={downloadables?.resume}
 				target="_blank"
-				rel="noreferrer"
+				rel="noopener noreferrer"
 				onMouseEnter={() => enterHover("anchor", {
 					...cursorText,
 					offset: 15,

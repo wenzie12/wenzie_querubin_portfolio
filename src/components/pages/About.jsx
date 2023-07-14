@@ -8,7 +8,9 @@ import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container/'
 
-import { profile, chevronDown } from '../../assets'
+import { ChevronIcon } from '../icons';
+import { SECONDARY_COLOR } from '../../themes/constants'
+import { profile } from '../../assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -66,13 +68,13 @@ const About = ({ opacity, scale }) => {
               My expertise lies in creating seamless interactions and visually appealing interfaces 
               through UI/UX design. My expertise lies in 
               <HighlightedText className="text-white-100 px-1" delay={0.6}>ReactJS</HighlightedText>,
-              <HighlightedText className="text-white-100 px-1" delay={0.6}>Javascript</HighlightedText> and
-              <HighlightedText className="text-white-100" delay={0.6}>TypeScript</HighlightedText>, 
+              <HighlightedText className="text-white-100 px-1" delay={0.8}>Javascript</HighlightedText> and
+              <HighlightedText className="text-white-100" delay={0.10}>TypeScript</HighlightedText>, 
               enabling me to bring innovative and intuitive designs to life.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
-            Outside of work, I enjoy woodworking as a creative outlet where I craft tangible objects from scratch.
-            Another passion of mine is aquascaping, which brings serenity and inspiration through the creation of stunning underwater landscapes.
+            Outside of work, I enjoy Wood Working as a creative outlet where I craft tangible objects from scratch.
+            Another passion of mine is Aquascaping, which brings serenity and inspiration through the creation of stunning underwater landscapes.
             </motion.span>
             <motion.span className="inline-block" variants={swivelVariants}>
               I am always eager to take on new challenges, collaborate with like-minded individuals,
@@ -84,13 +86,13 @@ const About = ({ opacity, scale }) => {
             variants={fadeIn("", "", 0.2, 1)}
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
-            {/* TODO: update to svg component later */}
-            <ImageContainer
-              isMotion
+            <ChevronIcon
               initial={{ transform: "rotate(-90deg)", }}
               whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
-              src={chevronDown}
-              alt="chevron"
+              classSVG="w-[32px] h-[21px] object-contain z-40"
+              classPath=""
+              fill={SECONDARY_COLOR}
+              role="img"
             />
             HOBBIES & INTERESTS
           </motion.p>
