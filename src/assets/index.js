@@ -12,7 +12,8 @@ export { default as linkedin }  from "./social-assets/linkedin_icon.svg";
 export { default as resume }  from "./social-assets/resume_icon.svg";  // not in use
 
 // about
-export { default as profile }  from "./about-assets/profile-img-mini.png"
+// export { default as profile }  from "./about-assets/profile-img-mini.png"
+export { default as profile }  from "../images/profile-img-mini.png"
 export { default as profileBg }  from "./about-assets/about_profile_bg.svg" // not in use 
 export { default as coding }  from "./about-assets/about_coding.svg"; // not in use
 export { default as ux_design }  from "./about-assets/about_ux_design.svg"; // not in use
