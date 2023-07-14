@@ -88,7 +88,7 @@ const About = ({ opacity, scale }) => {
           >
             <ChevronIcon
               initial={{ transform: "rotate(-90deg)", }}
-              whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
+              whileinview={{ transform: "rotate(0)", transition: { delay: .8, }}}
               classSVG="w-[32px] h-[21px] object-contain z-40"
               classPath=""
               fill={SECONDARY_COLOR}
