@@ -42,6 +42,7 @@ const MenuButton = ({
 	return (
 		<button
 			type="button"
+			name="menu"
 			{...props}
 			className={className}
 		>

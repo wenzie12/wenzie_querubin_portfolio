@@ -85,6 +85,7 @@ const Contact = ({ opacity, scale }) => {
             variants={raiseUp}
             whileHover="animate"
             initial="initial"
+            name="contact"
             type="button"
             onClick={handleContact}
             onMouseEnter={() => enterHover("hideHover")}

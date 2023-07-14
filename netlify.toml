@@ -2,5 +2,5 @@
   package = "netlify-plugin-cloudinary"
 
   [plugins.inputs]
-  cloudName = "PORTFOLIO_SITE_IMAGES"
-  imagesPath = "/src/assets"
+  cloudName = "wenzie12sg"
+  imagesPath = "/assets/"
