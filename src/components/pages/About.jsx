@@ -10,7 +10,8 @@ import { ImageContainer } from '../image-container/'
 
 import { ChevronIcon } from '../icons';
 import { SECONDARY_COLOR } from '../../themes/constants'
-import { profile } from '../../assets'
+// import { profile } from '../../assets'
+import profile from '../../images/profile-img-mini.png'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
