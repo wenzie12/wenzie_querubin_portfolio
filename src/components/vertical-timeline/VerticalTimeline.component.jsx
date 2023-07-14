@@ -1,5 +1,4 @@
-
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 import { textVariant, raiseUp, fadeIn, zoomIn, scaleHeight, swivelVariants } from '../../utils/motion'
 import { styles } from "../../styles"
@@ -8,6 +7,7 @@ import HighlightedText from '../custom-text/HighlightedText.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
+import { TERTIARY_COLOR } from '../../themes/constants'
 
 const VerticalTimeline = ({ data }) => {
 	const {
@@ -20,7 +20,7 @@ const VerticalTimeline = ({ data }) => {
 		<>
 			{
 				data?.map((item, i, row) => {
-					const { date,  title, company_name, img_bg="", link, points, } = item || []
+					const { date,  title, company_name, link, points, } = item || []
 					const lastItem = i + 1 === row.length
 
 					return (
@@ -112,7 +112,7 @@ const VerticalTimeline = ({ data }) => {
 											<i className="text-blue-200">@</i>{company_name}
 										</motion.a>
 										<motion.p variants={swivelVariants} className="lg:hidden font-normal">
-											<HighlightedText className="px-1" color="#7B8CA6" delay={.8} duration={0.4}>
+											<HighlightedText className="px-1" color={TERTIARY_COLOR} delay={.8} duration={0.4}>
 												{date}
 											</HighlightedText>
 										</motion.p>
@@ -123,7 +123,7 @@ const VerticalTimeline = ({ data }) => {
 													<motion.span variants={scaleHeight("spring", .4 * i, .5)} className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full bg-secondary/40" />
 													{point}
 												</motion.div>
-						 					))}
+											))}
 										</div>
 									</motion.div>
 								</motion.div>

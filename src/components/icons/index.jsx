@@ -41,6 +41,19 @@ export const GithubIcon = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ...pro
   </motion.svg>
 )
 
+// About
+export const ChevronIcon = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ...props}) => (
+  <svg width="18" height="19" className={classSVG} viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" { ...props}>
+    <path
+      d="M8.40336 14.1563L1.57099 6.94434C1.24147 6.59652 1.24147 6.0326 1.57099 5.68481L2.36788 4.84366C2.69684 4.49642 3.22998 4.49575 3.55971 4.84217L9 10.5578L14.4403 4.84217C14.77 4.49575 15.3031 4.49642 15.6321 4.84366L16.429 5.68481C16.7585 6.03264 16.7585 6.59655 16.429 6.94434L9.59664 14.1563C9.26712 14.5041 8.73288 14.5041 8.40336 14.1563Z"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      className={classPath}
+      fill={fill}
+    />
+  </svg>
+)
+
 // Projects
 export const WwwIcon = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ...props}) => (
   <motion.svg width="56" height="15" className={classSVG} viewBox="0 0 56 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -111,4 +124,3 @@ export const SourceCodeLink = ({ classSVG, classPath, fill={SECONDARY_COLOR}, ..
     />
   </svg>
 )
-

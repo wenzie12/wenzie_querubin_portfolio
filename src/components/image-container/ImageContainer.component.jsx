@@ -2,7 +2,13 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-const ImageContainer = ({ src, isMotion=false, ...imgProps}) => {
+const ImageContainer = ({
+	src,
+	isMotion=false,
+	width="100%",
+	height="100%",
+	...imgProps
+}) => {
 	const [isImgLoaded, setImgLoaded] = useState(false)
 
 	useEffect(() => {
@@ -14,7 +20,7 @@ const ImageContainer = ({ src, isMotion=false, ...imgProps}) => {
   return (
     <>
 			{!isImgLoaded && <i className=" animate-pulse">Loading...</i>}	
-			{isMotion ? <motion.img src={src} { ...imgProps }/> : <img src={src} { ...imgProps } />}
+			{isMotion ? <motion.img width={width} height={height} src={src} { ...imgProps }/> : <img src={src} width={width} height={height} { ...imgProps } />}
 		</>
   )
 }

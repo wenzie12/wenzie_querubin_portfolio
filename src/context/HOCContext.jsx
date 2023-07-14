@@ -1,6 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 
-/* eslint-disable */
 import { useContext, useState, createContext } from 'react'
+import { WHITE_100_COLOR } from '../themes/constants'
 
 
 // 1. LOADING STATE HOOKS
@@ -25,13 +27,14 @@ const CursorContext = createContext()
 // custom hooks
 export const useCursorContext = () => useContext(CursorContext)
 
+
 export const CursorProvider = ({ children }) => {
   
   const CURSOR_TEXT_DEFAULT = {
     text: "",
     offset: 70, // default
     fontSize: 12, // int value only (px)
-    color: "#f3f3f3",
+    color: WHITE_100_COLOR,
   }
 
   const [cursorVariant, setCursorVariant] = useState("default")
