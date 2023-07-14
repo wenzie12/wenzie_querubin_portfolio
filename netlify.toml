@@ -3,3 +3,4 @@
 
   [plugins.inputs]
   cloudName = "PORTFOLIO_SITE_IMAGES"
+  imagesPath = "/assets"
