@@ -2,4 +2,4 @@
   package = "netlify-plugin-cloudinary"
 
   [plugins.inputs]
-  cloudName = "wenzie12sg"
+  cloudName = "PORTFOLIO_SITE_IMAGES"
