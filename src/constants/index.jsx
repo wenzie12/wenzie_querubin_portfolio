@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
   import {
   // *tech
   bootstrap,
@@ -27,14 +28,11 @@
   manilaZooLandingPage,
   manilaZooLandingPageMobile,
 
-  // social
-  // facebook,
-  linkedin,
-  github,
   // downloadables,
   resumeFile,
-
   } from "../assets";
+
+  import { Github, Linkedin, } from "lucide-react";
   
   export const navLinks = [
     {
@@ -226,10 +224,6 @@
     },
   }
 
-  const downloadables = {
-    resume: resumeFile
-  }
-
   const social_links = [
     // {
     //   name: "facebook",
@@ -238,15 +232,19 @@
     // },
     {
       name: "linkedin",
-      icon: linkedin,
+      icon: (props) => <Linkedin {...props} />,
       link: contacts?.links.linkedin,
     },
     {
       name: "github",
-      icon: github,
+      icon: (props) => <Github {...props} />,
       link: contacts?.links.github,
     },
   ]
+
+  const downloadables = {
+    resume: resumeFile
+  }
 
   export {
     social_links,

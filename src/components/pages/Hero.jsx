@@ -4,10 +4,11 @@ import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
 
 import { styles } from '../../styles'
 import { scaleHeight, staggerContainer, swivelVariants } from '../../utils/motion'
-import { chevronDown } from '../../assets'
 import { ScrollButton } from '../custom-buttons'
 import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalContainer.component'
 
+// import { chevronDown } from '../../assets'
+import { ChevronRight } from 'lucide-react';
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
@@ -46,7 +47,16 @@ const Hero = ({ loading }) => {
         >
           {/* vertical icons */}
           <motion.div className="flex flex-col justify-center items-center">
-            <motion.img
+            <motion.span
+              initial={{ opacity: 0,  transform: "rotate(-90deg)", }}
+              whileInView={loading ? "initial" : [
+                { opacity: 1, transition: { delay: .4, duration: .4 }},
+                { transform: "rotate(0)", transition: { delay: .8, }}
+              ]}
+            >
+              <ChevronRight className="w-7 h-7 text-secondary" />
+            </motion.span>
+            {/* <motion.img
               initial={{ opacity: 0,  transform: "rotate(-90deg)", }}
               whileInView={loading ? "initial" : [
                 { opacity: 1, transition: { delay: .4, duration: .4 }},
@@ -55,7 +65,7 @@ const Hero = ({ loading }) => {
               src={chevronDown}
               alt="chevron"
               className="w-7 h-7 text-blue-100"
-            />
+            /> */}
             <motion.div
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"

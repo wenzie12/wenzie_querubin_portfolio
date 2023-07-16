@@ -1,17 +1,16 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { useRef } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion'
 
-import { chevronDown } from '../../assets'
+import { ChevronsDown } from 'lucide-react'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
-import { styles } from '../../styles'
 
 const ScrollButton = ({ href='', loading })  => {
   const {
-    cursorTextState: { cursorText, setCursorText },
+    cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
 
@@ -69,13 +68,10 @@ const ScrollButton = ({ href='', loading })  => {
           whileHover="hover"
           animate="initial"
           className="w-[24px] h-[50px] border-none flex justify-center items-start py-2"
-        >          
-          <motion.img
-            src={chevronDown}
-            alt="scroll down"
-            variants={toggleVariant}
-            className="w-7 h-7 mb-1"
-          />
+        > 
+        <motion.span variants={toggleVariant}>
+          <ChevronsDown className="w-7 h-7 mb-1 text-secondary font-semibold" />
+        </motion.span>  
         </motion.div>
       </a>
     </motion.div>

@@ -1,12 +1,8 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 
 import { raiseUp, fadeIn } from '../../utils/motion'
-import { appStore, playStore, link, www, github } from '../../assets'
-
-import { WwwIcon, AppStoreIcon, PlayStoreIcon, SourceCodeLink } from '../icons/'
-
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { ExternalLink, Play, Apple, Code2 } from 'lucide-react'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -47,14 +43,9 @@ const ProjectLinks = ({
         hrefLang="en-us"
         className="p-3"
       >
-        <WwwIcon
-          variants={raiseUp}
-          title="live-server"
-          role="img"
-          classSVG=""
-          classPath=""
-          fill={SECONDARY_COLOR}
-        />
+        <motion.span variants={raiseUp}>
+          <ExternalLink className='text-secondary' />
+        </motion.span>
       </motion.a>
       {playstore && (
         <motion.a
@@ -76,14 +67,9 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-        <PlayStoreIcon
-          variants={raiseUp}
-          title="playstore"
-          classSVG=""
-          classPath=""
-          fill={SECONDARY_COLOR}
-          role="img"
-        />
+          <motion.span variants={raiseUp}>
+            <Play className='text-secondary' />
+          </motion.span>
         </motion.a>
       )}
       {appstore && (
@@ -105,14 +91,9 @@ const ProjectLinks = ({
           rel="noreferrer"
           className="p-3"
         >
-        <AppStoreIcon
-          variants={raiseUp}
-          title="appstore"
-          classSVG=""
-          classPath=""
-          fill={SECONDARY_COLOR}
-          role="img"
-        />
+          <motion.span variants={raiseUp}>
+            <Apple className='text-secondary' />
+          </motion.span>
         </motion.a>
       )}
       {/* for github links */}
@@ -136,14 +117,9 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-          <SourceCodeLink
-            variants={raiseUp}
-            title="source-code"
-            classSVG=""
-            classPath=""
-            fill={SECONDARY_COLOR}
-            role="img"
-          />
+          <motion.span variants={raiseUp}>
+            <Code2 className='text-secondary' />
+          </motion.span>
         </motion.a>
       )}
     </motion.div>
