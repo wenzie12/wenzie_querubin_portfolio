@@ -5,15 +5,23 @@ export const mode = "jit";
 export const theme = {
   extend: {
     colors: {
-      primary: "#101B29", // dark blue
-      // primary: "#e5e5e5", // for light mode
-      // secondary: "#D4494C", // red
-      secondary: "#b12a29", // darker red
-      tertiary: "#7B8CA6", // blue-gray
-      "blue-200": "#3F4F69", // lighter
-      "blue-100": "#1D2639", // darker
+      // for light:
+      // primary: "#f8f9fa", // bg
+      // secondary: "#D4494C", // main text/title/borders etc
+      // // secondary: "#b12a29", 
+      // tertiary: "#7B8CA6", // sub text,
+      // "blue-100": "#8d99ae", // sub bg, others..
+      // "blue-200": "#2b2d42",  // sub bg
+      // "white-100": "#2b2d42",
+      
+      // og:
+      primary: "#101B29",
+      secondary: "#D4494C",
+      // secondary: "#b12a29",
+      tertiary: "#7B8CA6",
+      "blue-100": "#1D2639", 
+      "blue-200": "#3F4F69", 
       "white-100": "#f3f3f3",
-      // "white-100": "#101B29", // light mode
 
       "black-100": "#100d25",
       "black-200": "#090325",

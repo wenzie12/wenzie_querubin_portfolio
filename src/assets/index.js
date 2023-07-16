@@ -1,15 +1,7 @@
 // hero
 export { default as logo }  from "./wenzie_logo.svg";
-export { default as chevronDown }  from './chevron-down_icon.svg'
 export { default as menu }  from "./menu.svg";
 export { default as close }  from "./close.svg";
-
-//social
-export { default as atIcon }  from "./social-assets/at_icon.svg";
-export { default as facebook }  from "./social-assets/facebook_icon.svg";  // not in use
-export { default as github }  from "./social-assets/github_icon.svg";
-export { default as linkedin }  from "./social-assets/linkedin_icon.svg";
-export { default as resume }  from "./social-assets/resume_icon.svg";  // not in use
 
 // about
 // export { default as profile }  from "./about-assets/profile-img-mini.png"
@@ -43,10 +35,6 @@ export { default as github_others } from "./tech-assets/others/github.svg"
 export { default as jira } from "./tech-assets/others/jira.svg"
 
 // projects
-export { default as link } from "./projects-assets/link-work.svg"; // not in use
-export { default as www } from "./projects-assets/www.svg";
-export { default as appStore } from "./projects-assets/appstore.svg";
-export { default as playStore } from "./projects-assets/playstore.svg";
 // export { default as gomanilaLandingPage } from './projects-assets/go-manila-landing-page-mini.png'
 // export { default as manilaZooLandingPage } from './projects-assets/manila-zoo-landing-page-mini.png'
 // export { default as canstarLandingPage } from './projects-assets/canstar-landing-page-mini.png'

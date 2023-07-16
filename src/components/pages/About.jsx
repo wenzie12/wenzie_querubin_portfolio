@@ -8,8 +8,8 @@ import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container/'
 
-import { ChevronIcon } from '../icons';
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { ChevronDown } from 'lucide-react';
+
 import { profile } from '../../assets'
 
 // context
@@ -86,14 +86,12 @@ const About = ({ opacity, scale }) => {
             variants={fadeIn("", "", 0.2, 1)}
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
-            <ChevronIcon
+            <motion.span
               initial={{ transform: "rotate(-90deg)", }}
-              whileinview={{ transform: "rotate(0)", transition: { delay: .8, }}}
-              classSVG="w-[32px] h-[21px] object-contain z-40"
-              classPath=""
-              fill={SECONDARY_COLOR}
-              role="img"
-            />
+              whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
+            >
+              <ChevronDown className="w-6 h-6 text-secondary" />
+            </motion.span>
             HOBBIES & INTERESTS
           </motion.p>
           <InterestsGroup

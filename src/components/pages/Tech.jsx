@@ -2,14 +2,13 @@
 import { motion } from 'framer-motion'
 import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant } from '../../utils/motion'
 import { styles } from '../../styles'
-
-// context
-import { useCursorContext } from '../../context/HOCContext'
-
 import { SectionWrapper } from '../../hoc'
 
 import { technologies } from '../../constants'
-import { chevronDown } from '../../assets'
+import { ChevronDown } from 'lucide-react'
+
+// context
+import { useCursorContext } from '../../context/HOCContext'
 
 const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, techItems, cursorText }) => {
   return (
@@ -18,13 +17,12 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
         variants={fadeIn("", "", 0.2, 1)}
         className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal text-tertiary`}
       >
-        <motion.img
-          initial={{transform: "rotate(-90deg)",}}
+        <motion.span
+          initial={{ transform: "rotate(-90deg)", }}
           whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
-          src={chevronDown}
-          alt="chevron"
-          className="w-4 h-4"
-        />
+        >
+          <ChevronDown className="w-6 h-6 text-secondary" />
+        </motion.span>
         {label}
       </motion.p>
       <motion.div
