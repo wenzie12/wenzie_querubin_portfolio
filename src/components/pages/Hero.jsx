@@ -7,8 +7,7 @@ import { scaleHeight, staggerContainer, swivelVariants } from '../../utils/motio
 import { ScrollButton } from '../custom-buttons'
 import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalContainer.component'
 
-// import { chevronDown } from '../../assets'
-import { ChevronRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
@@ -24,9 +23,10 @@ const Hero = ({ loading }) => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
+    // param 1 - top part of section, end of window,
+    // param 2 - bottom of section, bottom of window 
   })
-
-  // move to a global variant files
+  
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
@@ -54,18 +54,8 @@ const Hero = ({ loading }) => {
                 { transform: "rotate(0)", transition: { delay: .8, }}
               ]}
             >
-              <ChevronRight className="w-7 h-7 text-secondary" />
+              <ChevronDown className="w-6 h-6 text-secondary" />
             </motion.span>
-            {/* <motion.img
-              initial={{ opacity: 0,  transform: "rotate(-90deg)", }}
-              whileInView={loading ? "initial" : [
-                { opacity: 1, transition: { delay: .4, duration: .4 }},
-                { transform: "rotate(0)", transition: { delay: .8, }}
-              ]}
-              src={chevronDown}
-              alt="chevron"
-              className="w-7 h-7 text-blue-100"
-            /> */}
             <motion.div
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"

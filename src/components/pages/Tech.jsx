@@ -62,7 +62,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
   )
 }
 
-const Tech = ({ opacity, scale }) => {
+const Tech = () => {
   const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -70,10 +70,7 @@ const Tech = ({ opacity, scale }) => {
   const { tech, design, others } = technologies
 
   return (
-    <motion.div
-      className={`${styles.contentContainer}`}
-      style={{ opacity, scale }}
-    >
+    <motion.div className={`${styles.contentContainer}`}>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-tertiary`} >TECHNOLOGIES</p>
         <h2 className={`${styles.sectionHeadText} text-secondary`}>Tech Stack</h2>

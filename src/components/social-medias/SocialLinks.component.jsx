@@ -34,6 +34,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						key={`name-${index}`}
 						variants={!isTabletOrMobile ? fadeIn("up", "spring", .1 * index) : fadeIn("", "", .1 * index)}
 						href={link}
+						aria-label={name}
 						target="_blank"
 						rel="noreferrer"
 						hrefLang="en-us"
@@ -57,6 +58,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 			<motion.a 
 				variants={!isTabletOrMobile ? fadeIn("up", "spring", .3) : fadeIn("", "", .3)}
 				href={downloadables?.resume}
+				aria-label="resume"
 				target="_blank"
 				rel="noopener noreferrer"
 				onMouseEnter={() => enterHover("anchor", {

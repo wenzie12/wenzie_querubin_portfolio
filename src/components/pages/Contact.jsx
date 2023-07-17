@@ -15,7 +15,7 @@ import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 
 // eslint-disable-next-line react/prop-types
-const Contact = ({ opacity, scale }) => {
+const Contact = () => {
 
   const {
     hoverEvents: { enterHover, leaveHover },
@@ -42,7 +42,7 @@ const Contact = ({ opacity, scale }) => {
 
   return (
     <>
-      <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`} style={{ opacity, scale }}>
+      <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`}>
         <motion.div variants={textVariant()}>
           <p className={`${styles.sectionSubText} text-tertiary text-center`} >SEND ME A MESSAGE</p>
           <h2 className={`${styles.sectionHeadText} text-secondary text-center`}>Contact</h2>

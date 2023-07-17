@@ -8,6 +8,8 @@ import { experiences } from '../../constants'
 
 import VerticalTimeline from '../vertical-timeline/VerticalTimeline.component'
 import { SectionWrapper } from '../../hoc'
+
+// context
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Experience = () => {
@@ -28,7 +30,6 @@ const Experience = () => {
     <motion.div
       inView={inView}
       ref={ref}
-      // style={{ opacity, scale }}
       className={`${styles.contentContainer}`}
     >
       <motion.div variants={textVariant()}>
