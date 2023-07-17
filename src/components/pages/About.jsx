@@ -19,7 +19,7 @@ import { useGlobalStateContext } from '../../context/GlobalStateContext'
 import { interests } from '../../constants'
 
 // eslint-disable-next-line react/prop-types
-const About = ({ opacity, scale }) => {
+const About = () => {
   const {
     cursorTextState: { cursorText, setCursorText },
     cursorVariantState : { setCursorVariant },
@@ -39,11 +39,7 @@ const About = ({ opacity, scale }) => {
   }, [inView, active, setActive])
 
   return (
-    <motion.div
-      inView={inView}
-      className={`${styles.contentContainer}`}
-      style={{ opacity, scale }}
-    >
+    <motion.div inView={inView} className={`${styles.contentContainer}`}>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-tertiary`} >Introduction</p>
         <h2 className={`${styles.sectionHeadText} text-secondary`}>About Me</h2>

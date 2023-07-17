@@ -13,11 +13,8 @@ import { projects } from "../../constants"
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 // eslint-disable-next-line react/prop-types
-const Projects = ({ opacity, scale }) => {
+const Projects = () => {
   const { activeState: { active, setActive }, } = useGlobalStateContext()
-
-  // const ref = useRef(null)
-  // const inView = useInView(ref)
 
   // intersection observer
   const { ref, inView } = useInView({
@@ -38,7 +35,6 @@ const Projects = ({ opacity, scale }) => {
         inView={inView}
         ref={ref}
         className={`${styles.contentContainer}`}
-        style={{ opacity, scale }}
       >
         <motion.div variants={textVariant()}>
           {/* header */}
