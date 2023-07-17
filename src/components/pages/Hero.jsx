@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { useRef } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
 
@@ -37,7 +37,7 @@ const Hero = ({ loading }) => {
         ref={ targetRef }
         style={{ opacity, scale, y, height: "100dvh", }}
         className="relative w-full flex items-center select-none"
-        // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-blue-100`}
+        // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-accent-1`}
       > 
         <motion.div
           variants={staggerContainer(.2)}
@@ -60,7 +60,7 @@ const Hero = ({ loading }) => {
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"
               whileInView={loading ? "hidden" : "show"}
-              className="w-1 sm:h-64 h-48 bg-gradient-to-b from-blue-200 to-primary"
+              className="w-1 sm:h-64 h-48 bg-gradient-to-b from-accent-2 to-primary"
             />
           </motion.div>
           {/* header */}
@@ -80,7 +80,7 @@ const Hero = ({ loading }) => {
             </motion.h1>
             <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} inline-block text-blue-200 font-normal`}
+              className={`${styles.heroSubText} inline-block text-accent-2 font-normal`}
             >
               Frontend Software Engineer @
               <a

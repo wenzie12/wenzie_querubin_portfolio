@@ -22,7 +22,7 @@ const MenuLinks = () => {
 						animate={toggle ? "show" : "hidden"}
 						initial="hidden"
 						key={link.id}
-						className={`${active === link.title ? "text-white-100" : "text-white"} font-poppins text-end font-medium cursor-pointer text-[16px] sm:text-[24px]`}
+						className="text-white-100 font-poppins text-end font-medium cursor-pointer text-[16px] sm:text-[24px]"
 						onClick={() => {
 							setToggle(!toggle)
 							setActive(link.title)

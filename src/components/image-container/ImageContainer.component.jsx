@@ -5,8 +5,6 @@ import { motion } from 'framer-motion'
 const ImageContainer = ({
 	src,
 	isMotion=false,
-	width="100%",
-	height="100%",
 	...imgProps
 }) => {
 	const [isImgLoaded, setImgLoaded] = useState(false)
@@ -20,7 +18,7 @@ const ImageContainer = ({
   return (
     <>
 			{!isImgLoaded && <i className=" animate-pulse">Loading...</i>}	
-			{isMotion ? <motion.img width={width} height={height} src={src} { ...imgProps }/> : <img src={src} width={width} height={height} { ...imgProps } />}
+			{isMotion ? <motion.img src={src} { ...imgProps }/> : <img src={src} width={width} height={height} { ...imgProps } />}
 		</>
   )
 }

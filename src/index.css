@@ -42,7 +42,7 @@ body {
   font-weight: 800px;
   font-size: 1.2em;
   margin-right: 8px;
-  color: theme(colors.blue-200);
+  color: theme(colors.accent-2);
 }
 
 /* for customCursor */

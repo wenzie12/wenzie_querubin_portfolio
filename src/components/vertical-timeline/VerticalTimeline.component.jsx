@@ -15,7 +15,6 @@ const VerticalTimeline = ({ data }) => {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
 
-
 	return (
 		<>
 			{
@@ -44,15 +43,15 @@ const VerticalTimeline = ({ data }) => {
 								{/* lines */}
 								<motion.div
 									variants={scaleHeight("", .2, .2)}
-									className="hidden md:block relative w-1 h-full bg-blue-100"
+									className="hidden md:block relative w-1 h-full bg-accent-1"
 								>
 									{/* circle */}
 									<motion.div
 										variants={zoomIn(.2, .4)}
-										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-blue-200 border-4 border-blue-200 rounded-full`}
-										className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-blue-100 rounded-full`}
+										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-accent-2 border-4 border-accent-2 rounded-full`}
+										className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-accent-1 rounded-full`}
 									/>
-									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 bg-blue-100 rounded-full`}/>} 
+									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 bg-accent-1 rounded-full`}/>} 
 								</motion.div>
 							</motion.div>
 
@@ -69,11 +68,11 @@ const VerticalTimeline = ({ data }) => {
 									initial="initial"
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className="relative p-4 md:p-8 mb-10 bg-blue-100/40 rounded-md"	
+									className="relative p-4 md:p-8 mb-10 bg-accent-1/40 rounded-md"
 								>
 									{/* pointer */}
 									<span
-										className="hidden md:block absolute -left-5 top-2 bg-blue-100/40 w-10 h-4"
+										className="hidden md:block absolute -left-5 top-2 bg-accent-1/40 w-10 h-4"
 										style={{
 											clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)',
 										}}
@@ -87,7 +86,7 @@ const VerticalTimeline = ({ data }) => {
 									>
 										<motion.h3
 											variants={textVariant()}
-											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-normal uppercase pb-2 md:pb-0"
+											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-semibold uppercase pb-2 md:pb-0"
 										>
 											{title}
 										</motion.h3>
@@ -107,9 +106,10 @@ const VerticalTimeline = ({ data }) => {
 											target="_blank"
 											rel="noreferrer"
 											hrefLang="en-us"
+											// className="text-[16px] text-secondary italic font-normal m-0"
 											className="text-[16px] text-secondary italic font-normal m-0"
 										>
-											<i className="text-blue-200">@</i>{company_name}
+											<i className="text-accent-2">@</i>{company_name}
 										</motion.a>
 										<motion.p variants={swivelVariants} className="lg:hidden font-normal">
 											<HighlightedText className="px-1" color={TERTIARY_COLOR} delay={0.8} duration={0.4}>

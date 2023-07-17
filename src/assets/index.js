@@ -4,14 +4,7 @@ export { default as menu }  from "./menu.svg";
 export { default as close }  from "./close.svg";
 
 // about
-// export { default as profile }  from "./about-assets/profile-img-mini.png"
 export { default as profile }  from "./about-assets/profile-img-mini.webp"
-
-export { default as profileBg }  from "./about-assets/about_profile_bg.svg" // not in use 
-export { default as coding }  from "./about-assets/about_coding.svg"; // not in use
-export { default as ux_design }  from "./about-assets/about_ux_design.svg"; // not in use
-export { default as gaming }  from "./about-assets/about_gaming.svg"; // not in use
-export { default as wood_working }  from "./about-assets/about_wood_working.svg"; // not in use
 
 // technologies
 export { default as bootstrap } from "./tech-assets/devs/bootstrap.svg"
@@ -41,9 +34,6 @@ export { default as jira } from "./tech-assets/others/jira.svg"
 export { default as gomanilaLandingPage } from './projects-assets/go-manila-landing-page-mini.webp'
 export { default as manilaZooLandingPage } from './projects-assets/manila-zoo-landing-page-mini.webp'
 export { default as canstarLandingPage } from './projects-assets/canstar-landing-page-mini.webp'
-
-export { default as gomanilaLoginPageMobile } from './projects-assets/go-manila-login-page-mobile-mini.png' // not in use
-export { default as manilaZooLandingPageMobile } from './projects-assets/manila-zoo-landing-page-mobile-mini.png' // not in use
 
 // downloadables
 export { default as resumeFile } from './downloadable-files/wenzie_querubin_2023.pdf'

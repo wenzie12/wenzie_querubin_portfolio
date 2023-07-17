@@ -95,14 +95,8 @@ const Navbar = ({ loading }) => {
                     className="py-4"
                   >
                     {link.title}
-                    <motion.i
-                      variants={tagVariants("left")}
-                      className="text-blue-200 absolute top-1 -left-4 font-semibold">{`<`}
-                    </motion.i>
-                    <motion.i
-                      variants={tagVariants("right")}
-                      className="text-blue-200 absolute top-1 -right-5 font-semibold">{`/>`}
-                    </motion.i>
+                    <motion.i variants={tagVariants("left")} className="text-accent-2 absolute top-1 -left-3 font-semibold">{`<`}</motion.i>
+                    <motion.i variants={tagVariants("right")} className="text-accent-2 absolute top-1 -right-4 font-semibold">{`/>`}</motion.i>
                   </motion.a>
                 </motion.li>
               )

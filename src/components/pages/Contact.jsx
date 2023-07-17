@@ -61,13 +61,13 @@ const Contact = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* <hr className="border-blue-200 mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
+        {/* <hr className="border-accent-2 mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
         {/* links */}
         <motion.div
           variants={staggerContainer(.2)}
           initial="hidden"
           whileInView="show"
-          className="w-full text-blue-100">
+          className="w-full text-accent-1">
 					<motion.div className="flex flex-row justify-center w-full gap-x-4 -mt-2">
 						<SocialLinks resumeLinkOrientation="horizontal" isResumeIcon />
 					</motion.div>
