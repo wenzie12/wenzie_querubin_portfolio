@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 
 import { textVariant, swivelVariants, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
@@ -20,7 +20,7 @@ const ProjectCard = ({data=[], className="" }) => {
     <>
       {
         data?.map((item, index) => {
-          const { name, description, tags, image, imageMobile, source_code_link, playstore, appstore, website } = item
+          const { name, description, tags, image, source_code_link, playstore, appstore, website } = item
           const isOdd = index % 2 !== 0
           
           return (
@@ -111,7 +111,7 @@ const ProjectCard = ({data=[], className="" }) => {
         })
       }
       
-      {/* TOOD: move in a custom component (button) */}
+      {/* TOOD: (More Project) move in a custom component (button) */}
       <motion.div
         variants={fadeIn("", "", 0, 0.8)}
         initial="hidden"

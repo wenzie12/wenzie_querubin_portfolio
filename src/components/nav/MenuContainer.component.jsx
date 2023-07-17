@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 // menu component for mobile view
-
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
@@ -13,7 +13,6 @@ import SocialLinks from '../social-medias/SocialLinks.component'
 
 import { SECONDARY_COLOR } from '../../themes/constants'
 
-// eslint-disable-next-line react/prop-types
 const MenuContainer = ({ toggle, setToggle }) => {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
@@ -46,7 +45,6 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				<div className="mt-20 px-5">
 					<MenuLinks />
 				</div>
-				{/* update social links component later */}
 				<motion.div className="w-full py-6 text-blue-100">
 					<motion.div
 						variants={staggerContainer(.2)}
