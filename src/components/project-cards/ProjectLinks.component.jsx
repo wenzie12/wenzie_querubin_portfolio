@@ -37,6 +37,7 @@ const ProjectLinks = ({
           leaveHover()
           enterHover("hideHover")
         }}
+        aria-label="Live Server"
         href={website}
         target="_blank"
         rel="noreferrer"
@@ -61,6 +62,7 @@ const ProjectLinks = ({
             leaveHover()
             enterHover("hideHover")
           }}
+          aria-label="Playstore"
           href={playstore}
           target="_blank"
           rel="noreferrer"
@@ -86,6 +88,7 @@ const ProjectLinks = ({
             leaveHover()
             enterHover("hideHover")
           }}
+          aria-label="Appstore"
           href={appstore}
           target="_blank"
           rel="noreferrer"
@@ -111,6 +114,7 @@ const ProjectLinks = ({
             leaveHover()
             enterHover("hideHover")
           }}
+          aria-label="Source Code"
           href={source_code_link}
           target="_blank"
           rel="noreferrer"

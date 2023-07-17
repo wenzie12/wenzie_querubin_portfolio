@@ -43,6 +43,7 @@ const MenuButton = ({
 		<button
 			type="button"
 			id="menu"
+			aria-label="menu"
 			{...props}
 			className={className}
 		>
