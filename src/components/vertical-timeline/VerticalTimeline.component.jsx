@@ -87,7 +87,7 @@ const VerticalTimeline = ({ data }) => {
 									>
 										<motion.h3
 											variants={textVariant()}
-											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-normal uppercase pb-2 md:pb-0"
+											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-semibold uppercase pb-2 md:pb-0"
 										>
 											{title}
 										</motion.h3>
@@ -107,6 +107,7 @@ const VerticalTimeline = ({ data }) => {
 											target="_blank"
 											rel="noreferrer"
 											hrefLang="en-us"
+											// className="text-[16px] text-secondary italic font-normal m-0"
 											className="text-[16px] text-secondary italic font-normal m-0"
 										>
 											<i className="text-blue-200">@</i>{company_name}

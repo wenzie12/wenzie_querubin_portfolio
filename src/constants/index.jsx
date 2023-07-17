@@ -23,10 +23,8 @@
   
   // projects
   gomanilaLandingPage,
-  gomanilaLoginPageMobile,
   canstarLandingPage,
   manilaZooLandingPage,
-  manilaZooLandingPageMobile,
 
   // downloadables,
   resumeFile,
@@ -151,8 +149,8 @@
           color: "",
         },
       ],
-      image: gomanilaLandingPage, // temporary image placeholder
-      imageMobile: gomanilaLoginPageMobile, 
+      image: gomanilaLandingPage,
+      imageMobile: "", 
       source_code_link: "",
       appstore: "https://apps.apple.com/us/app/gomanila/id1533414915",
       playstore: "https://play.google.com/store/apps/details?id=net.gomanila.app&hl=en&gl=US",
@@ -176,8 +174,8 @@
           color: "",
         },
       ],
-      image: manilaZooLandingPage, // temporary image placeholder
-      imageMobile: manilaZooLandingPageMobile, 
+      image: manilaZooLandingPage,
+      imageMobile: "", 
       source_code_link: "",
       appstore: "",
       playstore: "https://play.google.com/store/apps/details?id=com.LotDesigns.ManilaZooBotanicalGarden&hl=en&gl=US",
