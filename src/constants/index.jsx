@@ -54,10 +54,10 @@
   ];
 
   const interests = [
-    "UI Design",
     "Web Development",
-    "Gaming",
+    "UI Design",
     "Wood Working",
+    "Gaming",
     "Aquascaping",
     "Coffee",
   ]
