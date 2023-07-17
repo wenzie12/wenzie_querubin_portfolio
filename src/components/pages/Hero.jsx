@@ -60,7 +60,7 @@ const Hero = ({ loading }) => {
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"
               whileInView={loading ? "hidden" : "show"}
-              className="w-1 md:mt-2 sm:h-64 h-48 bg-gradient-to-b from-blue-200 to-primary"
+              className="w-1 sm:h-64 h-48 bg-gradient-to-b from-blue-200 to-primary"
             />
           </motion.div>
           {/* header */}

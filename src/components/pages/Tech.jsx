@@ -1,6 +1,6 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
-import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant } from '../../utils/motion'
+import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { SectionWrapper } from '../../hoc'
 
@@ -18,8 +18,9 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
         className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal text-tertiary`}
       >
         <motion.span
-          initial={{ transform: "rotate(-90deg)", }}
-          whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
+          variants={chevronVariant}
+          initial="initial"
+          whileInView="animate"
         >
           <ChevronDown className="w-6 h-6 text-secondary" />
         </motion.span>
@@ -78,7 +79,6 @@ const Tech = () => {
       <div className="flex flex-col md:w-2/3 text-justify">
         <motion.p
           variants={swivelVariants}
-          // variants={fadeIn("", "", 0.2, 1)}
           className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
         >
           Here are some technologies I&apos;ve recently worked with.

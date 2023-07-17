@@ -197,6 +197,10 @@
           color: "",
         },
         {
+          name: "typescript",
+          color: "",
+        },
+        {
           name: "wordpress",
           color: "",
         },

@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion'
 import { social_links, downloadables } from '../../constants/index'
@@ -49,7 +49,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						<motion.span
 							whileHover={hover}
 						>
-							{icon({ className: "w-5 h-5 text-secondary", })}
+							{icon({ className: "w-6 h-6 text-secondary", })}
 						</motion.span>
 						{/* <motion.img whileHover={hover} src={icon} alt={name} className="aspect-auto w-5 h-5" /> */}
 					</motion.a>)	
@@ -72,9 +72,8 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 			>
 				{
 					isResumeIcon ? 
-						// <motion.img whileHover={hover} src={resume} alt="resume" className="aspect-auto w-5 h-5" /> :
 						<motion.span whileHover={hover}>
-							<FileDown className="w-5 h-5 text-secondary"/>
+							<FileDown className="w-6 h-6 text-secondary"/>
 						</motion.span> :
 						<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md border-secondary border-2`}>
 							<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block text-white-100  text-center custom-pointer relative text-xs`}>

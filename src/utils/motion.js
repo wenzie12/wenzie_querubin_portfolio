@@ -103,14 +103,6 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
-export const scaleRight = {
-  hidden: {
-    
-  },
-  show: {
-    
-  }
-}
 
 export const zoomIn = (delay, duration) => {
   return {
@@ -155,19 +147,6 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
-export const raiseUp = {
-  initial: {
-    y: 0,
-  },
-  animate: {
-    y: -8,
-    transition: {
-      duration: .2,
-      ease: "easeInOut"
-    }
-  }
-}
-
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},
@@ -179,28 +158,6 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
-
-export const swivelVariants = {
-  hidden: {
-    transform: "perspective(550px) rotateY(-25deg) rotateX(-15deg)",
-    perspectiveOrigin: "top left",
-    transformStyle: "flat",
-    zIndex: 10,
-    opacity: .1,
-  },
-  show: {
-    transform: "perspective(550px) rotateY(0deg) rotateX(0deg)",
-    transformStyle: "flat",
-    opacity: 1,
-    transition: { 
-      staggerChildren: .15,
-      ease: "easeInOut",
-      duration: .6,
-    },
-  },
-}
-
-// used once
 
 export const scaleImageVariant = (delay, duration) => {
   return {
@@ -264,6 +221,44 @@ export const menuContainerVariants = {
     }
   }
 };
+
+export const raiseUp = {
+  initial: {
+    y: 0,
+  },
+  animate: {
+    y: -8,
+    transition: {
+      duration: .2,
+      ease: "easeInOut"
+    }
+  }
+}
+
+export const chevronVariant = {
+  initial: { transform: "rotate(-90deg)"},
+  animate: { transform: "rotate(0)", transition: { delay: .8, }}
+}
+
+export const swivelVariants = {
+  hidden: {
+    transform: "perspective(550px) rotateY(-25deg) rotateX(-15deg)",
+    perspectiveOrigin: "top left",
+    transformStyle: "flat",
+    zIndex: 10,
+    opacity: .1,
+  },
+  show: {
+    transform: "perspective(550px) rotateY(0deg) rotateX(0deg)",
+    transformStyle: "flat",
+    opacity: 1,
+    transition: { 
+      staggerChildren: .15,
+      ease: "easeInOut",
+      duration: .6,
+    },
+  },
+}
 
 
 

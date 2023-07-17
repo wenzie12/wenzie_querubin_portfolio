@@ -112,7 +112,7 @@ const VerticalTimeline = ({ data }) => {
 											<i className="text-blue-200">@</i>{company_name}
 										</motion.a>
 										<motion.p variants={swivelVariants} className="lg:hidden font-normal">
-											<HighlightedText className="px-1" color={TERTIARY_COLOR} delay={.8} duration={0.4}>
+											<HighlightedText className="px-1" color={TERTIARY_COLOR} delay={0.8} duration={0.4}>
 												{date}
 											</HighlightedText>
 										</motion.p>
@@ -120,7 +120,10 @@ const VerticalTimeline = ({ data }) => {
 										<div className="ml-4 mt-4 space-y-3">
 											{points?.map((point, i) => (
 												<motion.div key={i} variants={swivelVariants} className="relative text-tertiary pl-1 leading-[25px]">
-													<motion.span variants={scaleHeight("spring", .4 * i, .5)} className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full bg-secondary/40" />
+													<motion.span
+														variants={scaleHeight("spring", i * 0.3, 0.5)}
+														className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full bg-secondary/60"
+													/>
 													{point}
 												</motion.div>
 											))}

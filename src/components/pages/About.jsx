@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { SectionWrapper } from '../../hoc'
 
-import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant } from '../../utils/motion'
+import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container/'
@@ -18,7 +19,6 @@ import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 import { interests } from '../../constants'
 
-// eslint-disable-next-line react/prop-types
 const About = () => {
   const {
     cursorTextState: { cursorText, setCursorText },
@@ -39,9 +39,12 @@ const About = () => {
   }, [inView, active, setActive])
 
   return (
-    <motion.div inView={inView} className={`${styles.contentContainer}`}>
+    <motion.div
+      inView={inView}
+      className={`${styles.contentContainer}`}
+    >
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-tertiary`} >Introduction</p>
+        <p className={`${styles.sectionSubText} text-tertiary`}>Introduction</p>
         <h2 className={`${styles.sectionHeadText} text-secondary`}>About Me</h2>
       </motion.div>
       
@@ -57,7 +60,6 @@ const About = () => {
               <i className='text-secondary'> Multisys Technologies Corporation</i>.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
-              {/* TODO: move text to spans, para separate animation */}
               {/* With a passion for crafting exceptional user experiences, 
               I thrive in the world of frontend web development. */}
               As a frontend developer, I find joy in blending creativity and functionality. 
@@ -83,8 +85,9 @@ const About = () => {
             className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
           >
             <motion.span
-              initial={{ transform: "rotate(-90deg)", }}
-              whileInView={{ transform: "rotate(0)", transition: { delay: .8, }}}
+              variants={chevronVariant}
+              initial="initial"
+              whileInView="animate"
             >
               <ChevronDown className="w-6 h-6 text-secondary" />
             </motion.span>
@@ -143,14 +146,12 @@ const About = () => {
   )
 }
 
-// eslint-disable-next-line react/prop-types
 const InterestsGroup = ({ className,  enterHover, leaveHover, data }) => {
   return (
     <motion.div
       variants={swivelVariants}
       className={className}>
       {
-        // eslint-disable-next-line react/prop-types
         data?.map((item, i) => {
           return (
             <motion.div
