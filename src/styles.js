@@ -42,9 +42,9 @@ export const styles = {
     formInput: `
       block w-full mt-1 px-3 py-2
       bg-primary border-none rounded-md 
-      text-sm shadow-sm placeholder-blue-200
+      text-sm shadow-sm placeholder-accent-2
       
-      focus:outline-none focus:border-blue-200 focus:ring-1 focus:ring-blue-200
+      focus:outline-none focus:border-accent-2 focus:ring-1 focus:ring-accent-2
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500

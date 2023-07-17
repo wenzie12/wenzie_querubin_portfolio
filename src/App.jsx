@@ -34,7 +34,9 @@ const App = () => {
     <>
       <BrowserRouter>
         <LandingPageLoader loading={loading} /> 
-        {/* <div className="relative subpixel-antialiased font-extralight overflow-hidden"> */}
+        {/* for light mode  */}
+        {/* <div className="relative subpixel-antialiased font-normal overflow-hidden">  */}
+        {/*  for dark mode */}
         <div className="relative subpixel-antialiased font-light overflow-hidden for-light-mode"> 
           {!loading && (
             <>

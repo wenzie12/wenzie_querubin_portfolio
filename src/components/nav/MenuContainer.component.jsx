@@ -39,13 +39,12 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				variants={menuContainerVariants}
 				initial="hidden"
 				animate={toggle ? "show" : "hidden"}
-				// className="bg-gradient-to-b to-primary from-blue-100/[.7] absolute top-0 right-0 bottom-0 z-10  p-6 w-full h-screen" // apply gradient later
-				className={`${styles.padding} bg-gradient-to-b to-primary from-blue-100/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen`}
+				className={`${styles.padding} bg-gradient-to-b to-primary from-accent-1/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen`}
 			>
 				<div className="mt-20 px-5">
 					<MenuLinks />
 				</div>
-				<motion.div className="w-full py-6 text-blue-100">
+				<motion.div className="w-full py-6 text-accent-1">
 					<motion.div
 						variants={staggerContainer(.2)}
 						initial="hidden"

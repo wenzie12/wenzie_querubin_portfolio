@@ -31,7 +31,7 @@ const SocialMediaVerticalContainer = ({ loading }) => {
 					variants={staggerContainer(.2)}
 					initial="hidden"
 					animate="show"
-					className="flex flex-col justify-center w-9 h-52 text-blue-100"
+					className="flex flex-col justify-center w-9 h-52 text-accent-1"
 				>
 				<SocialLinks />
 				</motion.div>
@@ -41,7 +41,7 @@ const SocialMediaVerticalContainer = ({ loading }) => {
 					variants={fadeIn("up", "spring", .2, .8)}
 					initial="hidden"
 					animate={loading ? "hidden" : "show"}
-					className="w-1 h-16 md:h-32 bg-blue-100"
+					className="w-1 h-16 md:h-32 bg-accent-1"
 				/>
 			</div>
 		</motion.div>

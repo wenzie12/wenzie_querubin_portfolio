@@ -11,7 +11,7 @@ const HashtagText = ({ label }) => {
         initial="initial"
       >
         <i className="text-secondary mr-1">#</i>
-        <span className="text-blue-200">{label}</span>
+        <span className="text-accent-2">{label}</span>
       </motion.div>
   )
 }

@@ -6,21 +6,19 @@ export const theme = {
   extend: {
     colors: {
       // for light:
-      // primary: "#f8f9fa", // bg
-      // secondary: "#D4494C", // main text/title/borders etc
-      // // secondary: "#b12a29", 
-      // tertiary: "#7B8CA6", // sub text,
-      // "blue-100": "#8d99ae", // sub bg, others..
-      // "blue-200": "#2b2d42",  // sub bg
-      // "white-100": "#2b2d42",
+      // primary: "#f1f2f6",
+      // secondary: "#D4494C",
+      // tertiary: "#415a77",
+      // "accent-1": "#D5D6D9",
+      // "accent-2": "#8d99ae", 
+      // "white-100": "#0d1b2a",
       
-      // og:
+      // dark:
       primary: "#101B29",
       secondary: "#D4494C",
-      // secondary: "#b12a29",
       tertiary: "#7B8CA6",
-      "blue-100": "#1D2639", 
-      "blue-200": "#3F4F69", 
+      "accent-1": "#1D2639", 
+      "accent-2": "#3F4F69", 
       "white-100": "#f3f3f3",
 
       "black-100": "#100d25",

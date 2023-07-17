@@ -24,16 +24,16 @@ const ProjectCard = ({data=[], className="" }) => {
           const isOdd = index % 2 !== 0
           
           return (
-              // ${!isOdd && 'border-b-4 border-blue-100'}
+              // ${!isOdd && 'border-b-4 border-accent-1'}
               <motion.div
                 key={index}
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-blue-100/40 rounded-md`}
+                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-accent-1/40 rounded-md`}
               >
                 <motion.section
-                  className="p-6 md:px-4 my-4 md:my-0 bg-blue-100/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
+                  className="p-6 md:px-4 my-4 md:my-0 bg-accent-1/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
                   {/* content */}
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
@@ -62,7 +62,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         appstore={appstore}
                         source_code_link={source_code_link}
                       />
-                      <hr className="border-blue-200 border-1 rounded my-1" />
+                      <hr className="border-accent-2 border-1 rounded my-1" />
                       <motion.div variants={swivelVariants} className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
                         {tags?.map((tag, i) => (
                           <motion.div
@@ -76,7 +76,6 @@ const ProjectCard = ({data=[], className="" }) => {
                           </motion.div>
                         ))}
                       </motion.div>
-
                     </div>
                   </div>
                 </motion.section>
@@ -132,7 +131,7 @@ const ProjectCard = ({data=[], className="" }) => {
             // color: "#000000",
           })}
           onMouseLeave={leaveHover}
-          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-blue-100 px-3 text-[12px] cursor-not-allowed`}
+          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-accent-1 px-3 text-[12px] cursor-not-allowed`}
           // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
         >
           {/* <i className="text-secondary text-bold mr-1">#</i> */}

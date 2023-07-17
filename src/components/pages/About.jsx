@@ -66,8 +66,8 @@ const About = () => {
               My expertise lies in creating seamless interactions and visually appealing interfaces 
               through UI/UX design. My expertise lies in 
               <HighlightedText className="text-white-100 px-1" delay={0.6}>ReactJS</HighlightedText>,
-              <HighlightedText className="text-white-100 px-1" delay={0.8}>Javascript</HighlightedText> and
-              <HighlightedText className="text-white-100" delay={0.10}>TypeScript</HighlightedText>, 
+              <HighlightedText className="text-white-100 px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
+              <HighlightedText className="text-white-100" delay={1}>TypeScript</HighlightedText>, 
               enabling me to bring innovative and intuitive designs to life.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
@@ -114,7 +114,7 @@ const About = () => {
           >
           <motion.span
             variants={fadeIn("up", "spring",0.4, .8)}
-            className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] bg-blue-100"
+            className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] bg-accent-1"
           />
           <motion.div
             variants={raiseUp}
