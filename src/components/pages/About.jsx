@@ -120,7 +120,7 @@ const About = () => {
             variants={raiseUp}
             initial="initial"
             whileHover="animate"
-            className="overflow-hidden flex justify-center w-48 md:w-auto"
+            className={`${styles.profileImage} overflow-hidden flex justify-center w-48 md:w-auto`}
           >
             <ImageContainer
               isMotion
@@ -129,7 +129,7 @@ const About = () => {
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className="aspect-auto max-h-[24rem] lg:max-h-[28rem] rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0"
+              className={`${styles.profileImage} aspect-auto object-fit object-center max-h-[24rem] lg:max-h-[28rem] rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
             />
           </motion.div>
           </motion.div>
