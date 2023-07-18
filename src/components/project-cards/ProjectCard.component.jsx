@@ -49,6 +49,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         variants={swivelVariants}
                         initial="hidden"
                         whileInView="show"
+                        viewport={{ once: true }}
                         className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 text-tertiary`}
                       >
                         {description}
@@ -64,7 +65,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         source_code_link={source_code_link}
                       />
                       <hr className="border-accent-2 border-1 rounded my-1" />
-                      <motion.div variants={swivelVariants} className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
+                      <motion.div className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
                         {tags?.map((tag, i) => (
                           <motion.div
                             key={i}

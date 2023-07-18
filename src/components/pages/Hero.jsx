@@ -24,7 +24,7 @@ const Hero = ({ loading }) => {
     target: targetRef,
     offset: ["end end", "end start"],
     // param 1 - top part of section, end of window,
-    // param 2 - bottom of section, bottom of window 
+    // param 2 - bottom of section, bottom of window
   })
   
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
@@ -90,7 +90,12 @@ const Hero = ({ loading }) => {
                 text: "go to link!",
               })}
                 onMouseLeave={leaveHover}
-                href="https://www.multisyscorp.com/" target="_blank" className="text-secondary italic font-semibold">Multisys
+                href="https://www.multisyscorp.com/"
+                target="_blank"
+                className="text-secondary italic font-semibold"
+                rel="noreferrer"
+              >
+                Multisys
               </a>
             </motion.span>
             <motion.span

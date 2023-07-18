@@ -44,7 +44,7 @@ const ProjectLinks = ({
         hrefLang="en-us"
         className="p-3"
       >
-        <motion.span variants={raiseUp}>
+        <motion.span variants={raiseUp} className="inline-block">
           <ExternalLink className='text-secondary' />
         </motion.span>
       </motion.a>
@@ -69,7 +69,7 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-          <motion.span variants={raiseUp}>
+          <motion.span variants={raiseUp} className="inline-block">
             <Play className='text-secondary' />
           </motion.span>
         </motion.a>
@@ -94,7 +94,7 @@ const ProjectLinks = ({
           rel="noreferrer"
           className="p-3"
         >
-          <motion.span variants={raiseUp}>
+          <motion.span variants={raiseUp} className="inline-block">
             <Apple className='text-secondary' />
           </motion.span>
         </motion.a>

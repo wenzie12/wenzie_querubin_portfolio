@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter } from "react-router-dom"
 
 import { CursorWrapper } from './hoc'
@@ -11,7 +10,6 @@ import {
   Tech,
   Experience,
   Projects,
-  // Feedbacks,
   Contact,
   Footer,
 } from './components/pages'
@@ -28,7 +26,7 @@ const App = () => {
   useEffect(() => {
     // for loading screen (on page load)
     setTimeout(() => setLoading(false), 2000)
-  }, [])
+  }, [setLoading])
 
   return (
     <>
@@ -51,7 +49,6 @@ const App = () => {
               <Tech />
               <Experience />
               <Projects />
-              {/* <Feedbacks /> */}
               <Contact />
               <Footer />
             </div>
@@ -67,12 +64,3 @@ const App = () => {
 const AppHOC = CursorWrapper(App, "")
 
 export default AppHOC
-
-/*
-TODOs 
- >>(for improvement)
-  1. apply prop validations (PropTypes or TypeScript) later
- >>
-*/ 
-
-

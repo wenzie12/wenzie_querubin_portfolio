@@ -53,6 +53,9 @@ const About = () => {
         <div className="flex flex-col md:w-1/2 text-justify">
           <motion.p
             variants={swivelVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
           >
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
@@ -129,7 +132,7 @@ const About = () => {
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className={`${styles.profileImage} aspect-auto object-fit object-center max-h-[24rem] lg:max-h-[28rem] rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
+              className={`${styles.profileImage} aspect-auto rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
             />
           </motion.div>
           </motion.div>
@@ -148,9 +151,7 @@ const About = () => {
 
 const InterestsGroup = ({ className,  enterHover, leaveHover, data }) => {
   return (
-    <motion.div
-      variants={swivelVariants}
-      className={className}>
+    <motion.div className={className}>
       {
         data?.map((item, i) => {
           return (

@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { zoomIn } from '../../utils/motion'
 
 import { ProfileLogo } from '../icons'
-
-import { SECONDARY_COLOR, TERTIARY_COLOR, ACCENT_2_COLOR, } from '../../themes/constants'
+import { LOGO_DATA } from '../../constants'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -14,14 +13,6 @@ const LandingPageLoader = ({ loading }) => {
 		cursorTextState: { cursorText },
 		hoverEvents: { enterHover, leaveHover },
 	} = useCursorContext()
-
-	const logoData = [
-		{ fill: ACCENT_2_COLOR, class: "w-6 h-6", path: "opacity-60", delay: 1.2, duration: .3, },
-		{ fill: TERTIARY_COLOR, class: "w-8 h-8", path: "opacity-75", delay: 1, duration: .3, },
-		{ fill: SECONDARY_COLOR, class: "w-12 h-12", path: "opacity-100", delay: .5, duration: .3, },
-		{ fill: TERTIARY_COLOR, class: "w-8 h-8", path: "opacity-75", delay: .8, duration: .3, },
-		{ fill: ACCENT_2_COLOR, class: "w-6 h-6", path: "opacity-60", delay: 1.2, duration: .3, },
-	]
 
   return (
 		<AnimatePresence>
@@ -40,7 +31,7 @@ const LandingPageLoader = ({ loading }) => {
 				>
 					<div className="flex gap-2 items-center">
 						{
-							logoData?.map((item, i) => (
+							LOGO_DATA?.map((item, i) => (
 								<ProfileLogo
 									key={i}
 									isMotion

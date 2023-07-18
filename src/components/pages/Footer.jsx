@@ -23,7 +23,7 @@ const Footer = () => {
 				variants={fadeIn("", "tween", .2 , .4)}
 				initial="hidden"
 				whileInView="show"
-				viewport={{ once: true }}
+				// viewport={{ once: true }}
 				className="flex items-center justify-center gap-2 md:gap-4"
 			>
 				<Link 
