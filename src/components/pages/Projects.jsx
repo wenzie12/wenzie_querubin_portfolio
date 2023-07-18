@@ -46,6 +46,9 @@ const Projects = () => {
           <div className="flex flex-col md:w-2/3 mb-2 md:mb-8">
             <motion.p
               variants={swivelVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
               className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
             >
               Here are the projects that I am genuinely proud to have been a part of,

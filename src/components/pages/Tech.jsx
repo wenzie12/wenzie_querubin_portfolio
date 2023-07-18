@@ -79,6 +79,9 @@ const Tech = () => {
       <div className="flex flex-col md:w-2/3 text-justify">
         <motion.p
           variants={swivelVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
           className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
         >
           Here are some technologies I&apos;ve recently worked with.

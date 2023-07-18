@@ -50,9 +50,11 @@ const Contact = () => {
         {/* left section */}
         <motion.div className="flex-col-reverse md:flex-row flex">
           <div  className="flex flex-col text-justify">
-            <motion.p     
-              // variants={fadeIn("", "", 0.2, 1)}
+            <motion.p
               variants={swivelVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
               className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary text-center px-0 md:px-10 lg:px-20`}
             >
               {`While I'm not actively seeking new opportunities at the moment, 
