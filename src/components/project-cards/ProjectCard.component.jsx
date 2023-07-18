@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 
@@ -88,7 +89,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     variants={scaleImageVariant(0, .6)}
                     initial="hidden"
                     whileInView="show"
-                    className="flex items-center w-full h-full"
+                    className="flex justify-center items-center w-full h-full"
                   >
                     <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="lg:h-full">
                       <ImageContainer
@@ -100,7 +101,8 @@ const ProjectCard = ({data=[], className="" }) => {
                           // color: "#000000",
                         })}
                         onMouseLeave={leaveHover}
-                        className="aspect-auto object-fit object-center lg:w-full lg:h-full grayscale hover:grayscale-0" src={image} alt="project"
+                        // className={`aspect-auto object-fit object-center lg:w-full lg:h-full grayscale hover:grayscale-0`} src={image} alt="project"
+                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0`} src={image} alt="project"
                       />
                     </a>
                   </motion.div>
@@ -135,7 +137,7 @@ const ProjectCard = ({data=[], className="" }) => {
           // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
         >
           {/* <i className="text-secondary text-bold mr-1">#</i> */}
-          <span className="text-white-100">// More Projects</span>
+          <span className="text-white-100">{`//`} More Projects</span>
         </motion.button>
       </motion.div>
     </>

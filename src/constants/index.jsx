@@ -6,6 +6,7 @@
   framerMotion,
   html5,
   javascript,
+  typescript,
   nodejs,
   redux,
   reactjs,
@@ -65,12 +66,12 @@
       { name: "HTML5", icon: html5, },
       { name: "CSS3", icon: css3, },
       { name: "JavaScript", icon: javascript, },
-      // { name: "TypeScript", icon: "", },
       { name: "Sass", icon: sass, },
       { name: "Bootstrap 5", icon: bootstrap, },
       { name: "Tailwind CSS", icon: tailwind, },
       { name: "Framer Motion", icon: framerMotion, },
       { name: "React JS", icon: reactjs, },
+      { name: "TypeScript", icon: typescript, },
       { name: "Redux", icon: redux, },
       { name: "Node JS", icon: nodejs, },
     ],
@@ -181,35 +182,35 @@
       playstore: "https://play.google.com/store/apps/details?id=com.LotDesigns.ManilaZooBotanicalGarden&hl=en&gl=US",
       website: "https://www.manilazoo.ph/"
     },
-    {
-      name: "Canstar",
-      description:
-        "Canstar is Australia's original & biggest financial comparison site. Our expert ratings help you compare Home Loans, Credit Cards, Health Insurance & more.",
-      tags: [
-        {
-          name: "angular",
-          color: "",
-        },
-        {
-          name: "bootstrap",
-          color: "",
-        },
-        {
-          name: "typescript",
-          color: "",
-        },
-        {
-          name: "wordpress",
-          color: "",
-        },
-      ],
-      image: canstarLandingPage,
-      imageMobile: "", 
-      appstore: "",
-      playstore: "",
-      source_code_link: "",
-      website: "https://www.canstar.com.au/"
-    },
+    // {
+    //   name: "Canstar",
+    //   description:
+    //     "Canstar is Australia's original & biggest financial comparison site. Our expert ratings help you compare Home Loans, Credit Cards, Health Insurance & more.",
+    //   tags: [
+    //     {
+    //       name: "angular",
+    //       color: "",
+    //     },
+    //     {
+    //       name: "bootstrap",
+    //       color: "",
+    //     },
+    //     {
+    //       name: "typescript",
+    //       color: "",
+    //     },
+    //     {
+    //       name: "wordpress",
+    //       color: "",
+    //     },
+    //   ],
+    //   image: canstarLandingPage,
+    //   imageMobile: "", 
+    //   appstore: "",
+    //   playstore: "",
+    //   source_code_link: "",
+    //   website: "https://www.canstar.com.au/"
+    // },
   ];
 
   const contacts = {

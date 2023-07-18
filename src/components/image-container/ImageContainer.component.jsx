@@ -2,9 +2,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+import { FileImage } from 'lucide-react'
+
 const ImageContainer = ({
 	src,
 	isMotion=false,
+	className="",
 	...imgProps
 }) => {
 	const [isImgLoaded, setImgLoaded] = useState(false)
@@ -17,8 +20,13 @@ const ImageContainer = ({
 
   return (
     <>
-			{!isImgLoaded && <i className=" animate-pulse">Loading...</i>}	
-			{isMotion ? <motion.img src={src} { ...imgProps }/> : <img src={src} width={width} height={height} { ...imgProps } />}
+			{!isImgLoaded && (
+				<span className="z-10 absolute w-full min-w-[180px] min-h-[280px] md:min-w-[240px] md:min-h-[440px] mx-auto flex flex-col items-center justify-center animate-pulse">
+					<FileImage className="text-secondary w-12 h-12 animate-bounce "/>
+					<i className="text-sm my-1 mix-blend-difference">Loading</i>
+				</span>)}
+
+			{isMotion ? <motion.img src={src} className={`relative ${className}`} { ...imgProps } /> : <img src={src} className={`relative ${className}`} { ...imgProps } />}
 		</>
   )
 }
