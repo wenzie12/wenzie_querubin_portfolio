@@ -22,9 +22,9 @@ export const styles = {
     
     profileImage: `
       w-[192px] h-[272.76px]
-      sm:w-[270.28px] md:h-[383.98px]
-      md:w-[296px] lg:h-[420px]
-      lg:w-[315.31px] xl:h-[447.97px]`,
+      sm:w-[270.28px] sm:h-[383.98px]
+      md:w-[296px] md:h-[420px]
+      lg:w-[315.31px] lg:h-[447.97px]`,
     
     ProjectImage: `
       w-full h-full
