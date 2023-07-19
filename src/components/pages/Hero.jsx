@@ -29,13 +29,13 @@ const Hero = ({ loading }) => {
   
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
 
   return (
     <>
       <motion.section
         ref={ targetRef }
-        style={{ opacity, scale, y, height: "100dvh", }}
+        style={{ opacity, scale, y, height: "100dvh", transition: "ease-in-out" }}
         className="relative w-full flex items-center select-none"
         // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-accent-1`}
       > 

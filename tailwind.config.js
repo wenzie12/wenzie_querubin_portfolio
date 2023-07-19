@@ -6,12 +6,12 @@ export const theme = {
   extend: {
     colors: {
       // for light:
-      // primary: "#f1f2f6",
-      // secondary: "#D4494C",
-      // tertiary: "#415a77",
-      // "accent-1": "#D5D6D9",
-      // "accent-2": "#8d99ae", 
-      // "white-100": "#0d1b2a",
+      // primary: "#F3F3F3",
+      // secondary: "#D33A3D",
+      // tertiary: "#303945",
+      // "accent-1": "#DADADA",
+      // "accent-2": "#8F959F", 
+      // "white-100": "#201F1F",
       
       // dark:
       primary: "#101B29",

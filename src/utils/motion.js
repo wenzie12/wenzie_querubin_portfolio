@@ -109,11 +109,6 @@ export const zoomIn = (delay, duration) => {
     hidden: {
       scale: 0,
       opacity: 0,
-      transition: {
-        scale: {
-          duration: .2,
-        },
-      }
     },
     show: {
       scale: 1,
@@ -122,7 +117,7 @@ export const zoomIn = (delay, duration) => {
         type: "tween",
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: "easeInOut",
       },
     },
   };
