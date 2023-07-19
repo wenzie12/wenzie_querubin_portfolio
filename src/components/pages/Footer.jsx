@@ -29,7 +29,7 @@ const Footer = () => {
 				<Link 
 					to="/"
 					aria-label="home"
-					className='flex items-center gap-2 z-10'
+					className='flex items-center gap-2 z-10 hover:animate-pulse'
 					onMouseEnter={() => enterHover("anchor")}
 					onMouseLeave={leaveHover}
 					onClick={() => {

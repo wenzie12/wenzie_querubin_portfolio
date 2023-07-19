@@ -14,8 +14,8 @@
 }
 
 body {
-  background-color: theme(colors.primary); /* primary */
   cursor: url('assets/cursor-assets/custom_pointer_default.svg'), default;
+  background-color: theme(colors.primary); 
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */

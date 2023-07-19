@@ -51,7 +51,6 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						>
 							{icon({ className: "w-6 h-6 text-secondary", })}
 						</motion.span>
-						{/* <motion.img whileHover={hover} src={icon} alt={name} className="aspect-auto w-5 h-5" /> */}
 					</motion.a>)	
 			})}
 			{/* resume */}

@@ -224,6 +224,11 @@ import {
     //   icon: facebook,
     //   link: contacts?.links.facebook,
     // },
+    // {
+    //   name: "codepen",
+    //   icon: codepen,
+    //   link: contacts?.links.codepen,
+    // },
     {
       name: "linkedin",
       icon: (props) => <Linkedin {...props} />,

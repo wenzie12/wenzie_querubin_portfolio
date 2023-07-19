@@ -3,9 +3,10 @@ import { motion } from 'framer-motion'
 import { SectionWrapper } from '../../hoc'
 import { useInView } from 'react-intersection-observer' 
 
-import { textVariant, raiseUp, fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
+import { textVariant, fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
 import { styles } from '../../styles'
 import { contacts } from '../../constants'
+import { ActionButton } from '../custom-buttons'
 
 import SocialLinks from '../social-medias/SocialLinks.component'
 
@@ -13,8 +14,6 @@ import SocialLinks from '../social-medias/SocialLinks.component'
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
-
-// eslint-disable-next-line react/prop-types
 const Contact = () => {
 
   const {
@@ -75,27 +74,18 @@ const Contact = () => {
 					</motion.div>
 				</motion.div>
         <motion.div
-        // todo mali animation neto, lagyan mo ng fadein on view
           variants={fadeIn("", "", 0.2, 1)}
           className="flex justify-center w-full p-4 text-secondary"
         >
-          {/* TODO: 
-            - make this custom-button later same with 'Projects -> "view more" button 
-            - convert to forms modal instead (of ease of use)
-          */}
-          <motion.button
-            variants={raiseUp}
-            whileHover="animate"
-            initial="initial"
+          {/* TODO: - convert to forms modal instead (of ease of use) */}
+          <ActionButton
+            label="Say Hello!"
             name="contact"
             type="button"
             onClick={handleContact}
             onMouseEnter={() => enterHover("hideHover")}
             onMouseLeave={leaveHover} 
-            className={`${styles.borderBox} flex items-center justify-center rounded-md border-secondary h-[40px] text-xs`}
-          >
-            <span className="text-white-100">Say Hello!</span>
-          </motion.button>
+          />
         </motion.div>
       </motion.div>
     </>

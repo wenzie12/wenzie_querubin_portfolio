@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
+import { ImageContainer } from '../image-container'
 import { SectionWrapper } from '../../hoc'
 
 import { technologies } from '../../constants'
@@ -47,7 +48,8 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
               className={`${className} flex flex-col gap-y-2 md:flex-row md:gap-y-0 items-center justify-center px-4 md:px-3`}
             >
               <span className="text-xs text-accent-2 md:hidden">{item.name}</span>
-              <motion.img
+              <ImageContainer
+                isMotion
                 variants={raiseUp}
                 whileHover="animate"
                 initial="initial"

@@ -1,34 +1,61 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-import { FileImage } from 'lucide-react'
+import { FileImage, ImageOff } from 'lucide-react'
 
 const ImageContainer = ({
-	src,
+	src="",
 	isMotion=false,
 	className="",
 	...imgProps
 }) => {
 	const [isImgLoaded, setImgLoaded] = useState(false)
+	const [isError, setImgError] = useState(false)
 
 	useEffect(() => {
 		const img = new Image()
 		img.onload = () => setImgLoaded(true)
+		img.onerror = () => setImgError(true)
 		img.src = src
 	}, [src])
 
-  return (
-    <>
-			{!isImgLoaded && (
-				<span className="z-10 absolute w-full min-w-[180px] min-h-[280px] md:min-w-[240px] md:min-h-[440px] mx-auto flex flex-col items-center justify-center animate-pulse">
-					<FileImage className="text-secondary w-12 h-12 animate-bounce "/>
-					<i className="text-sm my-1 mix-blend-difference">Loading</i>
-				</span>)}
+	const isImgMotionComponent = (isMotion=false) => {
+		if (isMotion) return (
+			<motion.img
+				src={src}
+				className={`relative ${className}`}
+				{ ...imgProps }
+			/>
+		)
+		return <img src={src} className={`relative ${className}`} { ...imgProps } />
+	}
 
-			{isMotion ? <motion.img src={src} className={`relative ${className}`} { ...imgProps } /> : <img src={src} className={`relative ${className}`} { ...imgProps } />}
-		</>
-  )
+	const imageRenderStatus = (onLoadStatus, imgSrc) => {
+		if (!imgSrc || isError) return <BrokenImgComponent className={className} />
+		
+		return (
+			<>
+				{!onLoadStatus && <LoadingComponent className={className} />}
+				{isImgMotionComponent(isMotion)}
+			</>
+		)
+	}
+
+  return imageRenderStatus(isImgLoaded, src)
 }
+
+const LoadingComponent = ({ className }) => (
+	<span className={`${className} absolute z-10 flex flex-col items-center justify-center animate-pulse`}>
+		<FileImage className="text-secondary w-10 h-10 animate-bounce"/>
+		{/* <i className="text-xs my-1 mix-blend-difference text-white-100">Loading Asset</i> */}
+	</span>
+)
+
+const BrokenImgComponent = ({ className }) => (
+	<span className={`${className} z-10 flex items-center justify-center`}>
+		<ImageOff className="text-secondary w-10 h-10"/>
+	</span>
+)
 
 export default ImageContainer

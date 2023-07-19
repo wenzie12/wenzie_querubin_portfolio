@@ -7,6 +7,7 @@ import { styles } from '../../styles'
 import ProjectLinks from './ProjectLinks.component'
 import { ImageContainer } from '../image-container'
 import { HashtagText } from '../custom-text'
+import { ActionButton } from '../custom-buttons'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -23,7 +24,6 @@ const ProjectCard = ({data=[], className="" }) => {
         data?.map((item, index) => {
           const { name, description, tags, image, source_code_link, playstore, appstore, website } = item
           const isOdd = index % 2 !== 0
-          
           return (
               // ${!isOdd && 'border-b-4 border-accent-1'}
               <motion.div
@@ -92,7 +92,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     whileInView="show"
                     className="flex justify-center items-center w-full h-full"
                   >
-                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="lg:h-full">
+                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="flex items-center justify-center">
                       <ImageContainer
                         isMotion
                         onMouseEnter={() => enterHover("anchorBlended", {
@@ -102,8 +102,9 @@ const ProjectCard = ({data=[], className="" }) => {
                           // color: "#000000",
                         })}
                         onMouseLeave={leaveHover}
-                        // className={`aspect-auto object-fit object-center lg:w-full lg:h-full grayscale hover:grayscale-0`} src={image} alt="project"
-                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0`} src={image} alt="project"
+                        src={image}
+                        alt="project"
+                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0`}
                       />
                     </a>
                   </motion.div>
@@ -120,26 +121,17 @@ const ProjectCard = ({data=[], className="" }) => {
         whileInView="show"
         className="flex justify-center w-full mt-12 md:mt-20"
       >
-        <motion.button
-          // variants={raiseUp}
-          // whileHover="animate"
-          // initial="initial"
+        <ActionButton
+          label="More Projects"
+          isDisabled
           type="button"
           name="more projects"
-          onClick={() => console.log("more projects!")}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             text: "comming soon! :D",
-            // offset: 0, 
-            // color: "#000000",
           })}
           onMouseLeave={leaveHover}
-          className={`${styles.borderBox} h-[40px] flex items-center justify-center rounded-md border-accent-1 px-3 text-[12px] cursor-not-allowed`}
-          // className={`h-[30px] flex items-center justify-center rounded-md border-secondary px-3 text-[12px]`}
-        >
-          {/* <i className="text-secondary text-bold mr-1">#</i> */}
-          <span className="text-white-100">{`//`} More Projects</span>
-        </motion.button>
+        />
       </motion.div>
     </>
   )

@@ -49,7 +49,7 @@ const Navbar = ({ loading }) => {
         }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 bg-primary`}
+        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 bg-primary/95`}
       >
         {/* web */}
         <div className="w-full flex justify-between items-center mx-auto"> 
@@ -62,10 +62,10 @@ const Navbar = ({ loading }) => {
             onMouseEnter={() => enterHover("anchor")}
 						onMouseLeave={leaveHover}
             onClick={handleOnClick}
-            className='flex items-center gap-2 py-4 z-40'
+            className='flex items-center gap-2 py-4 z-40 group'
           >
             <ProfileLogo
-              classSVG="w-[32px] h-[21px] object-contain z-40"
+              classSVG="w-[32px] h-[21px] object-contain z-40 group-hover:animate-pulse"
               classPath=""
               fill={SECONDARY_COLOR}
               role="img"
