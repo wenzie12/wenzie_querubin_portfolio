@@ -5,6 +5,10 @@
 		"jsx": "react-jsx",
 		"outDir": "./dist",
 		"strict": true,
+		// allow .js, .jsx extension to be imported from .tsx files
+		"allowJs": true, 
+    "checkJs": false,
+		
 		"esModuleInterop": true,
 		"baseUrl": ".",
 		"lib": [

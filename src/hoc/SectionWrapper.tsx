@@ -1,11 +1,16 @@
 import { motion, } from 'framer-motion'
+import { JSX } from 'react/jsx-runtime';
 
 import { styles } from '../styles'
-import { staggerContainer, slideRightVariant, scaleHeight } from '../utils/motion'
+import { staggerContainer, slideRightVariant, scaleHeight } from '../utils/motion';
 
-const SectionWrapper = (Component, idName) => 
+type sectionWrapperType = {
+  Component: React.ElementType, // JSX.Element, // React.FC // React.ReactNode
+  idName?: '' | 'about' | 'technologies' | 'experience' | 'project' | 'contact'
+}
+
+const SectionWrapper = (Component:sectionWrapperType["Component"], idName:sectionWrapperType["idName"]) => 
   function HOC() {
-
     return (
       <>
         <motion.section

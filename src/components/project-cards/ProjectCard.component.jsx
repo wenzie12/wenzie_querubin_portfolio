@@ -22,7 +22,7 @@ const ProjectCard = ({data=[], className="" }) => {
     <>
       {
         data?.map((item, index) => {
-          const { name, description, tags, image, source_code_link, playstore, appstore, website } = item
+          const { name, descriptions, tags, image, source_code_link, playstore, appstore, website } = item
           const isOdd = index % 2 !== 0
           return (
               // ${!isOdd && 'border-b-4 border-accent-1'}
@@ -45,14 +45,21 @@ const ProjectCard = ({data=[], className="" }) => {
                       >
                         {name}
                       </motion.h3>
-                      <motion.p
-                        variants={swivelVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 text-tertiary`}
-                      >
-                        {description}
+                      {/* TODO: workaround for max height and "read more." modal for extra long texts */}
+                      {/* <motion.p className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 text-tertiary max-h-64 overflow-y-auto`}> */}
+                      <motion.p className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 text-tertiary max-h-64 overflow-y-auto`}>
+                        {descriptions?.map((description, i) => (
+                          <motion.span
+                            key={i}
+                            variants={swivelVariants}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="inline-block mb-2"
+                          >
+                            {description}
+                          </motion.span>
+                        ))}
                       </motion.p>
                     </motion.div>
                     <div className={`${styles.cardContainer}`}>

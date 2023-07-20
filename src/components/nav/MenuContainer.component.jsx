@@ -13,7 +13,8 @@ import SocialLinks from '../social-medias/SocialLinks.component'
 
 import { SECONDARY_COLOR } from '../../themes/constants'
 
-const MenuContainer = ({ toggle, setToggle }) => {
+// eslint-disable-next-line no-unused-vars
+const MenuContainer = ({ toggle, setToggle, active }) => {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
 	useEffect(() => {
@@ -26,6 +27,10 @@ const MenuContainer = ({ toggle, setToggle }) => {
 			animate={toggle ? "show" : "hidden"}
 			className="md:hidden flex flex-1 justify-end items-center"
 		>
+			{/* TODO: work on this features later | displayed active menu label on mobile view */}
+			{/* <motion.i  className="mr-4 pb-2 text-white-100 custom-pointer relative text-sm">
+				{!toggle && active}
+			</motion.i> */}
 			{isTabletOrMobile && (
 				<MenuButton
 					isOpen={toggle}

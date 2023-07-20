@@ -61,6 +61,6 @@ const App = () => {
 }
 
 // Wrapped APP in HOC named CursorWrapper
-const AppHOC = CursorWrapper(App, "")
+const AppHOC = CursorWrapper(App)
 
 export default AppHOC

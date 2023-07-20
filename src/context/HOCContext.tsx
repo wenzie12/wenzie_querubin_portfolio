@@ -1,18 +1,18 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
-
 import { useContext, useState, createContext } from 'react'
 import { WHITE_100_COLOR } from '../themes/constants'
 
 
-// 1. LOADING STATE HOOKS
-const LoadingContext = createContext()
+const LoadingContext = createContext<null | any>(null)
 
 // custom hooks
-export const useLoadingContext = () => useContext(LoadingContext)
+export const useLoadingContext = () => useContext<null | any>(LoadingContext)
 
-export const LoadingProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true)
+type LoadingProvider = {
+  children: string | JSX.Element | JSX.Element[] | (() => React.JSX.Element) | any // temporary add 'any' type
+}
+
+export const LoadingProvider = ({ children }: LoadingProvider) => {
+  const [loading, setLoading] = useState<boolean>(true)
 
   return (
     <LoadingContext.Provider value={{ loadingState: { loading, setLoading }}}>
@@ -22,13 +22,23 @@ export const LoadingProvider = ({ children }) => {
 }
 
 // 2. CURSOR HOOKS
-const CursorContext = createContext()
+const CursorContext = createContext<null | any>(null)
 
 // custom hooks
 export const useCursorContext = () => useContext(CursorContext)
 
+type CursorProvider = {
+  children: string | JSX.Element | JSX.Element[] | (() => React.JSX.Element) | any // temporary add 'any' type
+}
 
-export const CursorProvider = ({ children }) => {
+export const CursorProvider = ({ children }: CursorProvider) => {
+
+  type CursorText = {
+    text: string | ''
+    offset?: Number
+    fontSize?: Number
+    color?: string
+  }
   
   const CURSOR_TEXT_DEFAULT = {
     text: "",
@@ -38,9 +48,9 @@ export const CursorProvider = ({ children }) => {
   }
 
   const [cursorVariant, setCursorVariant] = useState("default")
-  const [cursorText, setCursorText] = useState(CURSOR_TEXT_DEFAULT)
+  const [cursorText, setCursorText] = useState<CursorText>(CURSOR_TEXT_DEFAULT)
 
-  function enterHover(variant, cursorText) {
+  function enterHover(variant: any, cursorText: any) {
     setCursorText(cursorText || CURSOR_TEXT_DEFAULT);
     setCursorVariant(variant || "anchor");
   } 
