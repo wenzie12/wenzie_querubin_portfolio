@@ -7,7 +7,7 @@ import { SectionWrapper } from '../../hoc'
 import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
-import { ImageContainer } from '../image-container/'
+import { ImageContainer } from '../image-container'
 
 import { ChevronDown } from 'lucide-react';
 
