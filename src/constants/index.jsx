@@ -126,7 +126,7 @@ import {
     {
       name: "GoManila App",
       description:
-        "An electronic Business Permit and Licensing System that allows taxpayers to pay their Business Taxes and secure business permits online. Local Civil Registry.",
+        "An electronic Business Permit and Licensing System that allows taxpayers to pay their Business Taxes and secure business permits online or thru mobile app.",
       tags: [
         {
           name: "react",
@@ -151,7 +151,7 @@ import {
     {
       name: "Manila Zoo Ticket System",
       description:
-        "The Manila Zoological and Botanical Garden is the only public zoo in the City of Manila it first opened on July 25, 1959 during the tenure of Manila Mayor Arsenio H. Lacson.",
+        "The Manila Zoo Ticketing System is an online ticket booking system that enables you to purchase your entrance ticket online as well as book your visit to the park.",
       tags: [
         {
           name: "react",
