@@ -1,7 +1,9 @@
-import { useRef } from 'react'
+/* eslint-disable react/prop-types */
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
+import { Moon } from 'lucide-react';
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
@@ -14,14 +16,18 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 import { SECONDARY_COLOR } from '../../themes/constants'
 
-// eslint-disable-next-line react/prop-types
 const Navbar = ({ loading }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
-  const { hoverEvents: { enterHover, leaveHover } } = useCursorContext()
+  const { 
+    cursorTextState: { cursorText, setCursorText },
+    hoverEvents: { enterHover, leaveHover }
+  } = useCursorContext()
   const {
     activeState: { active, setActive },
     toggleState: { toggle, setToggle },
   } = useGlobalStateContext()
+
+  const [toggleDarkMode, setToggleDarkMode] = useState(true)
 
   const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -101,8 +107,22 @@ const Navbar = ({ loading }) => {
                 </motion.li>
               )
             })}
+            <motion.button
+              onMouseEnter={() => enterHover("", {
+                ...cursorText,
+                offset: 75,
+                text: 'Dark Mode: ON',
+              })}
+              onMouseLeave={leaveHover}
+              onClick={() => setToggleDarkMode(!toggleDarkMode)}
+              
+              type="button"
+              className="dark-mode"
+            >
+              {/* <Moon className="w-6 h-6 text-accent-2" /> // dark mode OFF */}
+              <Moon className={`${toggleDarkMode ? 'text-secondary' : 'text-accent-2'} w-6 h-6`} />
+            </motion.button>
           </motion.ul>
-      
       {/* mobile - menu */}
         <MenuContainer
           toggle={toggle}

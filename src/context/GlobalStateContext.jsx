@@ -1,12 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 import { useContext, useState, createContext } from 'react'
 
 const GlobalStateContext = createContext()
 
 // custom hooks
-// eslint-disable-next-line react-refresh/only-export-components
 export const useGlobalStateContext = () => useContext(GlobalStateContext)
 
-// eslint-disable-next-line react/prop-types
 export const GlobalStateProvider = ({ children }) => {
 
   const [active, setActive] = useState('')
