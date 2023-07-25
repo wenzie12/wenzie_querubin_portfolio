@@ -84,7 +84,7 @@ const ThemesButton = () => {
         aria-label="theme"
         className="dark-mode"
       >
-        <Moon className={`${toggleDarkMode ? 'dark:text-secondary text-secondary-lt' : 'dark:text-accent-2 text-accent-2-lt'} w-6 h-6`} />
+        <Moon className={`${toggleDarkMode ? 'dark:text-secondary text-secondary-lt' : 'dark:text-accent-2 text-accent-2-lt'} w-7 h-7`} />
       </motion.button>
     </motion.div>
     )

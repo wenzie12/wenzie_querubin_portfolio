@@ -4,13 +4,13 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 import { styles } from '../../styles'
-import { staggerContainer, menuContainerVariants } from '../../utils/motion'
+import { staggerContainer, menuContainerVariants, fadeIn } from '../../utils/motion'
 import { useMediaQuery } from 'react-responsive'
 
 import { MenuButton } from '../custom-buttons'
 import MenuLinks from './MenuLinks.component'
 import SocialLinks from '../social-medias/SocialLinks.component'
-
+import { ThemesButton } from '../custom-buttons'
 import { colors } from '../../themes/constants'
 
 // context
@@ -31,14 +31,26 @@ const MenuContainer = ({ toggle, setToggle }) => {
 			className="md:hidden flex flex-1 justify-end items-center"
 		>
 			{isTabletOrMobile && (
-				<MenuButton
-					isOpen={toggle}
-					onClick={() => setToggle(!toggle)}
-					color={colors[toggleDarkMode ? 'secondary' : 'secondary-lt']} // secondary
-					transition={{ ease: "easeOut", duration: 0.2 }}
-					className="z-40 cursor-pointer py-2"
-				/>
+				<>
+					<MenuButton
+						isOpen={toggle}
+						onClick={() => setToggle(!toggle)}
+						color={colors[toggleDarkMode ? 'secondary' : 'secondary-lt']} // secondary
+						transition={{ ease: "easeOut", duration: 0.2 }}
+						className="z-40 cursor-pointer py-2"
+					/>
+					<motion.div
+						variants={fadeIn("down", "spring", .1)}
+						animate="show"
+						initial="hidden"
+						className="ml-4 mb-1"
+					>
+						<ThemesButton />
+					</motion.div>
+				</>
 			)}
+			
+			{/* menu */}
 			<motion.div
 				variants={menuContainerVariants}
 				initial="hidden"
