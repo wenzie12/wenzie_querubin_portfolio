@@ -9,11 +9,11 @@ import { navLinks } from '../../constants'
 import { fadeIn, tagVariants } from '../../utils/motion'
 import { ProfileLogo } from '../icons'
 import MenuContainer from './MenuContainer.component'
+import { ThemesButton } from '../custom-buttons'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
-import { ThemesButton } from '../custom-buttons'
 
 const Navbar = ({ loading }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -103,7 +103,12 @@ const Navbar = ({ loading }) => {
                 </motion.li>
               )
             })}
-            <ThemesButton />
+            <motion.div
+              variants={fadeIn("down", "spring", .1)}
+              className="p-0 m-0"
+            >
+              <ThemesButton />
+            </motion.div>
           </motion.ul>
       {/* mobile - menu */}
         <MenuContainer
