@@ -1,25 +1,30 @@
 /** @type {import('tailwindcss').Config} */
+
 export const content = ["./src/**/*.{js,jsx}"];
 export const mode = "jit";
+
+export const darkMode = 'class'
+
+import { colors } from './src/themes/constants'
 
 export const theme = {
   extend: {
     colors: {
       // for light:
-      // primary: "#F3F3F3",
-      // secondary: "#D33A3D",
-      // tertiary: "#303945",
-      // "accent-1": "#DADADA",
-      // "accent-2": "#8F959F", 
-      // "white-100": "#201F1F",
+      "primary-lt": colors['primary-lt'],
+      "secondary-lt": colors['secondary-lt'],
+      "tertiary-lt": colors['tertiary-lt'],
+      "accent-1-lt": colors['accent-1-lt'],
+      "accent-2-lt": colors['accent-2-lt'],
+      "accent-3-lt": colors['accent-3-lt'],
       
-      // dark:
-      primary: "#101B29",
-      secondary: "#D4494C",
-      tertiary: "#7B8CA6",
-      "accent-1": "#1D2639", 
-      "accent-2": "#3F4F69", 
-      "white-100": "#f3f3f3",
+      // dark
+      primary: colors['primary'],
+      secondary: colors['secondary'],
+      tertiary: colors['tertiary'],
+      "accent-1": colors['accent-1'],
+      "accent-2": colors['accent-2'],
+      "accent-3": colors['accent-3'],
 
       "black-100": "#100d25",
       "black-200": "#090325",
@@ -41,4 +46,5 @@ export const theme = {
     },
   },
 };
+
 export const plugins = [];

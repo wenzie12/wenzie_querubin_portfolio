@@ -7,9 +7,11 @@ import HighlightedText from '../custom-text/HighlightedText.component'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
-import { TERTIARY_COLOR } from '../../themes/constants'
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
+import { colors } from '../../themes/constants'
 
 const VerticalTimeline = ({ data }) => {
+	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
 	const {
 		cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -25,7 +27,7 @@ const VerticalTimeline = ({ data }) => {
 					return (
 						<div
 							key={`${title}-${i}`}
-							className={`${styles.sectionText} flex flex-row text-tertiary`}
+							className={`${styles.sectionText} flex flex-row dark:text-tertiary text-tertiary-lt`}
 						>
 							{/* left */}
 							<motion.div
@@ -43,15 +45,15 @@ const VerticalTimeline = ({ data }) => {
 								{/* lines */}
 								<motion.div
 									variants={scaleHeight("", .2, .2)}
-									className="hidden md:block relative w-1 h-full bg-accent-1"
+									className="hidden md:block relative w-1 h-full dark:bg-accent-1 bg-accent-1-lt"
 								>
 									{/* circle */}
 									<motion.div
 										variants={zoomIn(.2, .4)}
-										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-accent-2 border-4 border-accent-2 rounded-full`}
-										className={`absolute mb-10 top-1 -right-2 h-5 w-5 bg-accent-1 rounded-full`}
+										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 dark:bg-accent-2 bg-accent-2-lt border-4 dark:border-accent-2 border-accent-2-lt rounded-full`}
+										className={`absolute mb-10 top-1 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full`}
 									/>
-									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 bg-accent-1 rounded-full`}/>} 
+									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full`}/>} 
 								</motion.div>
 							</motion.div>
 
@@ -68,11 +70,11 @@ const VerticalTimeline = ({ data }) => {
 									initial="initial"
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className="relative p-4 md:p-8 mb-10 bg-accent-1/40 rounded-md"
+									className="relative p-4 md:p-8 mb-10 dark:bg-accent-1/40 bg-accent-1-lt/40 rounded-md"
 								>
 									{/* pointer */}
 									<span
-										className="hidden md:block absolute -left-5 top-2 bg-accent-1/40 w-10 h-4"
+										className="hidden md:block absolute -left-5 top-2 dark:bg-accent-1/40 bg-accent-1-lt/40 w-10 h-4"
 										style={{
 											clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)',
 										}}
@@ -86,7 +88,7 @@ const VerticalTimeline = ({ data }) => {
 									>
 										<motion.h3
 											variants={textVariant()}
-											className="text-[1.25rem] lg:text-[1.5rem] text-white-100 font-semibold uppercase pb-2 md:pb-0"
+											className="text-[1.25rem] lg:text-[1.5rem] dark:text-accent-3 text-accent-3-lt font-semibold uppercase pb-2 md:pb-0"
 										>
 											{title}
 										</motion.h3>
@@ -106,10 +108,10 @@ const VerticalTimeline = ({ data }) => {
 											target="_blank"
 											rel="noreferrer"
 											hrefLang="en-us"
-											// className="text-[16px] text-secondary italic font-normal m-0"
-											className="text-[16px] text-secondary italic font-normal m-0"
+											// className="text-[16px] dark:text-secondary text-secondary-lt italic font-normal m-0"
+											className="text-[16px] dark:text-secondary text-secondary-lt italic font-normal m-0"
 										>
-											<i className="text-accent-2">@</i>{company_name}
+											<i className="dark:text-accent-2 text-accent-2-lt">@</i>{company_name}
 										</motion.a>
 										<motion.p
 											variants={swivelVariants}
@@ -118,7 +120,7 @@ const VerticalTimeline = ({ data }) => {
 											viewport={{ once: true }}
 											className="lg:hidden font-normal"
 										>
-											<HighlightedText className="px-1" color={TERTIARY_COLOR} delay={0.8} duration={0.4}>
+											<HighlightedText className="px-1" color={colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']} delay={0.8} duration={0.4}>
 												{date}
 											</HighlightedText>
 										</motion.p>
@@ -131,11 +133,11 @@ const VerticalTimeline = ({ data }) => {
 													initial="hidden"
 													whileInView="show"
 													viewport={{ once: true }}
-													className="relative text-tertiary pl-1 leading-[25px]"
+													className="relative dark:text-tertiary text-tertiary-lt pl-1 leading-[25px]"
 												>
 													<motion.span
 														variants={scaleHeight("spring", i * 0.3, 0.5)}
-														className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full bg-secondary/60"
+														className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full dark:bg-secondary/60 bg-secondary-lt/60"
 													/>
 													{point}
 												</motion.div>

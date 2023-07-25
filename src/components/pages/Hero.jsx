@@ -54,13 +54,13 @@ const Hero = ({ loading }) => {
                 { transform: "rotate(0)", transition: { delay: .8, }}
               ]}
             >
-              <ChevronDown className="w-6 h-6 text-secondary" />
+              <ChevronDown className="w-6 h-6 dark:text-secondary text-secondary-lt" />
             </motion.span>
             <motion.div
               variants={scaleHeight("spring", .6, 2)}
               initial="hidden"
               whileInView={loading ? "hidden" : "show"}
-              className="w-1 sm:h-64 h-48 bg-gradient-to-b from-accent-2 to-primary"
+              className="w-1 sm:h-64 h-48 bg-gradient-to-b dark:from-accent-2 dark:to-primary from-accent-2-lt to-primary-lt"
             />
           </motion.div>
           {/* header */}
@@ -71,16 +71,16 @@ const Hero = ({ loading }) => {
           >
             <motion.h1
               variants={swivelVariants}
-              className={`${styles.heroSubText} text-tertiary`}
+              className={`${styles.heroSubText} dark:text-tertiary text-tertiary-lt`}
             >
               <motion.span variants={swivelVariants}>Hi, I&apos;m</motion.span>
-              <motion.span variants={swivelVariants} className={`${styles.heroHeadText} text-secondary block w-full`}>
+              <motion.span variants={swivelVariants} className={`${styles.heroHeadText} dark:text-secondary text-secondary-lt block w-full`}>
                 Wenzie
               </motion.span>
             </motion.h1>
             <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} inline-block text-accent-2 font-normal`}
+              className={`${styles.heroSubText} inline-block dark:text-accent-2 text-accent-2-lt font-normal`}
             >
               Frontend Software Engineer @
               <a
@@ -92,7 +92,7 @@ const Hero = ({ loading }) => {
                 onMouseLeave={leaveHover}
                 href="https://www.multisyscorp.com/"
                 target="_blank"
-                className="text-secondary italic font-semibold"
+                className="dark:text-secondary text-secondary-lt italic font-semibold"
                 rel="noreferrer"
               >
                 Multisys
@@ -100,7 +100,7 @@ const Hero = ({ loading }) => {
             </motion.span>
             <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} inline-block mt-2 text-tertiary md:w-3/4`}
+              className={`${styles.heroSubText} inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4`}
             >
               Experienced Frontend Developer with a passion
               for creating dynamic, user-friendly web
@@ -110,7 +110,7 @@ const Hero = ({ loading }) => {
         </motion.div>
  
         {/* toggle to section button (animated) */}
-      <ScrollButton href="#about" loading={loading} />
+      <ScrollButton href="#about" aria-label="scroll down" loading={loading} />
       </motion.section>
       <AnimatePresence>
         {active !== "Contact" && (

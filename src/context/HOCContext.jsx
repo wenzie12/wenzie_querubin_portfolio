@@ -2,7 +2,8 @@
 /* eslint-disable react/prop-types */
 
 import { useContext, useState, createContext } from 'react'
-import { WHITE_100_COLOR } from '../themes/constants'
+import { useGlobalStateContext } from './GlobalStateContext'
+import { colors } from '../themes/constants'
 
 
 // 1. LOADING STATE HOOKS
@@ -27,14 +28,14 @@ const CursorContext = createContext()
 // custom hooks
 export const useCursorContext = () => useContext(CursorContext)
 
-
 export const CursorProvider = ({ children }) => {
+  const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
   
   const CURSOR_TEXT_DEFAULT = {
     text: "",
     offset: 70, // default
     fontSize: 12, // int value only (px)
-    color: WHITE_100_COLOR,
+    color: colors[toggleDarkMode ? 'accent-3' : 'accent-3-lt'],
   }
 
   const [cursorVariant, setCursorVariant] = useState("default")

@@ -49,7 +49,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						<motion.span
 							whileHover={hover}
 						>
-							{icon({ className: "w-6 h-6 text-secondary", })}
+							{icon({ className: "w-6 h-6 dark:text-secondary text-secondary-lt", })}
 						</motion.span>
 					</motion.a>)	
 			})}
@@ -72,10 +72,10 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 				{
 					isResumeIcon ? 
 						<motion.span whileHover={hover}>
-							<FileDown className="w-6 h-6 text-secondary"/>
+							<FileDown className="w-6 h-6 dark:text-secondary text-secondary-lt"/>
 						</motion.span> :
-						<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md border-secondary border-2`}>
-							<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block text-white-100  text-center custom-pointer relative text-xs`}>
+						<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md dark:border-secondary border-secondary-lt border-2`}>
+							<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block dark:text-accent-3 text-accent-3-lt  text-center custom-pointer relative text-xs`}>
 								Resume
 							</span>
 						</motion.div>

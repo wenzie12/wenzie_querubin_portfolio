@@ -11,10 +11,14 @@ import { MenuButton } from '../custom-buttons'
 import MenuLinks from './MenuLinks.component'
 import SocialLinks from '../social-medias/SocialLinks.component'
 
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { colors } from '../../themes/constants'
+
+// context
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const MenuContainer = ({ toggle, setToggle }) => {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
 
 	useEffect(() => {
 		setToggle(false)
@@ -30,7 +34,7 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				<MenuButton
 					isOpen={toggle}
 					onClick={() => setToggle(!toggle)}
-					color={SECONDARY_COLOR} // secondary
+					color={colors[toggleDarkMode ? 'secondary' : 'secondary-lt']} // secondary
 					transition={{ ease: "easeOut", duration: 0.2 }}
 					className="z-40 cursor-pointer py-2"
 				/>
@@ -39,12 +43,12 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				variants={menuContainerVariants}
 				initial="hidden"
 				animate={toggle ? "show" : "hidden"}
-				className={`${styles.padding} bg-gradient-to-b to-primary from-accent-1/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen`}
+				className={`${styles.padding} bg-gradient-to-b dark:to-primary dark:from-accent-1/[.95] to-primary-lt from-accent-1-lt/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen`}
 			>
 				<div className="mt-20 px-5">
 					<MenuLinks />
 				</div>
-				<motion.div className="w-full py-6 text-accent-1">
+				<motion.div className="w-full py-6 dark:text-accent-1 text-accent-1-lt">
 					<motion.div
 						variants={staggerContainer(.2)}
 						initial="hidden"

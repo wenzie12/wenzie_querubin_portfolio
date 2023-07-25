@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+  :root {
+    --color-primary: 16 27 41;
+    --color-secondary: #D4494C;
+    --color-tertiary: 123 140 166;
+    --color-accent-1: 29 38 57;
+    --color-accent-2: 63 79 105;
+    --color-accent-3: 243 243 243;
+  }
+} */
+
+/* #root {
+  // Scss variables to assign using JavaScript in reactJS / default
+  --cms-primary: #4c6085;
+  $cms-primary-light: #4c6085;
+  $cms-secondary: #6c757d; // #004277;
+  $cms-muted: #e3e4e5;
+  $cms-muted-secondary: #6c757d;
+  $cms-light: rgba(239,239,239,0.3);
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +36,7 @@
 
 body {
   cursor: url('assets/cursor-assets/custom_pointer_default.svg'), default;
-  background-color: theme(colors.primary); 
+  background-color: var(--color-primary); 
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
@@ -25,8 +46,8 @@ body {
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .hash-span {
@@ -42,10 +63,10 @@ body {
   font-weight: 800px;
   font-size: 1.2em;
   margin-right: 8px;
-  color: theme(colors.accent-2);
+  color: var(--color-accent-2);
 }
 
-/* for customCursor */
+/* for customCursor */  
 .circle {
   position: fixed;
   z-index: 100;
@@ -59,7 +80,7 @@ body {
   width: 10px;
   border-radius: 200px;
   pointer-events: none;
-  color: theme(colors.white-100);
+  color: var(--color-accent-3);
   /* mix-blend-mode: exclusion; */
   
   text-align: center;

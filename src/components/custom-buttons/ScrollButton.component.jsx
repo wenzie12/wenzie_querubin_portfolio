@@ -70,7 +70,7 @@ const ScrollButton = ({ href='', loading })  => {
           className="w-[24px] h-[50px] border-none flex justify-center items-start py-2"
         > 
         <motion.span variants={toggleVariant}>
-          <ChevronsDown className="w-7 h-7 mb-1 text-secondary font-semibold" />
+          <ChevronsDown className="w-7 h-7 mb-1 dark:text-secondary text-secondary-lt font-semibold" />
         </motion.span>  
         </motion.div>
       </a>

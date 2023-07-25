@@ -1,19 +1,25 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { colors } from '../../themes/constants'
+
+// context
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const HighlightedText = ({
 	className="",
 	children="sample text",
 	delay=0.3,
 	duration=0.5,
-	color=`${SECONDARY_COLOR}`
+	color=`${colors['secondary']}`
 }) => {
+	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
+	
+	const secondaryColor = colors[toggleDarkMode ? 'secondary' : 'secondary-lt']
 
 	const highlightVariants = {
 		initial: {
 			// backgroundImage: 'linear-gradient(#D4494C, #D4494C)',
-			backgroundImage: `linear-gradient(${SECONDARY_COLOR}, ${SECONDARY_COLOR})`,
+			backgroundImage: `linear-gradient(${secondaryColor}, ${secondaryColor})`,
 			backgroundSize: "100% 100%",
 			backgroundPosition: "100% 0px",
 			transition: {
@@ -21,7 +27,7 @@ const HighlightedText = ({
 			}
 		},
 		animate: {
-			backgroundImage: `linear-gradient(${SECONDARY_COLOR}, ${SECONDARY_COLOR})`,
+			backgroundImage: `linear-gradient(${secondaryColor}, ${secondaryColor})`,
 			backgroundRepeat: "no-repeat",
 			backgroundSize: "4px 100%",
 			backgroundPosition: "-10px 0px",

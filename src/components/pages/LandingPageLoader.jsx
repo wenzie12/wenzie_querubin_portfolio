@@ -7,8 +7,12 @@ import { LOGO_DATA } from '../../constants'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
+
+import { colors } from '../../themes/constants'
 
 const LandingPageLoader = ({ loading }) => {
+	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
 	const {
 		cursorTextState: { cursorText },
 		hoverEvents: { enterHover, leaveHover },
@@ -20,7 +24,7 @@ const LandingPageLoader = ({ loading }) => {
 				<motion.div
 					variants={zoomIn(0, 1)}
 					exit="hidden"
-					style={{ height: "100dvh", }}
+					style={{ height: "100dvh", backgroundColor: `${toggleDarkMode ? colors['primary'] : colors['primary-lt']}` }}
 					className="grid place-items-center absolute top-0 left-0 right-0 w-full scrollbar-hide"
 					onMouseEnter={() => enterHover("anchor", {
 						...cursorText,
@@ -40,7 +44,7 @@ const LandingPageLoader = ({ loading }) => {
 									initial="hidden"
 									classSVG={item.class}
 									classPath={item.path}
-									fill={item.fill}
+									fill={toggleDarkMode ? item.fill : item.fill_lt}
 								/>
 							))
 						}
@@ -50,6 +54,5 @@ const LandingPageLoader = ({ loading }) => {
 		</AnimatePresence>
   )
 }
-
 
 export default LandingPageLoader

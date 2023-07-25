@@ -1,7 +1,10 @@
 import useMouse from "@react-hook/mouse-position";
-import { SECONDARY_COLOR, TERTIARY_COLOR, WHITE_100_COLOR } from "../../themes/constants";
+
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
+import { colors } from "../../themes/constants";
 
 export const useVariants = (ref) => {
+  const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
   const mouse = useMouse(ref, {
     enterDelay: 140,
     leaveDelay: 140,
@@ -22,7 +25,7 @@ export const useVariants = (ref) => {
       opacity: .4,
       height: 12,
       width: 12,
-      backgroundColor: SECONDARY_COLOR,
+      backgroundColor: colors[toggleDarkMode ? 'secondary' : 'secondary-lt'],
       x: mouseXPosition - 20,
       y: mouseYPosition - 20,
       transition: {
@@ -32,8 +35,8 @@ export const useVariants = (ref) => {
     },
     anchor: {
       opacity: .75,
-      backgroundColor: `${TERTIARY_COLOR}50`,
-      color: WHITE_100_COLOR,
+      backgroundColor: `${colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']}50`,
+      color: colors[toggleDarkMode ? 'accent-3' : 'accent-3-lt'],
       // mixBlendMode: "difference",
       height: 64,
       width: 64,
@@ -43,8 +46,8 @@ export const useVariants = (ref) => {
     },
     anchorBlended: {
       opacity: .75,
-      backgroundColor: `${TERTIARY_COLOR}50`,
-      color: WHITE_100_COLOR,
+      backgroundColor: `${colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']}50`,
+      color: colors[toggleDarkMode ? 'accent-3' : 'accent-3-lt'],
       mixBlendMode: "difference",
       height: 64,
       width: 64,
@@ -54,7 +57,7 @@ export const useVariants = (ref) => {
     },
     hideHover: {
       opacity: 0,
-      backgroundColor: `${TERTIARY_COLOR}50`,
+      backgroundColor: `${colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']}50`,
       x: mouseXPosition - 32,
       y: mouseYPosition - 32,
     },
