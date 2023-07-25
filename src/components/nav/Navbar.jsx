@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
-import { Moon } from 'lucide-react';
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
@@ -14,20 +13,16 @@ import MenuContainer from './MenuContainer.component'
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { ThemesButton } from '../custom-buttons'
 
 const Navbar = ({ loading }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
-  const { 
-    cursorTextState: { cursorText, setCursorText },
-    hoverEvents: { enterHover, leaveHover }
-  } = useCursorContext()
+  const { hoverEvents: { enterHover, leaveHover }} = useCursorContext()
   const {
     activeState: { active, setActive },
     toggleState: { toggle, setToggle },
+    toggleThemeState: { toggleDarkMode }
   } = useGlobalStateContext()
-
-  const [toggleDarkMode, setToggleDarkMode] = useState(true)
 
   const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -44,6 +39,8 @@ const Navbar = ({ loading }) => {
     setToggle(false) 
   }
 
+  const tagVariantColor = toggleDarkMode ? 'secondary' : 'secondary-lt'
+
   return (
     <>
       <motion.nav
@@ -55,7 +52,7 @@ const Navbar = ({ loading }) => {
         }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 bg-primary/95`}
+        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95`}
       >
         {/* web */}
         <div className="w-full flex justify-between items-center mx-auto"> 
@@ -71,18 +68,17 @@ const Navbar = ({ loading }) => {
             className='flex items-center gap-2 py-4 z-40 group'
           >
             <ProfileLogo
-              classSVG="w-[32px] h-[21px] object-contain z-40 group-hover:animate-pulse"
+              classSVG="w-[32px] h-[21px] object-contain z-40 group-hover:animate-pulse dark:text-secondary text-secondary-lt"
               classPath=""
-              fill={SECONDARY_COLOR}
               role="img"
             />
-            <p className="text-white-100 text-[18px] cursor-pointer hidden md:flex text-sm">
+            <p className="dark:text-accent-3 text-accent-3-lt text-[18px] cursor-pointer hidden md:flex text-sm">
               Wenzie Querubin 
             </p>
           </Link>
           </motion.div>
           <motion.ul
-            className="list-none hidden md:flex flex-row gap-14">
+            className="list-none hidden md:flex flex-row items-center gap-14">
             {navLinks?.map((link, index) => {
               return (
                 <motion.li
@@ -91,7 +87,7 @@ const Navbar = ({ loading }) => {
                   onClick={() => setActive(link.title)}
                   onMouseEnter={() => enterHover("anchor")}
                   onMouseLeave={leaveHover}
-                  className="text-white-100 custom-pointer relative text-sm"
+                  className="dark:text-accent-3 text-accent-3-lt custom-pointer relative text-sm"
                 >
                   <motion.a
                     whileHover="hover"
@@ -101,27 +97,13 @@ const Navbar = ({ loading }) => {
                     className="py-4"
                   >
                     {link.title}
-                    <motion.i variants={tagVariants("left")} className="text-accent-2 absolute top-1 -left-3 font-semibold">{`<`}</motion.i>
-                    <motion.i variants={tagVariants("right")} className="text-accent-2 absolute top-1 -right-4 font-semibold">{`/>`}</motion.i>
+                    <motion.i variants={tagVariants("left", tagVariantColor)} className="dark:text-accent-2 text-accent-2-lt absolute top-1 -left-3 font-semibold">{`<`}</motion.i>
+                    <motion.i variants={tagVariants("right", tagVariantColor)} className="dark:text-accent-2 text-accent-2-lt absolute top-1 -right-4 font-semibold">{`/>`}</motion.i>
                   </motion.a>
                 </motion.li>
               )
             })}
-            <motion.button
-              onMouseEnter={() => enterHover("", {
-                ...cursorText,
-                offset: 75,
-                text: 'Dark Mode: ON',
-              })}
-              onMouseLeave={leaveHover}
-              onClick={() => setToggleDarkMode(!toggleDarkMode)}
-              
-              type="button"
-              className="dark-mode"
-            >
-              {/* <Moon className="w-6 h-6 text-accent-2" /> // dark mode OFF */}
-              <Moon className={`${toggleDarkMode ? 'text-secondary' : 'text-accent-2'} w-6 h-6`} />
-            </motion.button>
+            <ThemesButton />
           </motion.ul>
       {/* mobile - menu */}
         <MenuContainer

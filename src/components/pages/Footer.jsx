@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { styles } from "../../styles"
 
 import { fadeIn } from '../../utils/motion'
-import { SECONDARY_COLOR } from '../../themes/constants'
+import { colors } from '../../themes/constants'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -14,7 +14,10 @@ import { ProfileLogo } from '../icons'
 
 const Footer = () => {
 	const { hoverEvents: { enterHover, leaveHover } } = useCursorContext()
-	const { activeState: { setActive }, } = useGlobalStateContext()
+	const {
+		activeState: { setActive},
+		toggleThemeState: { toggleDarkMode },
+	} = useGlobalStateContext()
 
 
   return (
@@ -40,12 +43,12 @@ const Footer = () => {
 					<ProfileLogo
 						classSVG="w-7 h-7"
 						classPath=""
-						fill={SECONDARY_COLOR}
+						fill={colors[toggleDarkMode ? 'secondary' : 'secondary-lt']}
 						role="img"
 					/>
 				</Link>
-				<span className="flex flex-col xs:flex-row text-xs md:text-sm text-tertiary">
-					Design & Developed by <HighlightedText className="text-tertiary xs:px-1" delay={0.6}>Wenzie Querubin</HighlightedText>
+				<span className="flex flex-col xs:flex-row text-xs md:text-sm dark:text-tertiary text-tertiary-lt">
+					Design & Developed by <HighlightedText className="dark:text-tertiary text-tertiary-lt xs:px-1" delay={0.6}>Wenzie Querubin</HighlightedText>
 				</span>
 			</motion.div>
     </footer>

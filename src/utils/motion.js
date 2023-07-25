@@ -1,4 +1,5 @@
-import { SECONDARY_COLOR } from "../themes/constants";
+
+import { colors } from '../themes/constants'
 
 export const textVariant = (delay) => {
   return {
@@ -171,7 +172,7 @@ export const scaleImageVariant = (delay, duration) => {
 }
 
 
-export const tagVariants = (direction) => {
+export const tagVariants = (direction, isDarkTheme=true) => {
   return {
     initial: { 
       x: direction === "left" ? "4px" : direction === "right" ? "-4px" : 0,
@@ -183,7 +184,7 @@ export const tagVariants = (direction) => {
     selected: { 
       x: 0,
       opacity: 1,
-      color: SECONDARY_COLOR, // secondary
+      color: isDarkTheme ? colors['secondary'] : colors['secondary-lt'],
     },
     hover: {
       x: 0,

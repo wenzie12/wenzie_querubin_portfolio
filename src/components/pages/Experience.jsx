@@ -33,8 +33,8 @@ const Experience = () => {
       className={`${styles.contentContainer}`}
     >
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-tertiary`} >What I&apos;ve done so far</p>
-        <h2 className={`${styles.sectionHeadText} text-secondary`}>Experience</h2>
+        <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`} >What I&apos;ve done so far</p>
+        <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>Experience</h2>
       </motion.div>
 
       <motion.div variants={fadeIn("", "", 0.2, 1)} className={`${styles.contentSpacing} mt-4 flex flex-col`}> 

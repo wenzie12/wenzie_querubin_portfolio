@@ -16,14 +16,14 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
     <motion.div className="flex flex-col lg:w-1/3 mb-4 md:mb-0">
       <motion.p
         variants={fadeIn("", "", 0.2, 1)}
-        className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal text-tertiary`}
+        className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
       >
         <motion.span
           variants={chevronVariant}
           initial="initial"
           whileInView="animate"
         >
-          <ChevronDown className="w-6 h-6 text-secondary" />
+          <ChevronDown className="w-6 h-6 dark:text-secondary text-secondary-lt" />
         </motion.span>
         {label}
       </motion.p>
@@ -47,7 +47,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
               onMouseLeave={leaveHover} 
               className={`${className} flex flex-col gap-y-2 md:flex-row md:gap-y-0 items-center justify-center px-4 md:px-3`}
             >
-              <span className="text-xs text-accent-2 md:hidden">{item.name}</span>
+              <span className="text-xs dark:text-accent-2 text-accent-2-lt md:hidden">{item.name}</span>
               <ImageContainer
                 isMotion
                 variants={raiseUp}
@@ -75,8 +75,8 @@ const Tech = () => {
   return (
     <motion.div className={`${styles.contentContainer}`}>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-tertiary`} >TECHNOLOGIES</p>
-        <h2 className={`${styles.sectionHeadText} text-secondary`}>Tech Stack</h2>
+        <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`} >TECHNOLOGIES</p>
+        <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>Tech Stack</h2>
       </motion.div>
       <div className="flex flex-col md:w-2/3 text-justify">
         <motion.p
@@ -84,7 +84,7 @@ const Tech = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
+          className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
         >
           Here are some technologies I&apos;ve recently worked with.
         </motion.p>
@@ -98,7 +98,7 @@ const Tech = () => {
           leaveHover={leaveHover}
           techItems={tech}
           cursorText={cursorText}
-          className="border-secondary"
+          className=""
           imgClassName=""
         />
         <TechStack
@@ -107,7 +107,7 @@ const Tech = () => {
           leaveHover={leaveHover}
           techItems={design}
           cursorText={cursorText}
-          className="border-tertiary"
+          className=""
           imgClassName=""
         />
         <TechStack
@@ -116,7 +116,7 @@ const Tech = () => {
           leaveHover={leaveHover}
           techItems={others}
           cursorText={cursorText}
-          className="border-yellow-100"
+          className=""
           imgClassName=""
         /> 
       </motion.div>

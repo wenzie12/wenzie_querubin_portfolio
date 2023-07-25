@@ -38,8 +38,8 @@ const Projects = () => {
       >
         <motion.div variants={textVariant()}>
           {/* header */}
-          <p className={`${styles.sectionSubText} text-tertiary`} >MY WORK</p>
-          <h2 className={`${styles.sectionHeadText} text-secondary`}>Projects</h2>
+          <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`} >MY WORK</p>
+          <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>Projects</h2>
         </motion.div>
 
         <div className="">
@@ -49,7 +49,7 @@ const Projects = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
+              className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
             >
               Here are the projects that I am genuinely proud to have been a part of,
               as I played a significant role and made substantial contributions to their success.

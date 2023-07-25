@@ -10,8 +10,8 @@ const HashtagText = ({ label }) => {
         whileHover="animate"  
         initial="initial"
       >
-        <i className="text-secondary mr-1">#</i>
-        <span className="text-accent-2">{label}</span>
+        <i className="dark:text-secondary text-secondary-lt mr-1">#</i>
+        <span className="dark:text-accent-2 text-accent-2-lt">{label}</span>
       </motion.div>
   )
 }

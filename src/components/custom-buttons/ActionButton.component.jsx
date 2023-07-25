@@ -12,10 +12,10 @@ const ActionButton = ({ label="", isDisabled=false, ...otherProps}) => {
         whileHover: "animate",
       })}
       type="button"
-      className={`${styles.borderBox} ${!isDisabled ? 'border-secondary' : 'border-accent-1 cursor-not-allowed'} flex items-center justify-center rounded-md h-[40px] text-xs`}
+      className={`${styles.borderBox} ${!isDisabled ? 'dark:border-secondary border-secondary-lt' : 'dark:border-accent-1 border-accent-1-lt cursor-not-allowed'} flex items-center justify-center rounded-md h-[40px] text-xs`}
       { ...otherProps }
     >
-      <span className={`${isDisabled ? 'text-accent-2' : 'text-white-100'}`}>
+      <span className={`${isDisabled ? 'dark:text-accent-2 text-accent-2-lt' : 'dark:text-accent-3 text-accent-3-lt'}`}>
         {isDisabled && `// `}{label}
       </span>
     </motion.button>

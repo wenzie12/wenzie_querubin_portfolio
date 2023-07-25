@@ -11,14 +11,22 @@ export const GlobalStateProvider = ({ children }) => {
 
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
-  const [offset, setOffset] = useState(["start start", "end start"]) // section wrapper scrollTrigger offset settings 
+  const [toggleDarkMode, setToggleDarkMode] = useState(() => {
+    if (localStorage.getItem('theme')) {
+      if (localStorage.getItem('theme') === 'dark') return true
+      if (localStorage.getItem('theme') === 'light') return false
+    }
+
+    // dark is default
+    return true
+  })
 
   return (
     <GlobalStateContext.Provider
       value={{
         activeState: { active, setActive },
         toggleState: { toggle, setToggle },
-        offsetState: { offset, setOffset },
+        toggleThemeState: { toggleDarkMode, setToggleDarkMode },
       }}
     >
       {children}
