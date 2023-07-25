@@ -45,7 +45,7 @@ const ProjectLinks = ({
         className="p-3"
       >
         <motion.span variants={raiseUp} className="inline-block">
-          <ExternalLink className='text-secondary' />
+          <ExternalLink className='dark:text-secondary text-secondary-lt' />
         </motion.span>
       </motion.a>
       {playstore && (
@@ -70,7 +70,7 @@ const ProjectLinks = ({
           className="p-3"
         >
           <motion.span variants={raiseUp} className="inline-block">
-            <Play className='text-secondary' />
+            <Play className='dark:text-secondary text-secondary-lt' />
           </motion.span>
         </motion.a>
       )}
@@ -95,7 +95,7 @@ const ProjectLinks = ({
           className="p-3"
         >
           <motion.span variants={raiseUp} className="inline-block">
-            <Apple className='text-secondary' />
+            <Apple className='dark:text-secondary text-secondary-lt' />
           </motion.span>
         </motion.a>
       )}
@@ -122,7 +122,7 @@ const ProjectLinks = ({
           className="p-3"
         >
           <motion.span variants={raiseUp}>
-            <Code2 className='text-secondary' />
+            <Code2 className='dark:text-secondary text-secondary-lt' />
           </motion.span>
         </motion.a>
       )}

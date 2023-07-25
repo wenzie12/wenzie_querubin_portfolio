@@ -44,8 +44,8 @@ const About = () => {
       className={`${styles.contentContainer}`}
     >
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-tertiary`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText} text-secondary`}>About Me</h2>
+        <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`}>Introduction</p>
+        <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>About Me</h2>
       </motion.div>
       
       <div ref={ref} className="flex-col-reverse md:flex-row flex gap-x-10">
@@ -56,11 +56,11 @@ const About = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary`}
+            className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
           >
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
               I&apos;m Wenzie, a Frontend Software Developer currently working at
-              <i className='text-secondary'> Multisys Technologies Corporation</i>.
+              <i className='dark:text-secondary text-secondary-lt'> Multisys Technologies Corporation</i>.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
               {/* With a passion for crafting exceptional user experiences, 
@@ -68,9 +68,9 @@ const About = () => {
               As a frontend developer, I find joy in blending creativity and functionality. 
               My expertise lies in creating seamless interactions and visually appealing interfaces 
               through UI/UX design. My expertise lies in 
-              <HighlightedText className="text-white-100 px-1" delay={0.6}>ReactJS</HighlightedText>,
-              <HighlightedText className="text-white-100 px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
-              <HighlightedText className="text-white-100" delay={1}>TypeScript</HighlightedText>, 
+              <HighlightedText className="dark:text-accent-3 text-accent-3-lt px-1" delay={0.6}>ReactJS</HighlightedText>,
+              <HighlightedText className="dark:text-accent-3 text-accent-3-lt px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
+              <HighlightedText className="dark:text-accent-3 text-accent-3-lt" delay={1}>TypeScript</HighlightedText>, 
               enabling me to bring innovative and intuitive designs to life.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
@@ -85,14 +85,14 @@ const About = () => {
           </motion.p>
           <motion.p
             variants={fadeIn("", "", 0.2, 1)}
-            className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal text-tertiary`}
+            className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
           >
             <motion.span
               variants={chevronVariant}
               initial="initial"
               whileInView="animate"
             >
-              <ChevronDown className="w-6 h-6 text-secondary" />
+              <ChevronDown className="w-6 h-6 dark:text-secondary text-secondary-lt" />
             </motion.span>
             HOBBIES & INTERESTS
           </motion.p>
@@ -117,7 +117,7 @@ const About = () => {
           >
           <motion.span
             variants={fadeIn("up", "spring",0.4, .8)}
-            className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] bg-accent-1"
+            className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] dark:bg-accent-1 bg-accent-1-lt"
           />
           <motion.div
             variants={raiseUp}
@@ -132,7 +132,7 @@ const About = () => {
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className={`${styles.profileImage} bg-accent-2/80 aspect-auto rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
+              className={`${styles.profileImage} dark:bg-accent-2 bg-accent-2-lt/80 aspect-auto rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
             />
           </motion.div>
           </motion.div>

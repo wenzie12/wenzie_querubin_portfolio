@@ -43,8 +43,8 @@ const Contact = () => {
     <>
       <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`}>
         <motion.div variants={textVariant()}>
-          <p className={`${styles.sectionSubText} text-tertiary text-center`} >SEND ME A MESSAGE</p>
-          <h2 className={`${styles.sectionHeadText} text-secondary text-center`}>Contact</h2>
+          <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt text-center`} >SEND ME A MESSAGE</p>
+          <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt text-center`}>Contact</h2>
         </motion.div>
         {/* left section */}
         <motion.div className="flex-col-reverse md:flex-row flex">
@@ -54,7 +54,7 @@ const Contact = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className={`${styles.sectionText} ${styles.contentSpacing} text-tertiary text-center px-0 md:px-10 lg:px-20`}
+              className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt text-center px-0 md:px-10 lg:px-20`}
             >
               {`While I'm not actively seeking new opportunities at the moment, 
               I'm always available in my inbox. Whether you have any inquiries or simply want to greet, 
@@ -62,20 +62,20 @@ const Contact = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* <hr className="border-accent-2 mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
+        {/* <hr className="dark:border-accent-2 border-accent-2-lt mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
         {/* links */}
         <motion.div
           variants={staggerContainer(.2)}
           initial="hidden"
           whileInView="show"
-          className="w-full text-accent-1">
+          className="w-full dark:text-accent-1 text-accent-1-lt">
 					<motion.div className="flex flex-row justify-center w-full gap-x-4 -mt-2">
 						<SocialLinks resumeLinkOrientation="horizontal" isResumeIcon />
 					</motion.div>
 				</motion.div>
         <motion.div
           variants={fadeIn("", "", 0.2, 1)}
-          className="flex justify-center w-full p-4 text-secondary"
+          className="flex justify-center w-full p-4 dark:text-secondary text-secondary-lt"
         >
           {/* TODO: - convert to forms modal instead (of ease of use) */}
           <ActionButton

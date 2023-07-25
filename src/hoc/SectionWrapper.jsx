@@ -25,17 +25,17 @@ const SectionWrapper = (Component, idName) =>
           <motion.div className="relative">
             <motion.i
               variants={slideRightVariant("spring", 0.2)}
-              className="text-accent-2 absolute -top-6 md:-left-10 hidden md:block"
+              className="dark:text-accent-2 text-accent-2-lt absolute -top-6 md:-left-10 hidden md:block"
             >
               {`<${idName || 'section'}>`}
             </motion.i>
             <motion.div
               variants={scaleHeight("tween", 0.2)}
-              className="w-[1.5px] bg-accent-1 h-full absolute md:-left-8 hidden md:block"
+              className="w-[1.5px] dark:bg-accent-1 bg-accent-1-lt h-full absolute md:-left-8 hidden md:block"
             />
             <motion.i
               variants={slideRightVariant("spring", 0.4)}
-              className="text-accent-2 absolute -bottom-6 md:-left-10 hidden md:block"
+              className="dark:text-accent-2 text-accent-2-lt absolute -bottom-6 md:-left-10 hidden md:block"
             > 
               {`</${idName || 'section'}>`}
             </motion.i>

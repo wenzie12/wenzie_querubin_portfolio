@@ -11,8 +11,10 @@ import { ActionButton } from '../custom-buttons'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
+import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const ProjectCard = ({data=[], className="" }) => {
+  const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
   const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -31,17 +33,17 @@ const ProjectCard = ({data=[], className="" }) => {
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:bg-accent-1/40 rounded-md`}
+                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:dark:bg-accent-1/40 bg-accent-1-lt/40 rounded-md`}
               >
                 <motion.section
-                  className="p-6 md:px-4 my-4 md:my-0 bg-accent-1/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
+                  className="p-6 md:px-4 my-4 md:my-0 dark:bg-accent-1/40 bg-accent-1-lt/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
                   {/* content */}
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
                     <motion.div initial="hidden" whileInView="show" className={`${styles.cardContainer}`}>
                       <motion.h3
                         variants={textVariant(.2)}
-                        className={`${isOdd && 'md:text-right'} text-[1.25rem] lg:text-[1.5rem] text-secondary font-semibold italic`}
+                        className={`${isOdd && 'md:text-right'} text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold italic`}
                       >
                         {name}
                       </motion.h3>
@@ -50,7 +52,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 text-tertiary`}
+                        className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 dark:text-tertiary text-tertiary-lt`}
                       >
                         {description}
                       </motion.p>
@@ -64,7 +66,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         appstore={appstore}
                         source_code_link={source_code_link}
                       />
-                      <hr className="border-accent-2 border-1 rounded my-1" />
+                      <hr className="dark:border-accent-2 border-accent-2-lt border-1 rounded my-1" />
                       <motion.div className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
                         {tags?.map((tag, i) => (
                           <motion.div
@@ -95,7 +97,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="flex items-center justify-center">
                       <ImageContainer
                         isMotion
-                        onMouseEnter={() => enterHover("anchorBlended", {
+                        onMouseEnter={() => enterHover(toggleDarkMode ? "anchorBlended" : "anchor", {
                           ...cursorText,
                           text: "live server",
                           // offset: 0, 

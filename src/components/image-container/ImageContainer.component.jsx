@@ -47,14 +47,14 @@ const ImageContainer = ({
 
 const LoadingComponent = ({ className }) => (
 	<span className={`${className} absolute z-10 flex flex-col items-center justify-center animate-pulse`}>
-		<FileImage className="text-secondary w-10 h-10 animate-bounce"/>
-		{/* <i className="text-xs my-1 mix-blend-difference text-white-100">Loading Asset</i> */}
+		<FileImage className="dark:text-secondary text-secondary-lt w-10 h-10 animate-bounce"/>
+		{/* <i className="text-xs my-1 mix-blend-difference dark:text-accent-3 text-accent-3-lt">Loading Asset</i> */}
 	</span>
 )
 
 const BrokenImgComponent = ({ className }) => (
 	<span className={`${className} z-10 flex items-center justify-center`}>
-		<ImageOff className="text-secondary w-10 h-10"/>
+		<ImageOff className="dark:text-secondary text-secondary-lt w-10 h-10"/>
 	</span>
 )
 
