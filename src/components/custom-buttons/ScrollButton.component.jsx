@@ -57,6 +57,7 @@ const ScrollButton = ({ href='', loading })  => {
     >
       <a
         href={href}
+        aria-label="scroll down"
         onMouseEnter={() => enterHover("anchor", {
           ...cursorText,
           offset: 70,
