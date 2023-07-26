@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion'
 import { social_links, downloadables } from '../../constants/index'
-import { useMediaQuery } from 'react-responsive'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { FileDown } from 'lucide-react'
 
@@ -10,7 +10,7 @@ import { FileDown } from 'lucide-react'
 import { useCursorContext } from '../../context/HOCContext'
 
 const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) => {
-	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const { isTabletOrMobile } = useCustomMediaQuery()
 	const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -23,6 +23,8 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
       ease: "easeInOut"
     }
 	}
+
+	const animateOnHover = !isTabletOrMobile && { whileHover: hover }
 	
   return (
     <>
@@ -46,9 +48,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						onMouseLeave={leaveHover}
 						className="py-3 w-10 flex justify-center items-center"
 					>
-						<motion.span
-							whileHover={hover}
-						>
+						<motion.span {...animateOnHover}>
 							{icon({ className: "w-6 h-6 dark:text-secondary text-secondary-lt", })}
 						</motion.span>
 					</motion.a>)	
@@ -71,10 +71,10 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 			>
 				{
 					isResumeIcon ? 
-						<motion.span whileHover={hover}>
+						<motion.span {...animateOnHover}>
 							<FileDown className="w-6 h-6 dark:text-secondary text-secondary-lt"/>
 						</motion.span> :
-						<motion.div whileHover={hover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md dark:border-secondary border-secondary-lt border-2`}>
+						<motion.div {...animateOnHover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md dark:border-secondary border-secondary-lt border-2`}>
 							<span className={`${resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90"}  block dark:text-accent-3 text-accent-3-lt  text-center custom-pointer relative text-xs`}>
 								Resume
 							</span>

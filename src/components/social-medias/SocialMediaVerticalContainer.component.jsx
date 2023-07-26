@@ -1,13 +1,13 @@
 /* eslint-disable */
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useMediaQuery } from 'react-responsive'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { fadeIn, staggerContainer } from '../../utils/motion'
 import SocialLinks from './SocialLinks.component'
 
 const SocialMediaVerticalContainer = ({ loading }) => {
-	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const { isTabletOrMobile } = useCustomMediaQuery()
 
 	const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({

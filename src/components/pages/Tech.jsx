@@ -4,6 +4,7 @@ import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant, chevronVariant } 
 import { styles } from '../../styles'
 import { ImageContainer } from '../image-container'
 import { SectionWrapper } from '../../hoc'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { technologies } from '../../constants'
 import { ChevronDown } from 'lucide-react'
@@ -12,6 +13,7 @@ import { ChevronDown } from 'lucide-react'
 import { useCursorContext } from '../../context/HOCContext'
 
 const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, techItems, cursorText }) => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   return (
     <motion.div className="flex flex-col lg:w-1/3 mb-4 md:mb-0">
       <motion.p
@@ -49,10 +51,12 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
             >
               <span className="text-xs dark:text-accent-2 text-accent-2-lt md:hidden">{item.name}</span>
               <ImageContainer
-                isMotion
-                variants={raiseUp}
-                whileHover="animate"
-                initial="initial"
+                {...(!isTabletOrMobile && {
+                  isMotion: true,
+                  variants: raiseUp,
+                  whileHover: "animate",
+                  initial: "initial",
+                })}
                 src={item.icon}
                 alt={item.name}
                 className={`${imgClassName} aspect-square w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12`}

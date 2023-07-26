@@ -2,7 +2,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useMediaQuery } from 'react-responsive'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { styles } from '../../styles'
 import { navLinks } from '../../constants'
@@ -16,7 +16,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Navbar = ({ loading }) => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const { hoverEvents: { enterHover, leaveHover }} = useCursorContext()
   const {
     activeState: { active, setActive },
@@ -68,7 +68,7 @@ const Navbar = ({ loading }) => {
             className='flex items-center gap-2 py-4 z-40 group'
           >
             <ProfileLogo
-              classSVG="w-[32px] h-[21px] object-contain z-40 group-hover:animate-pulse dark:text-secondary text-secondary-lt"
+              classSVG="w-[32px] h-[21px] object-contain z-40 md:group-hover:animate-pulse dark:text-secondary text-secondary-lt"
               classPath=""
               role="img"
             />

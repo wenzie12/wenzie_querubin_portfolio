@@ -4,6 +4,7 @@ import { textVariant, raiseUp, fadeIn, zoomIn, scaleHeight, swivelVariants } fro
 import { styles } from "../../styles"
 
 import HighlightedText from '../custom-text/HighlightedText.component'
+import { useCustomMediaQuery } from '../../hooks'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -11,6 +12,7 @@ import { useGlobalStateContext } from '../../context/GlobalStateContext'
 import { colors } from '../../themes/constants'
 
 const VerticalTimeline = ({ data }) => {
+	const { isTabletOrMobile } = useCustomMediaQuery()
 	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
 	const {
 		cursorTextState: { cursorText },
@@ -65,16 +67,18 @@ const VerticalTimeline = ({ data }) => {
 								className="flex justify-start flex-col md:px-10 w-full"
 							>
 								<motion.div
-									variants={raiseUp}
-									whileHover="animate"
-									initial="initial"
+									{...(!isTabletOrMobile && {
+										variants: raiseUp,
+										whileHover: "animate",
+										initial: "initial",
+									})}
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className="relative p-4 md:p-8 mb-10 dark:bg-accent-1/40 bg-accent-1-lt/40 rounded-md"
+									className="relative p-4 md:p-8 mb-10 dark:bg-accent-1/50 bg-accent-1-lt/80 rounded-md"
 								>
 									{/* pointer */}
 									<span
-										className="hidden md:block absolute -left-5 top-2 dark:bg-accent-1/40 bg-accent-1-lt/40 w-10 h-4"
+										className="hidden md:block absolute -left-5 top-2 dark:bg-accent-1/50 bg-accent-1-lt/80 w-10 h-4"
 										style={{
 											clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)',
 										}}

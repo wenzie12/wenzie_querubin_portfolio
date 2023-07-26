@@ -2,18 +2,14 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { spring, useVariants } from "./cursorSettings";
 import ReactCurvedText from 'react-curved-text'
-import { useMediaQuery } from 'react-responsive'
-
+import { useCustomMediaQuery } from '../../hooks'
 
 // context
 import { useCursorContext } from '../../context/HOCContext' 
 
 const CursorWrapper = (Component) => 
 function HOC() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
-  // const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
-  // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-  // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+  const { isTabletOrMobile } = useCustomMediaQuery()
 
   const {
     cursorVariantState : { cursorVariant },
@@ -26,7 +22,6 @@ function HOC() {
   return (
     <div ref={ref} className="">
       {
-        // isPortrait && (isBigScreen || isRetina) &&
         !isTabletOrMobile &&
         <motion.div
           variants={variants}

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { raiseUp, fadeIn } from '../../utils/motion'
 import { ExternalLink, Play, Apple, Code2 } from 'lucide-react'
@@ -14,10 +15,16 @@ const ProjectLinks = ({
   appstore,
   source_code_link,
 }) => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
+
+  const animateOnHover = !isTabletOrMobile ? {
+    initial: "initial",
+    whileHover: "animate",          
+  } : {}
 
   return (
     <motion.div
@@ -25,8 +32,7 @@ const ProjectLinks = ({
       className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex justify-start items-center text-sm leading-[25px] gap-x-2`}
     >
       <motion.a
-        initial="initial"
-        whileHover="animate"
+        {...animateOnHover}
         onMouseEnter={() => enterHover("", {
           ...cursorText,
           offset: 75,
@@ -50,8 +56,7 @@ const ProjectLinks = ({
       </motion.a>
       {playstore && (
         <motion.a
-          initial="initial"
-          whileHover="animate"
+          {...animateOnHover}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,
@@ -76,8 +81,7 @@ const ProjectLinks = ({
       )}
       {appstore && (
         <motion.a
-          initial="initial"
-          whileHover="animate"
+          {...animateOnHover}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,
@@ -102,8 +106,7 @@ const ProjectLinks = ({
       {/* for github links */}
       {source_code_link && (
         <motion.a
-          initial="initial"
-          whileHover="animate"
+          {...animateOnHover}
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,

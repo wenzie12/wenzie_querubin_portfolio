@@ -2,13 +2,14 @@
 import { useRef } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import { fadeIn } from '../../utils/motion'
-
 import { ChevronsDown } from 'lucide-react'
+import { useCustomMediaQuery } from '../../hooks'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
 
 const ScrollButton = ({ href='', loading })  => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -66,7 +67,9 @@ const ScrollButton = ({ href='', loading })  => {
         onMouseLeave={leaveHover}
       >
         <motion.div
-          whileHover="hover"
+          {...(!isTabletOrMobile && {
+            whileHover: "hover",
+          })}
           animate="initial"
           className="w-[24px] h-[50px] border-none flex justify-center items-start py-2"
         > 

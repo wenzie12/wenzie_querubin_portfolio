@@ -32,6 +32,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
