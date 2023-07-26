@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { styles } from '../../styles'
 import { scaleHeight, staggerContainer, swivelVariants } from '../../utils/motion'
@@ -13,6 +14,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Hero = ({ loading }) => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText },
     hoverEvents: { enterHover, leaveHover },
@@ -31,11 +33,23 @@ const Hero = ({ loading }) => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
 
+  const animateOnLargeDevice = () => {
+    if (isTabletOrMobile) return { opacity }
+
+    return { opacity, scale, y }
+  }
+
   return (
     <>
       <motion.section
         ref={ targetRef }
-        style={{ opacity, scale, y, height: "100dvh", transition: "ease-in-out" }}
+        // prevent showing of cursor text on page load
+        onMouseEnter={() => enterHover("default", {
+          ...cursorText,
+          text: "",
+        })}
+        onMouseLeave={leaveHover}
+        style={{ ...animateOnLargeDevice(), height: "100dvh", transition: "ease-in-out" }}
         className="relative w-full flex items-center select-none"
         // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-accent-1`}
       > 

@@ -8,6 +8,7 @@ import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant
 import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { ChevronDown } from 'lucide-react';
 
@@ -20,6 +21,7 @@ import { useGlobalStateContext } from '../../context/GlobalStateContext'
 import { interests } from '../../constants'
 
 const About = () => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText, setCursorText },
     cursorVariantState : { setCursorVariant },
@@ -120,9 +122,11 @@ const About = () => {
             className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] dark:bg-accent-1 bg-accent-1-lt"
           />
           <motion.div
-            variants={raiseUp}
-            initial="initial"
-            whileHover="animate"
+            {...(!isTabletOrMobile && {
+              variants: raiseUp,
+              initial: "initial",
+              whileHover: "animate",
+            })}
             className={`${styles.profileImage} overflow-hidden flex justify-center`}
           >
             <ImageContainer

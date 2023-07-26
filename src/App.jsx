@@ -17,7 +17,7 @@ import { Navbar } from './components/nav'
 
 // context
 import { useLoadingContext } from './context/HOCContext'
-
+import { AnimatePresence } from 'framer-motion'
 const App = () => {
   const {loadingState: { loading, setLoading }} = useLoadingContext()
   // let { scrollYProgress } = useScroll()
@@ -31,12 +31,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <LandingPageLoader loading={loading} /> 
-        <div className="dark:font-light font-normal relative subpixel-antialiased overflow-hidden"> 
-          {!loading && (
-            <>
-            {/* landing page */}
-            <div className="">
+        <AnimatePresence>
+          {loading && <LandingPageLoader />}
+        </AnimatePresence>
+        {!loading &&
+          <div className="dark:font-light font-normal relative subpixel-antialiased overflow-hidden"> 
+            <div>
               <Navbar loading={loading} />
               <Hero loading={loading}/>
             </div>
@@ -48,10 +48,9 @@ const App = () => {
               <Projects />
               <Contact />
               <Footer />
-            </div>
-            </> 
-          )}    
-        </div>
+            </div>   
+          </div>
+        }
       </BrowserRouter>
     </>
   )

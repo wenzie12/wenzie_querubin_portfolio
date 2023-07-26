@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { textVariant, swivelVariants, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
 import { styles } from '../../styles'
@@ -14,6 +15,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const ProjectCard = ({data=[], className="" }) => {
+  const { isTabletOrMobile } = useCustomMediaQuery()
   const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
   const {
     cursorTextState: { cursorText },
@@ -33,10 +35,10 @@ const ProjectCard = ({data=[], className="" }) => {
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full lg:dark:bg-accent-1/40 lg:bg-accent-1-lt/40 rounded-md`}
+                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full dark:lg:bg-accent-1/50 lg:bg-accent-1-lt/80 rounded-md`}
               >
                 <motion.section
-                  className="p-6 md:px-4 my-4 md:my-0 dark:bg-accent-1/40 bg-accent-1-lt/40 md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
+                  className="p-6 md:px-4 my-4 md:my-0 dark:bg-accent-1/50 bg-accent-1-lt/80 md:bg-transparent dark:md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
                   {/* content */}
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
@@ -84,8 +86,10 @@ const ProjectCard = ({data=[], className="" }) => {
                   </div>
                 </motion.section>
                 <motion.section
-                  initial="hidden"
-                  whileHover="show" 
+                  {...(!isTabletOrMobile && {
+                    initial: "hidden",
+                    whileHover: "show",
+                  })}
                   className="section-2 hidden md:flex w-1/2 overflow-hidden relative"
                 >
                   <motion.div
@@ -100,13 +104,11 @@ const ProjectCard = ({data=[], className="" }) => {
                         onMouseEnter={() => enterHover(toggleDarkMode ? "anchorBlended" : "anchor", {
                           ...cursorText,
                           text: "live server",
-                          // offset: 0, 
-                          // color: "#000000",
                         })}
                         onMouseLeave={leaveHover}
                         src={image}
                         alt="project"
-                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0`}
+                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0 dark:border-0 border-2`}
                       />
                     </a>
                   </motion.div>
@@ -130,7 +132,7 @@ const ProjectCard = ({data=[], className="" }) => {
           name="more projects"
           onMouseEnter={() => enterHover("", {
             ...cursorText,
-            text: "comming soon! :D",
+            text: "coming soon! :D",
           })}
           onMouseLeave={leaveHover}
         />

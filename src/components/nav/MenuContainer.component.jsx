@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../../styles'
 import { staggerContainer, menuContainerVariants, fadeIn } from '../../utils/motion'
-import { useMediaQuery } from 'react-responsive'
+import { useCustomMediaQuery } from '../../hooks'
 
 import { MenuButton } from '../custom-buttons'
 import MenuLinks from './MenuLinks.component'
@@ -17,7 +17,8 @@ import { colors } from '../../themes/constants'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const MenuContainer = ({ toggle, setToggle }) => {
-	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const { isTabletOrMobile } = useCustomMediaQuery()
+
 	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
 
 	useEffect(() => {
@@ -32,6 +33,14 @@ const MenuContainer = ({ toggle, setToggle }) => {
 		>
 			{isTabletOrMobile && (
 				<>
+					<motion.div
+						variants={fadeIn("down", "spring", .1)}
+						animate="show"
+						initial="hidden"
+						className="mr-4 mb-1 z-40"
+					>
+						<ThemesButton />
+					</motion.div>
 					<MenuButton
 						isOpen={toggle}
 						onClick={() => setToggle(!toggle)}
@@ -39,14 +48,6 @@ const MenuContainer = ({ toggle, setToggle }) => {
 						transition={{ ease: "easeOut", duration: 0.2 }}
 						className="z-40 cursor-pointer py-2"
 					/>
-					<motion.div
-						variants={fadeIn("down", "spring", .1)}
-						animate="show"
-						initial="hidden"
-						className="ml-4 mb-1"
-					>
-						<ThemesButton />
-					</motion.div>
 				</>
 			)}
 			
