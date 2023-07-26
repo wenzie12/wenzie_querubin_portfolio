@@ -62,7 +62,6 @@ const Contact = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* <hr className="dark:border-accent-2 border-accent-2-lt mx-auto w-[30%] border-1 rounded my-1 animate-pulse" /> */}
         {/* links */}
         <motion.div
           variants={staggerContainer(.2)}

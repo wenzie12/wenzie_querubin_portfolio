@@ -6,8 +6,6 @@ import { navLinks } from '../../constants'
 // context
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
-import { colors } from '../../themes/constants'
-
 const MenuLinks = () => {
   const { 
 		activeState: { active, setActive },

@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { Moon } from 'lucide-react';
-import { raiseUp } from '../../utils/motion'
+import { Moon, Sun } from 'lucide-react';
+import { slideIn } from '../../utils/motion'
 
 import { colors } from '../../themes/constants'
 
@@ -20,12 +20,14 @@ const ThemesButton = () => {
   const element = document.documentElement
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
   
-  function onWindowMatch() {
+  const onWindowMatch = () => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
       element.classList.add("dark")
-    } else {
-      element.classList.remove("dark")
-    }
+      return
+    } 
+    
+    element.classList.remove("dark")
+    return
   }
 
   const setTheme = useCallback(() => {
@@ -49,16 +51,15 @@ const ThemesButton = () => {
   const cursorThemeText = {
     ...cursorText,
     offset: 65,
+    color: colors[toggleDarkMode ? 'accent-3' : 'accent-3-lt'],
     text: `Dark Mode: ${toggleDarkMode ? "ON" : "OFF"}`,
   }
 
-
   useEffect(() => {
-    setCursorText(cursorThemeText)
     setTheme()
+    setCursorText(cursorThemeText)
 
-    return setCursorText(cursorText)
-  }, [toggleDarkMode])
+  }, [toggleDarkMode,])
 
   onWindowMatch()
 
@@ -67,26 +68,35 @@ const ThemesButton = () => {
   element?.style.setProperty("--color-accent-3",  toggleDarkMode ? colors['accent-3'] : colors['accent-3-lt'])
 
   return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex justify-center items-center"
-    >
+    <div className="flex justify-center items-center">
       <motion.button
-        variants={raiseUp}
         onMouseEnter={() => enterHover("", cursorThemeText)}
         onMouseLeave={leaveHover}
-        onClick={() => {
-          setToggleDarkMode(!toggleDarkMode)
-        }}
+        onClick={() => setToggleDarkMode(!toggleDarkMode)}
         type="button"
-        id="theme"
-        aria-label="theme"
-        className="dark-mode"
+        id="toggle-themes"
+        aria-label="toggle themes"
+        className="flex items-center justify-center relative overflow-hidden md:hover:animate-pulse"
       >
-        <Moon className={`${toggleDarkMode ? 'dark:text-secondary text-secondary-lt' : 'dark:text-accent-2 text-accent-2-lt'} w-7 h-7`} />
+        <motion.span
+          variants={slideIn("up", "spring", .2, .4)}
+          initial="hidden"
+          animate={toggleDarkMode ? "show" : "hidden"}
+          className="absolute top-0"
+        >
+          <Moon className="w-6 h-6 dark:text-secondary" />
+        </motion.span>
+
+        <motion.span
+          variants={slideIn("up", "spring", .2, .4)}
+          initial="hidden"
+          animate={toggleDarkMode ?  "hidden" : "show"}
+          className=""
+        >
+          <Sun className="w-6 h-6 text-secondary-lt" />
+        </motion.span>
       </motion.button>
-    </motion.div>
+    </div>
     )
 }
 
