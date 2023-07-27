@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, lazy, Suspense, Fragment } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useCustomMediaQuery } from '../../hooks'
@@ -8,9 +8,8 @@ import { styles } from '../../styles'
 import { navLinks } from '../../constants'
 import { fadeIn, tagVariants } from '../../utils/motion'
 import { ProfileLogo } from '../icons'
+import MenuContainer from './MenuContainer.component'
 import { ThemesButton } from '../custom-buttons'
-
-const MenuContainer = lazy(() => import("./MenuContainer.component"))
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -111,12 +110,10 @@ const Navbar = ({ loading }) => {
             </motion.div>
           </motion.ul>
           {/* mobile - menu */}
-          <Suspense fallback={<Fragment />}>
-            <MenuContainer
-              toggle={toggle}
-              setToggle={setToggle}
-            />
-          </Suspense>
+          <MenuContainer
+            toggle={toggle}
+            setToggle={setToggle}
+          />
         </div>
       </motion.nav>
     </>
