@@ -1,19 +1,19 @@
-import { useEffect, lazy, Suspense, Fragment } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter } from "react-router-dom"
 import { CursorWrapper } from './hoc'
 
-// import { LandingPageLoader } from './components/pages'
+import {
+  LandingPageLoader,
+  Hero,
+  About,
+  Tech,
+  Experience,
+  Projects,
+  Contact,
+  Footer,
+} from './components/pages'
 
-const LandingPageLoader = lazy(() => import("./components/pages/LandingPageLoader"))
-const Hero = lazy(() => import("./components/pages/Hero"))
-const About = lazy(() => import("./components/pages/About"))
-const Tech = lazy(() => import("./components/pages/Tech"))
-const Experience = lazy(() => import("./components/pages/Experience"))
-const Projects = lazy(() => import("./components/pages/Projects"))
-const Contact = lazy(() => import("./components/pages/Contact"))
-const Footer = lazy(() => import("./components/pages/Footer"))
-
-const Navbar = lazy(() => import("./components/nav/Navbar"))
+import { Navbar } from './components/nav'
 
 // context
 import { useLoadingContext } from './context/HOCContext'
@@ -26,7 +26,6 @@ const App = () => {
   useEffect(() => {
     // for loading screen (on page load)
     setTimeout(() => setLoading(false), 1600)
-
   }, [setLoading])
 
   return (
@@ -35,24 +34,23 @@ const App = () => {
         <AnimatePresence>
           {loading && <LandingPageLoader />}
         </AnimatePresence>
-        <Suspense fallback={<Fragment />}>
-          {!loading &&
-            <div className="dark:font-light font-normal relative subpixel-antialiased overflow-hidden"> 
-              <div>
-                <Navbar loading={loading} />
-                <Hero loading={loading}/>
-              </div>
-              {/* sections */}
-              <div className="md:px-6">
-                <About />
-                <Tech />
-                <Experience />
-                <Projects />
-                <Contact />
-                <Footer />
-              </div>   
-            </div>}
-        </Suspense>
+        {!loading &&
+          <div className="dark:font-light font-normal relative subpixel-antialiased overflow-hidden"> 
+            <div>
+              <Navbar loading={loading} />
+              <Hero loading={loading}/>
+            </div>
+            {/* sections */}
+            <div className="md:px-6">
+              <About />
+              <Tech />
+              <Experience />
+              <Projects />
+              <Contact />
+              <Footer />
+            </div>   
+          </div>
+        }
       </BrowserRouter>
     </>
   )
