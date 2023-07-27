@@ -116,7 +116,7 @@ const Hero = ({ loading }) => {
               variants={swivelVariants}
               className={`${styles.heroSubText} inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4`}
             >
-              Experienced Frontend Developer with a passion
+              Frontend Developer with a passion
               for creating dynamic, user-friendly web
               applications using ReactJs.
             </motion.span>

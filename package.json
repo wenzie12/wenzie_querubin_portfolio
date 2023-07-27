@@ -11,20 +11,16 @@
   },
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",
-    "clsx": "^1.2.1",
     "framer-motion": "^10.12.18",
     "lucide-react": "^0.241.0",
     "netlify-plugin-cloudinary": "^1.2.0",
     "react": "^18.2.0",
     "react-curved-text": "^2.0.2",
-    "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.5.2",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.11.2",
-    "react-tilt": "^1.0.2",
     "tailwind-merge": "^1.13.1",
-    "tailwindcss-animate": "^1.0.6",
-    "zod": "^3.21.4"
+    "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.9",

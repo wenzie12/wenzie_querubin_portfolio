@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useTransition, } from 'react'
 import { motion } from 'framer-motion'
 
 import { FileImage, ImageOff } from 'lucide-react'
@@ -12,12 +12,19 @@ const ImageContainer = ({
 }) => {
 	const [isImgLoaded, setImgLoaded] = useState(false)
 	const [isError, setImgError] = useState(false)
+	const [isPending, startTransition] = useTransition()
 
 	useEffect(() => {
 		const img = new Image()
-		img.onload = () => setImgLoaded(true)
-		img.onerror = () => setImgError(true)
-		img.src = src
+		startTransition(() => {
+			img.onload = () => setImgLoaded(true)
+			img.onerror = () => setImgError(true)	
+			img.src = src
+		})
+		
+		// img.onload = () => setImgLoaded(true)
+		// img.onerror = () => setImgError(true)
+		// img.src = src
 	}, [src])
 
 	const isImgMotionComponent = (isMotion=false) => {
@@ -36,7 +43,7 @@ const ImageContainer = ({
 		
 		return (
 			<>
-				{!onLoadStatus && <LoadingComponent className={className} />}
+				{(!onLoadStatus || isPending) &&  <LoadingComponent className={className} />}
 				{isImgMotionComponent(isMotion)}
 			</>
 		)

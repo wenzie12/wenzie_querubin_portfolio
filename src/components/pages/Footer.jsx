@@ -1,3 +1,4 @@
+// import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { styles } from "../../styles"
@@ -18,6 +19,28 @@ const Footer = () => {
 		activeState: { setActive},
 		toggleThemeState: { toggleDarkMode },
 	} = useGlobalStateContext()
+	
+	// fetch github info
+	// const [githubInfo, setGitHubInfo] = useState({
+  //   stars: null,
+  //   forks: null,
+  // });
+
+  // useEffect(() => {
+  //   if (process.env.NODE_ENV !== 'production') {
+  //     return;
+  //   }
+  //   fetch('https://api.github.com/repos/wenzie_12/wenziequerubin')
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       const { stargazers_count, forks_count } = json;
+  //       setGitHubInfo({
+  //         stars: stargazers_count,
+  //         forks: forks_count,
+  //       });
+  //     })
+  //     .catch(e => console.error(e));
+  // }, []);
 
 
   return (
@@ -48,7 +71,7 @@ const Footer = () => {
 					/>
 				</Link>
 				<span className="flex flex-col xs:flex-row text-xs md:text-sm dark:text-tertiary text-tertiary-lt">
-					Design & Developed by <HighlightedText className="dark:text-tertiary text-tertiary-lt xs:px-1" delay={0.6}>Wenzie Querubin</HighlightedText>
+					Design & Developed by <HighlightedText className="text-accent-3 xs:px-1" delay={0.6}>Wenzie Querubin</HighlightedText>
 				</span>
 			</motion.div>
     </footer>

@@ -51,7 +51,7 @@ const Projects = () => {
               viewport={{ once: true }}
               className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
             >
-              Here are the projects that I am genuinely proud to have been a part of,
+              Here are few of the projects that I am genuinely proud to have been part of,
               as I played a significant role and made substantial contributions to their success.
             </motion.p>
           </div>

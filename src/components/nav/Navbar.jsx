@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef } from 'react'
+import { useRef, lazy, Suspense, Fragment } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useCustomMediaQuery } from '../../hooks'
@@ -8,8 +8,9 @@ import { styles } from '../../styles'
 import { navLinks } from '../../constants'
 import { fadeIn, tagVariants } from '../../utils/motion'
 import { ProfileLogo } from '../icons'
-import MenuContainer from './MenuContainer.component'
 import { ThemesButton } from '../custom-buttons'
+
+const MenuContainer = lazy(() => import("./MenuContainer.component"))
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -30,7 +31,6 @@ const Navbar = ({ loading }) => {
     offset: ["start start", "end start"],
   })
 
-  // const backgroundColor = useTransform(scrollYProgress, [0, 1], ["101B29", "#101B29"]) // for gradient bg, currently not in used
   const paddingTop = useTransform(scrollYProgress, [0, 1], [`${!isTabletOrMobile ? '2.5rem' : '1.5rem'}`,"1.2rem"])
 
   const handleOnClick = () => {
@@ -54,8 +54,8 @@ const Navbar = ({ loading }) => {
         animate={loading ? "hidden" : "show"}
         className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95`}
       >
-        {/* web */}
         <div className="w-full flex justify-between items-center mx-auto"> 
+          {/* web - menu */}
           <motion.div
             variants={fadeIn("down", "spring", .1)}
           >
@@ -110,11 +110,13 @@ const Navbar = ({ loading }) => {
               <ThemesButton />
             </motion.div>
           </motion.ul>
-      {/* mobile - menu */}
-        <MenuContainer
-          toggle={toggle}
-          setToggle={setToggle}
-        />
+          {/* mobile - menu */}
+          <Suspense fallback={<Fragment />}>
+            <MenuContainer
+              toggle={toggle}
+              setToggle={setToggle}
+            />
+          </Suspense>
         </div>
       </motion.nav>
     </>

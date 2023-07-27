@@ -29,4 +29,9 @@ export const styles = {
     ProjectImage: `
       w-full h-full
       lg:w-[544.01px] lg:h-[367.99px]`,
+
+    dropShadow2xl: "dark:drop-shadow-none drop-shadow-2xl drop-shadow-accent-3-lt",
+    // dropShadowMd: "dark:drop-shadow-none drop-shadow-md drop-shadow-accent-3-lt",
+    // dropShadowSm: "dark:drop-shadow-none drop-shadow-sm drop-shadow-accent-3-lt",
+    // dropShadowLg: "dark:drop-shadow-none drop-shadow-lg drop-shadow-accent-3-lt",
   };
