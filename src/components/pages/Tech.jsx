@@ -103,7 +103,7 @@ const Tech = () => {
           techItems={tech}
           cursorText={cursorText}
           className=""
-          imgClassName=""
+          imgClassName={styles.dropShadowMd}
         />
         <TechStack
           label="DESIGN"
@@ -112,7 +112,7 @@ const Tech = () => {
           techItems={design}
           cursorText={cursorText}
           className=""
-          imgClassName=""
+          imgClassName={styles.dropShadowMd}
         />
         <TechStack
           label="GENERAL"
@@ -121,7 +121,7 @@ const Tech = () => {
           techItems={others}
           cursorText={cursorText}
           className=""
-          imgClassName=""
+          imgClassName={styles.dropShadowMd}
         /> 
       </motion.div>
     </motion.div>

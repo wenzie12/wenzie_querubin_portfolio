@@ -16,7 +16,6 @@ import {
   resumeFile,
   } from "../assets";
 
-  // todo: balikan ko ung color theme neto
   export const LOGO_DATA = [
 		{ fill: colors['accent-2'], fill_lt: colors['accent-2-lt'], class: "w-6 h-6", path: "opacity-60", delay: 1.2, duration: .3, },
 		{ fill: colors['tertiary'], fill_lt: colors['tertiary-lt'], class: "w-8 h-8", path: "opacity-75", delay: 1, duration: .3, },

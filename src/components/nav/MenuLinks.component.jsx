@@ -27,7 +27,7 @@ const MenuLinks = () => {
 							setToggle(!toggle)
 							setActive(link.title)
 						}}
-						className="group dark:text-accent-3 text-accent-3-lt font-poppins text-end font-medium cursor-pointer text-[16px] sm:text-[24px]"
+						className="group dark:text-accent-3 text-accent-3-lt font-poppins text-end font-medium cursor-pointer text-sm sm:text-[24px]"
 					>
 						<motion.a
 							href={`#${link.id}`}

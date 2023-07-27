@@ -19,10 +19,11 @@ function HOC() {
   const ref = useRef(null);
   const variants = useVariants(ref);
 
-  return (
-    <div ref={ref} className="">
-      {
-        !isTabletOrMobile &&
+  if (isTabletOrMobile) return <Component />
+
+  if (!isTabletOrMobile) return (
+    <div {...(!isTabletOrMobile && { ref })}>
+      {!isTabletOrMobile &&
         <motion.div
           variants={variants}
           initial="default"
@@ -48,8 +49,7 @@ function HOC() {
               />
             ) : ""}
           </div>
-        </motion.div>
-      }
+        </motion.div>}
       <Component />
     </div>
 	)

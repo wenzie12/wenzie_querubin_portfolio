@@ -74,7 +74,7 @@ const VerticalTimeline = ({ data }) => {
 									})}
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className="relative p-4 md:p-8 mb-10 dark:bg-accent-1/50 bg-accent-1-lt/80 rounded-md"
+									className={`${styles.dropShadowMd} relative p-4 md:p-8 mb-10 dark:bg-accent-1/50 bg-accent-1-lt/80 rounded-md`}
 								>
 									{/* pointer */}
 									<span
@@ -84,7 +84,7 @@ const VerticalTimeline = ({ data }) => {
 										}}
 									/>
 
-									{/* content-container */}
+									{/* content-container card */}
 									<motion.div
 										initial="hidden"
 										whileInView="show"
@@ -124,7 +124,7 @@ const VerticalTimeline = ({ data }) => {
 											viewport={{ once: true }}
 											className="lg:hidden font-normal"
 										>
-											<HighlightedText className="px-1" color={colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']} delay={0.8} duration={0.4}>
+											<HighlightedText className="px-1 text-accent-3" color={colors[toggleDarkMode ? 'tertiary' : 'tertiary-lt']} delay={0.8} duration={0.4}>
 												{date}
 											</HighlightedText>
 										</motion.p>
@@ -141,7 +141,7 @@ const VerticalTimeline = ({ data }) => {
 												>
 													<motion.span
 														variants={scaleHeight("spring", i * 0.3, 0.5)}
-														className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full dark:bg-secondary/60 bg-secondary-lt/60"
+														className="absolute top-0 -left-3 rounded-tl-sm rounded-bl-sm w-1 h-full dark:bg-secondary/80 bg-secondary-lt/80"
 													/>
 													{point}
 												</motion.div>

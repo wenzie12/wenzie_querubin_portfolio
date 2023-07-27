@@ -13,12 +13,10 @@ const HighlightedText = ({
 	color=`${colors['secondary']}`
 }) => {
 	const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
-	
 	const secondaryColor = colors[toggleDarkMode ? 'secondary' : 'secondary-lt']
 
 	const highlightVariants = {
 		initial: {
-			// backgroundImage: 'linear-gradient(#D4494C, #D4494C)',
 			backgroundImage: `linear-gradient(${secondaryColor}, ${secondaryColor})`,
 			backgroundSize: "100% 100%",
 			backgroundPosition: "100% 0px",
@@ -47,7 +45,6 @@ const HighlightedText = ({
 			whileInView="animate"
 			viewport={{ once: false, amount: 0.25 }}
 			className={`${className} inline-block`}
-			// bg-gradient-to-r bg-no-repeat from-secondary-100 to-secondary
     >
      {children}
     </motion.i>

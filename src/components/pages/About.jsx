@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { SectionWrapper } from '../../hoc'
 
-import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, scaleImageVariant, chevronVariant } from '../../utils/motion'
+import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container'
@@ -70,9 +70,9 @@ const About = () => {
               As a frontend developer, I find joy in blending creativity and functionality. 
               My expertise lies in creating seamless interactions and visually appealing interfaces 
               through UI/UX design. My expertise lies in 
-              <HighlightedText className="dark:text-accent-3 text-accent-3-lt px-1" delay={0.6}>ReactJS</HighlightedText>,
-              <HighlightedText className="dark:text-accent-3 text-accent-3-lt px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
-              <HighlightedText className="dark:text-accent-3 text-accent-3-lt" delay={1}>TypeScript</HighlightedText>, 
+              <HighlightedText className="text-accent-3 px-1" delay={0.6}>ReactJS</HighlightedText>,
+              <HighlightedText className="text-accent-3 px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
+              <HighlightedText className="text-accent-3" delay={1}>TypeScript</HighlightedText>, 
               enabling me to bring innovative and intuitive designs to life.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
@@ -87,7 +87,7 @@ const About = () => {
           </motion.p>
           <motion.p
             variants={fadeIn("", "", 0.2, 1)}
-            className={`${styles.sectionText} ${styles.contentSpacing} flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
+            className={`${styles.sectionText} ${styles.contentSpacing} hidden lg:flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
           >
             <motion.span
               variants={chevronVariant}
@@ -110,33 +110,59 @@ const About = () => {
         </div>
         
         {/* right section */}
-        <motion.div className="flex justify-center md:w-1/2 py-8 md:py-0">
+        <motion.div className="flex justify-center md:w-1/2 pt-8 pb-4 md:py-0">
           <motion.div
-            variants={fadeIn("up", "tween",0.2, .4)}
+            variants={fadeIn("up", "spring", 0.3, 0.8)}
             initial="hidden"
             whileInView="show"
-            className="group relative"
+            className="group"
           >
-          <motion.span
-            variants={fadeIn("up", "spring",0.4, .8)}
-            className="absolute top-3 -right-3 md:-top-6 md:-right-6 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] dark:bg-accent-1 bg-accent-1-lt"
-          />
           <motion.div
             {...(!isTabletOrMobile && {
               variants: raiseUp,
               initial: "initial",
               whileHover: "animate",
             })}
-            className={`${styles.profileImage} overflow-hidden flex justify-center`}
+            className={`${styles.profileImage} ${styles.dropShadow2xl} overflow-hidden flex justify-center mx-auto`}
           >
+            {/* image backdrop */}
+            {/* <motion.span
+              variants={fadeIn("up", "spring",0.4, .8)}
+              className={`${styles.profileImage} absolute top-16 right-1 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] dark:bg-accent-1 bg-accent-1-lt`}
+            /> */}
             <ImageContainer
-              isMotion
-              variants={scaleImageVariant}
               onMouseEnter={() => enterHover("hideHover")}
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className={`${styles.profileImage} dark:bg-accent-2 bg-accent-2-lt/80 aspect-auto rounded-sm grayscale-0 md:grayscale group-hover:grayscale-0`}
+              className={`
+                ${styles.profileImage}
+                aspect-auto rounded-sm
+              dark:bg-accent-2 bg-accent-2-lt/80
+                grayscale-0 md:grayscale group-hover:grayscale-0
+              `}
+            />
+          </motion.div>
+          <motion.div className='mt-2'>
+            <motion.p
+              variants={fadeIn("", "", 0.2, 1)}
+              className={`${styles.sectionText} ${styles.contentSpacing} hidden md:flex lg:hidden flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt overflow-hidden`}
+            >
+              <motion.span
+                variants={chevronVariant}
+                initial="initial"
+                whileInView="animate"
+              >
+                <ChevronDown className="w-6 h-6 dark:text-secondary text-secondary-lt" />
+              </motion.span>
+              HOBBIES & INTERESTS
+            </motion.p>
+            <InterestsGroup
+              data={interests}
+              enterHover={enterHover}
+              leaveHover={leaveHover}
+              className=" hidden md:flex lg:hidden flex-wrap gap-4"
+              // className="md:hidden flex flex-wrap gap-4"
             />
           </motion.div>
           </motion.div>
@@ -146,7 +172,7 @@ const About = () => {
         data={interests}
         enterHover={enterHover}
         leaveHover={leaveHover}
-        className="lg:hidden flex flex-wrap gap-4"
+        className="md:hidden flex flex-wrap gap-4"
         // className="md:hidden flex flex-wrap gap-4"
       />
     </motion.div>

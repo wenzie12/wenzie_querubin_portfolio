@@ -15,7 +15,6 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Contact = () => {
-
   const {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
