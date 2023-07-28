@@ -32,7 +32,7 @@ const LandingPageLoader = () => {
 			>
 				<motion.div
 					initial={{ scale: 1, opacity: 1, }}
-					exit={{ scale: 0, opacity: 0, transition: { duration: .35,} }}
+					exit={{ scale: 0, opacity: 0, transition: { duration: .35 } }}
 					className="flex gap-2 items-center"
 				>
 					{LOGO_DATA?.map((item, i) => (

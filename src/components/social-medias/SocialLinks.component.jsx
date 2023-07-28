@@ -64,7 +64,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 				onMouseEnter={() => enterHover("anchor", {
 					...cursorText,
 					offset: 15,
-					text: "download resume",
+					text: "Download Resume",
 				})}
 				onMouseLeave={leaveHover}
 				download

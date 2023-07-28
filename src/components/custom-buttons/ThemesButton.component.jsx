@@ -82,7 +82,7 @@ const ThemesButton = () => {
         className="flex items-center justify-center relative overflow-hidden md:hover:animate-pulse"
       >
         <motion.span
-          variants={slideIn("up", "spring", .25, .4)}
+          variants={slideIn("up", "spring", .1, .4)}
           initial="hidden"
           animate={toggleDarkMode ? "show" : "hidden"}
           className="absolute top-0"
@@ -91,7 +91,7 @@ const ThemesButton = () => {
         </motion.span>
 
         <motion.span
-          variants={slideIn("up", "spring", .25, .4)}
+          variants={slideIn("up", "spring", .1, .4)}
           initial="hidden"
           animate={toggleDarkMode ?  "hidden" : "show"}
         >
