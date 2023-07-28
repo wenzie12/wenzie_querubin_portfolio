@@ -20,13 +20,13 @@ const MetatagDecorator = ({
     <meta property="og:image" content={imageUrl} />
     <meta property="og:video" content={videoUrl} />
     <meta name="theme-color" content={themeColor} />
-    <meta
-      property="og:url"
+    <meta property="og:url"
       // content={siteUrl + window.location.pathname + window.location.search}
       content={siteUrl}
     />
     <meta name="twitter:card" content={twitterCard} />
     <meta property="twitter:image:alt" content={twitterImageAlt} />
+
   </Helmet>
 );
 
