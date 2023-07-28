@@ -39,8 +39,8 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <meta property="og:image" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" data-react-helmet />
-        <meta property="og:url" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" data-react-helmet />
+        <meta property="og:image" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" />
+        <meta property="og:url" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" />
       </Helmet>
       {/* <MetatagDecorator
         description="Frontend Software Engineer specializing in ReactJS"
