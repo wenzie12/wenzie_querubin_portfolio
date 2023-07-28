@@ -1,5 +1,22 @@
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
-  [plugins.inputs]
-  cloudName = "wenzie12sg"
+[plugins.inputs]
+cloudName = "wenzie12sg"
+
+[build.processing]
+  skip_processing = false
+  
+[build.processing.css]
+  bundle = false
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+  
+[build.processing.images]
+  compress = true
+
+[build.processing.html]
+  pretty_urls = true
