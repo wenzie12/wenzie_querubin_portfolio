@@ -41,7 +41,7 @@ const App = () => {
         description="Frontend Software Engineer specializing in ReactJS"
         imageUrl="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png"
         siteName="wenziequerubin"
-        siteUrl="https://www.wenziequerubin.com"
+        siteUrl="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png"
 
         themeColor={colors[toggleDarkMode ? 'primary' : 'primary-lt']}
         twitterCard=""
