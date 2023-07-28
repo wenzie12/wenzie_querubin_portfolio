@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 import { BrowserRouter } from "react-router-dom"
+import { AnimatePresence } from 'framer-motion'
 import { CursorWrapper } from './hoc'
+
+import MetatagDecorator from './components/custom-metatags/MetatagDecorator'
+import { colors } from './themes/constants'
 
 import {
   LandingPageLoader,
@@ -17,8 +21,11 @@ import { Navbar } from './components/nav'
 
 // context
 import { useLoadingContext } from './context/HOCContext'
-import { AnimatePresence } from 'framer-motion'
+import { useGlobalStateContext } from './context/GlobalStateContext'
+
+
 const App = () => {
+  const { toggleThemeState: { toggleDarkMode } } = useGlobalStateContext()
   const { loadingState: { loading, setLoading }} = useLoadingContext()
   // let { scrollYProgress } = useScroll()
   // let y = useTransform(scrollYProgress, [0,2], ["0%", "100%"])
@@ -30,6 +37,16 @@ const App = () => {
 
   return (
     <>
+      <MetatagDecorator
+        description="Frontend Software Engineer specializing in ReactJS"
+        imageUrl="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png"
+        siteName="wenziequerubin"
+        siteUrl="https://www.wenziequerubin.com"
+
+        themeColor={colors[toggleDarkMode ? 'primary' : 'primary-lt']}
+        twitterCard=""
+        twitterImageAlt=""
+      />
       <BrowserRouter>
         <AnimatePresence>
           {loading && <LandingPageLoader />}
