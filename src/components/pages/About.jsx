@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { twMerge } from 'tailwind-merge';
 import { SectionWrapper } from '../../hoc'
 
 import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, chevronVariant } from '../../utils/motion'
@@ -43,11 +44,11 @@ const About = () => {
   return (
     <motion.div
       inView={inView}
-      className={`${styles.contentContainer}`}
+      className={twMerge(styles.contentContainer, "")}
     >
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>About Me</h2>
+        <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")}>Introduction</p>
+        <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>About Me</h2>
       </motion.div>
       
       <div ref={ref} className="flex-col-reverse md:flex-row flex gap-x-10">
@@ -58,7 +59,7 @@ const About = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
+            className={twMerge(styles.sectionText, styles.contentSpacing, "dark:text-tertiary text-tertiary-lt")}
           >
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
               I&apos;m Wenzie, a Frontend Software Developer currently working at
@@ -87,7 +88,7 @@ const About = () => {
           </motion.p>
           <motion.p
             variants={fadeIn("", "", 0.2, 1)}
-            className={`${styles.sectionText} ${styles.contentSpacing} hidden lg:flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
+            className={twMerge(styles.sectionText, styles.contentSpacing, "hidden lg:flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt")}
           >
             <motion.span
               variants={chevronVariant}
@@ -123,7 +124,7 @@ const About = () => {
               initial: "initial",
               whileHover: "animate",
             })}
-            className={`${styles.profileImage} ${styles.dropShadow2xl} overflow-hidden flex justify-center mx-auto`}
+            className={twMerge(styles.profileImage, styles.dropShadow2xl, "overflow-hidden flex justify-center mx-auto")}
           >
             {/* image backdrop */}
             {/* <motion.span
@@ -135,18 +136,13 @@ const About = () => {
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className={`
-                ${styles.profileImage}
-                aspect-auto rounded-sm
-              dark:bg-accent-2 bg-accent-2-lt/80
-                grayscale-0 md:grayscale group-hover:grayscale-0
-              `}
+              className={twMerge(styles.profileImage, "aspect-auto rounded-sm dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0")}
             />
           </motion.div>
           <motion.div className='mt-2'>
             <motion.p
               variants={fadeIn("", "", 0.2, 1)}
-              className={`${styles.sectionText} ${styles.contentSpacing} hidden md:flex lg:hidden flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt overflow-hidden`}
+              className={twMerge(styles.sectionText, styles.contentSpacing, "hidden md:flex lg:hidden flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt overflow-hidden")}
             >
               <motion.span
                 variants={chevronVariant}

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect, } from 'react'
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 
 import { FileImage, ImageOff } from 'lucide-react'
 
@@ -24,11 +25,11 @@ const ImageContainer = ({
 		if (isMotion) return (
 			<motion.img
 				src={src}
-				className={`relative ${className}`}
+				className={twMerge("relative", className)}
 				{ ...imgProps }
 			/>
 		)
-		return <img src={src} className={`relative ${className}`} { ...imgProps } />
+		return <img src={src} className={twMerge("relative", className)} { ...imgProps } />
 	}
 
 	const imageRenderStatus = (onLoadStatus, imgSrc) => {
@@ -46,14 +47,14 @@ const ImageContainer = ({
 }
 
 const LoadingComponent = ({ className }) => (
-	<span className={`${className} absolute z-10 flex flex-col items-center justify-center animate-pulse`}>
+	<span className={twMerge("absolute z-10 flex flex-col items-center justify-center animate-pulse", className)}>
 		<FileImage className="dark:text-secondary text-secondary-lt w-10 h-10 animate-bounce"/>
 		{/* <i className="text-xs my-1 mix-blend-difference dark:text-accent-3 text-accent-3-lt">Loading Asset</i> */}
 	</span>
 )
 
 const BrokenImgComponent = ({ className }) => (
-	<span className={`${className} z-10 flex items-center justify-center`}>
+	<span className={twMerge("z-10 flex items-center justify-center", className)}>
 		<ImageOff className="dark:text-secondary text-secondary-lt w-10 h-10"/>
 	</span>
 )

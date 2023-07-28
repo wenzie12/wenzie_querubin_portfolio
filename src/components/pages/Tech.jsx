@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { ImageContainer } from '../image-container'
@@ -18,7 +19,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
     <motion.div className="flex flex-col lg:w-1/3 mb-4 md:mb-0">
       <motion.p
         variants={fadeIn("", "", 0.2, 1)}
-        className={`${styles.sectionText} flex flex-row items-center gap-2 text-normal dark:text-tertiary text-tertiary-lt`}
+        className={twMerge(styles.sectionText, "flex flex-row items-center gap-2 text-normal dark:text-tertiary text-tertiary-lt")}
       >
         <motion.span
           variants={chevronVariant}
@@ -47,7 +48,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
                 // color: "#f3f3f3",
               })}
               onMouseLeave={leaveHover} 
-              className={`${className} flex flex-col gap-y-2 md:flex-row md:gap-y-0 items-center justify-center px-4 md:px-3`}
+              className={twMerge("flex flex-col gap-y-2 md:flex-row md:gap-y-0 items-center justify-center px-4 md:px-3", className)}
             >
               <span className="text-xs dark:text-accent-2 text-accent-2-lt md:hidden">{item.name}</span>
               <ImageContainer
@@ -59,7 +60,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
                 })}
                 src={item.icon}
                 alt={item.name}
-                className={`${imgClassName} aspect-square w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12`}
+                className={twMerge("aspect-square w-9 h-9 md:w-10 md:h-10 lg:w-12 lg:h-12", imgClassName)}
               />
             </motion.div>
           )
@@ -77,10 +78,10 @@ const Tech = () => {
   const { tech, design, others } = technologies
 
   return (
-    <motion.div className={`${styles.contentContainer}`}>
+    <motion.div className={twMerge(styles.contentContainer, "")}>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`} >TECHNOLOGIES</p>
-        <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>Tech Stack</h2>
+        <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")} >TECHNOLOGIES</p>
+        <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>Tech Stack</h2>
       </motion.div>
       <div className="flex flex-col md:w-2/3 text-justify">
         <motion.p
@@ -88,7 +89,7 @@ const Tech = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
+          className={twMerge(styles.sectionText, styles.contentSpacing, "dark:text-tertiary text-tertiary-lt")}
         >
           Here are some technologies I&apos;ve recently worked with.
         </motion.p>

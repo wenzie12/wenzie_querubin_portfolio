@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 import { colors } from '../../themes/constants'
 
 // context
@@ -44,7 +45,7 @@ const HighlightedText = ({
 			initial="initial"
 			whileInView="animate"
 			viewport={{ once: false, amount: 0.25 }}
-			className={`${className} inline-block`}
+			className={twMerge("inline-block", className)}
     >
      {children}
     </motion.i>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
 
 import { textVariant, swivelVariants } from '../../utils/motion'
@@ -34,12 +35,12 @@ const Projects = () => {
       <motion.div
         inView={inView}
         ref={ref}
-        className={`${styles.contentContainer}`}
+        className={twMerge(styles.contentContainer, "")}
       >
         <motion.div variants={textVariant()}>
           {/* header */}
-          <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt`} >MY WORK</p>
-          <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt`}>Projects</h2>
+          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")} >MY WORK</p>
+          <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>Projects</h2>
         </motion.div>
 
         <div className="">
@@ -49,7 +50,7 @@ const Projects = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt`}
+              className={twMerge(styles.sectionText, "dark:text-tertiary text-tertiary-lt")}
             >
               Here are few of the projects that I am genuinely proud to have been part of,
               as I played a significant role and made substantial contributions to their success.

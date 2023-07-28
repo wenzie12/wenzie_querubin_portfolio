@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { styles } from "../../styles"
+import { twMerge } from 'tailwind-merge'
 
 import { fadeIn } from '../../utils/motion'
 import { colors } from '../../themes/constants'
@@ -44,7 +45,7 @@ const Footer = () => {
 
 
   return (
-    <footer className={`${styles.paddingX} flex flex-col gap-4 items-center justify-end pb-10 h-80 w-full`}>
+    <footer className={twMerge(styles.paddingX, "flex flex-col gap-4 items-center justify-end pb-10 h-80 w-full")}>
 			<motion.div
 				variants={fadeIn("", "tween", .2 , .4)}
 				initial="hidden"

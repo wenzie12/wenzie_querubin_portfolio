@@ -3,8 +3,6 @@ import { BrowserRouter } from "react-router-dom"
 import { AnimatePresence } from 'framer-motion'
 import { CursorWrapper } from './hoc'
 
-import { Helmet } from 'react-helmet-async'
-
 import {
   LandingPageLoader,
   Hero,
@@ -34,11 +32,6 @@ const App = () => {
 
   return (
     <>
-      {/* <Helmet>
-        <meta property="og:image" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" />
-        <meta property="og:url" content="https://res.cloudinary.com/wenzie12sg/image/upload/v1689567401/wenziequerubin-portfolio-assets/img-link-banner_nqy6kz.png" />
-      </Helmet> */}
-
       <BrowserRouter>
         <AnimatePresence>
           {loading && <LandingPageLoader />}

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { twMerge, twJoin } from 'tailwind-merge'
 import { useCustomMediaQuery } from '../../hooks'
 
 import { textVariant, swivelVariants, zoomIn, fadeIn, scaleImageVariant } from '../../utils/motion'
@@ -35,17 +36,21 @@ const ProjectCard = ({data=[], className="" }) => {
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={`${className} ${isOdd && 'flex-row-reverse'} flex w-full dark:lg:bg-accent-1/50 lg:bg-accent-1-lt/80 rounded-md`}
+                className={twMerge(className, isOdd && 'flex-row-reverse', "flex w-full dark:lg:bg-accent-1/50 lg:bg-accent-1-lt/80 rounded-md")}
               >
                 <motion.section
                   className="p-6 md:px-4 my-4 md:my-0 dark:bg-accent-1/50 bg-accent-1-lt/80 md:bg-transparent dark:md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
                 >
                   {/* content */}
                   <div className="md:p-0 lg:p-4 flex flex-col place-content-between">
-                    <motion.div initial="hidden" whileInView="show" className={`${styles.cardContainer}`}>
+                    <motion.div
+                      initial="hidden"
+                      whileInView="show"
+                      className={twMerge(styles.cardContainer, "")}
+                    >
                       <motion.h3
                         variants={textVariant(.2)}
-                        className={`${isOdd && 'md:text-right'} text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold italic`}
+                        className={twJoin(isOdd && 'md:text-right', "text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold italic")}
                       >
                         {name}
                       </motion.h3>
@@ -54,12 +59,12 @@ const ProjectCard = ({data=[], className="" }) => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={`${styles.cardSpacing} text-justify text-sm leading-[25px] py-4 dark:text-tertiary text-tertiary-lt`}
+                        className={twMerge(styles.cardSpacing, "text-justify text-sm leading-[25px] py-4 dark:text-tertiary text-tertiary-lt")}
                       >
                         {description}
                       </motion.p>
                     </motion.div>
-                    <div className={`${styles.cardContainer}`}>
+                    <div className={twMerge(styles.cardContainer, "")}>
                       {/* links */}
                       <ProjectLinks
                         isOdd={isOdd}
@@ -69,7 +74,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         source_code_link={source_code_link}
                       />
                       <hr className="dark:border-accent-2 border-accent-2-lt border-1 rounded my-1" />
-                      <motion.div className={`${!isOdd ? 'flex-row' : 'md:flex-row-reverse'} flex flex-wrap gap-4 hashtags`}>
+                      <motion.div className={twJoin(!isOdd ? 'flex-row' : 'md:flex-row-reverse', "flex flex-wrap gap-4 hashtags")}>
                         {tags?.map((tag, i) => (
                           <motion.div
                             key={i}
@@ -108,7 +113,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         onMouseLeave={leaveHover}
                         src={image}
                         alt="project"
-                        className={`${styles.ProjectImage} aspect-auto object-fit object-center grayscale hover:grayscale-0 dark:border-0 border-2`}
+                        className={twMerge(styles.ProjectImage, "aspect-auto object-fit object-center grayscale hover:grayscale-0 dark:border-0 border-2")}
                       />
                     </a>
                   </motion.div>

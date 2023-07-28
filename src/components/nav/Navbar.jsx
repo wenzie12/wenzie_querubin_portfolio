@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useRef } from 'react'
+import { twMerge } from 'tailwind-merge'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useCustomMediaQuery } from '../../hooks'
@@ -47,11 +48,11 @@ const Navbar = ({ loading }) => {
         style={{
           // backgroundColor,
           paddingTop, 
-          transition: "200ms ease-in-out",
+          transition: "300ms ease-in-out 300ms",
         }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95`}
+        className={twMerge(styles.paddingX, 'w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95')}
       >
         <div className="w-full flex justify-between items-center mx-auto"> 
           {/* web - menu */}

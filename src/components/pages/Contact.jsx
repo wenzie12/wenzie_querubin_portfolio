@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
 import { useInView } from 'react-intersection-observer' 
 
@@ -40,10 +41,10 @@ const Contact = () => {
 
   return (
     <>
-      <motion.div ref={ref} inView={inView} className={`${styles.contentContainer}`}>
+      <motion.div ref={ref} inView={inView} className={twMerge(styles.contentContainer, "")}>
         <motion.div variants={textVariant()}>
-          <p className={`${styles.sectionSubText} dark:text-tertiary text-tertiary-lt text-center`} >SEND ME A MESSAGE</p>
-          <h2 className={`${styles.sectionHeadText} dark:text-secondary text-secondary-lt text-center`}>Contact</h2>
+          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt text-center")} >SEND ME A MESSAGE</p>
+          <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt text-center")}>Contact</h2>
         </motion.div>
         {/* left section */}
         <motion.div className="flex-col-reverse md:flex-row flex">
@@ -53,7 +54,7 @@ const Contact = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className={`${styles.sectionText} ${styles.contentSpacing} dark:text-tertiary text-tertiary-lt text-center px-0 md:px-10 lg:px-20`}
+              className={twMerge(styles.sectionText, styles.contentSpacing, "dark:text-tertiary text-tertiary-lt text-center px-0 md:px-10 lg:px-20")}
             >
               {`While I'm not actively seeking new opportunities at the moment, 
               I'm always available in my inbox. Whether you have any inquiries or simply want to greet, 

@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useCustomMediaQuery } from '../../hooks'
@@ -24,7 +24,7 @@ const SocialMediaVerticalContainer = ({ loading }) => {
 				...(!isTabletOrMobile ? { bottom: positionBottom } : { display: "none"}), 
 				transition: "400ms ease-in-out 200ms"
 			}}
-			className={`md:px-14 lg:px-16 px-6 fixed -right-4 max-w-7xl mx-auto flex flex-row items-start gap-5 z-40`}
+			className="md:px-14 lg:px-16 px-6 fixed -right-4 max-w-7xl mx-auto flex flex-row items-start gap-5 z-40"
 		>
 			<div className="flex flex-col justify-center items-center">
 				<motion.div

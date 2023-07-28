@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
+import { twMerge } from "tailwind-merge"
 import { useCustomMediaQuery } from '../../hooks'
 
 import { styles } from '../../styles'
@@ -57,7 +58,7 @@ const Hero = ({ loading }) => {
           variants={staggerContainer(.2)}
           initial={false}
           whileInView="show"
-          className={`${styles.paddingXHero} absolute top-[180px] xs:top-[200px] md:relative md:top-0 lg:max-w-5xl mx-auto flex flex-row items-start justify-center gap-5`}
+          className={twMerge(styles.paddingXHero, 'absolute top-[180px] xs:top-[200px] md:relative md:top-0 lg:max-w-5xl mx-auto flex flex-row items-start justify-center gap-5')}
         >
           {/* vertical icons */}
           <motion.div className="flex flex-col justify-center items-center">
@@ -85,7 +86,7 @@ const Hero = ({ loading }) => {
           >
             <motion.h1
               variants={swivelVariants}
-              className={`${styles.heroSubText} dark:text-tertiary text-tertiary-lt`}
+              className={twMerge(styles.heroSubText, "dark:text-tertiary text-tertiary-lt")}
             >
               <motion.span variants={swivelVariants}>Hi, I&apos;m</motion.span>
               <motion.span variants={swivelVariants} className={`${styles.heroHeadText} dark:text-secondary text-secondary-lt block w-full`}>
@@ -94,7 +95,7 @@ const Hero = ({ loading }) => {
             </motion.h1>
             <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} inline-block dark:text-accent-2 text-accent-2-lt font-normal`}
+              className={twMerge(styles.heroSubText, "inline-block dark:text-accent-2 text-accent-2-lt font-normal")}
             >
               Frontend Software Engineer @
               <a
@@ -114,7 +115,7 @@ const Hero = ({ loading }) => {
             </motion.span>
             <motion.span
               variants={swivelVariants}
-              className={`${styles.heroSubText} inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4`}
+              className={twMerge(styles.heroSubText, "inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4")}
             >
               Frontend Developer with a passion
               for creating dynamic, user-friendly web

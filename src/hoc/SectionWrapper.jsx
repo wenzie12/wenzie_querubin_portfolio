@@ -1,5 +1,5 @@
 import { motion, } from 'framer-motion'
-
+import { twMerge } from 'tailwind-merge'
 import { styles } from '../styles'
 import { staggerContainer, slideRightVariant, scaleHeight } from '../utils/motion'
 
@@ -13,7 +13,7 @@ const SectionWrapper = (Component, idName) =>
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className={`${styles.padding} max-w-7xl mx-auto z-0`}
+          className={twMerge(styles.padding, "max-w-7xl mx-auto z-0")}
         >
           {/* scrolls to this invisible span via scroll button */}
           <motion.span

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 import { textVariant, raiseUp, fadeIn, zoomIn, scaleHeight, swivelVariants } from '../../utils/motion'
 import { styles } from "../../styles"
 
@@ -29,7 +30,7 @@ const VerticalTimeline = ({ data }) => {
 					return (
 						<div
 							key={`${title}-${i}`}
-							className={`${styles.sectionText} flex flex-row dark:text-tertiary text-tertiary-lt`}
+							className={twMerge(styles.sectionText, "flex flex-row dark:text-tertiary text-tertiary-lt")}
 						>
 							{/* left */}
 							<motion.div
@@ -52,10 +53,9 @@ const VerticalTimeline = ({ data }) => {
 									{/* circle */}
 									<motion.div
 										variants={zoomIn(.2, .4)}
-										// className={`absolute mb-10 top-1 -right-2 h-5 w-5 dark:bg-accent-2 bg-accent-2-lt border-4 dark:border-accent-2 border-accent-2-lt rounded-full`}
-										className={`absolute mb-10 top-1 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full`}
+										className="absolute mb-10 top-1 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full"
 									/>
-									{lastItem && <div className={`absolute bottom-0 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full`}/>} 
+									{lastItem && <div className="absolute bottom-0 -right-2 h-5 w-5 dark:bg-accent-1 bg-accent-1-lt rounded-full" />} 
 								</motion.div>
 							</motion.div>
 
@@ -74,21 +74,19 @@ const VerticalTimeline = ({ data }) => {
 									})}
 									onMouseEnter={() => enterHover("hideHover")}
 									onMouseLeave={leaveHover}
-									className={`${styles.dropShadowMd} relative p-4 md:p-8 mb-10 dark:bg-accent-1/50 bg-accent-1-lt/80 rounded-md`}
+									className={twMerge(styles.dropShadowMd, "relative p-4 md:p-8 mb-10 dark:bg-accent-1/50 bg-accent-1-lt/80 rounded-md")}
 								>
 									{/* pointer */}
 									<span
 										className="hidden md:block absolute -left-5 top-2 dark:bg-accent-1/50 bg-accent-1-lt/80 w-10 h-4"
-										style={{
-											clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)',
-										}}
+										style={{ clipPath: 'polygon(50% 0%, 50% 99%, 30% 50%)' }}
 									/>
 
 									{/* content-container card */}
 									<motion.div
 										initial="hidden"
 										whileInView="show"
-										className={`${styles.sectionText} p-2 overflow-hidden`}
+										className={twMerge(styles.sectionText, "p-2 overflow-hidden")}
 									>
 										<motion.h3
 											variants={textVariant()}

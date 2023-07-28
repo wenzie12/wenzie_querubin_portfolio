@@ -2,6 +2,7 @@
 // menu component for mobile view
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { twMerge } from 'tailwind-merge'
 
 import { styles } from '../../styles'
 import { staggerContainer, menuContainerVariants, fadeIn } from '../../utils/motion'
@@ -56,7 +57,7 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				variants={menuContainerVariants}
 				initial="hidden"
 				animate={toggle ? "show" : "hidden"}
-				className={`${styles.padding} bg-gradient-to-b dark:to-primary dark:from-accent-1/[.95] to-primary-lt from-accent-1-lt/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen`}
+				className={twMerge(styles.padding, "bg-gradient-to-b dark:to-primary dark:from-accent-1/[.95] to-primary-lt from-accent-1-lt/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen")}
 			>
 				<div className="mt-20 px-5">
 					<MenuLinks />
