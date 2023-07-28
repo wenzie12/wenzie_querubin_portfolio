@@ -18,8 +18,9 @@ const ThemesButton = () => {
   } = useCursorContext()
 
   const element = document.documentElement
+  // check system theme
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
-  
+
   const onWindowMatch = () => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
       element.classList.add("dark")
@@ -36,17 +37,20 @@ const ThemesButton = () => {
       localStorage.setItem('theme', 'dark')
       return
     }
-    if (toggleDarkMode === false) {
+    // for auto
+    // if (!toggleDarkMode || (!toggleDarkMode && !('theme' in localStorage))) { 
+    if (!toggleDarkMode) {
       element.classList.remove('dark')
       localStorage.setItem('theme', 'light')
       return
     }
     
     // element.classList.add('dark')
-    // localStorage.removeItem('theme')
+    // remove themes on close tab
+    localStorage.removeItem('theme') 
     // return 
     return
-  })
+  }, [toggleDarkMode])
 
   const cursorThemeText = {
     ...cursorText,
@@ -59,13 +63,12 @@ const ThemesButton = () => {
     setTheme()
     setCursorText(cursorThemeText)
 
-  }, [toggleDarkMode,])
+    element?.style.setProperty("--color-primary", toggleDarkMode ? colors['primary'] : colors['primary-lt'])
+    element?.style.setProperty("--color-accent-2", toggleDarkMode ? colors['accent-2'] : colors['accent-2-lt'])
+    element?.style.setProperty("--color-accent-3",  toggleDarkMode ? colors['accent-3'] : colors['accent-3-lt'])
+  }, [toggleDarkMode])
 
   onWindowMatch()
-
-  element?.style.setProperty("--color-primary",  toggleDarkMode ? colors['primary'] : colors['primary-lt'])
-  element?.style.setProperty("--color-accent-2",  toggleDarkMode ? colors['accent-2'] : colors['accent-2-lt'])
-  element?.style.setProperty("--color-accent-3",  toggleDarkMode ? colors['accent-3'] : colors['accent-3-lt'])
 
   return (
     <div className="flex justify-center items-center">
