@@ -38,7 +38,6 @@ const App = () => {
         </AnimatePresence>
         {!loading &&
           <div
-            // style={{ transition: "300ms ease-in-out 300ms" }}
             className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative subpixel-antialiased overflow-hidden theme-transition"> 
             <div>
               <Navbar loading={loading} />
