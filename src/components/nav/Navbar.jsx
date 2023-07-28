@@ -44,17 +44,18 @@ const Navbar = ({ loading }) => {
   return (
     <>
       <motion.nav
-        ref={ targetRef }
-        style={{
-          // backgroundColor,
-          paddingTop, 
-          transition: "300ms ease-in-out 300ms",
-        }}
         initial="hidden"
         animate={loading ? "hidden" : "show"}
-        className={twMerge(styles.paddingX, 'w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95')}
+        className={"w-full flex items-center fixed top-0 z-20 dark:bg-primary/95 bg-primary-lt/95"}
       >
-        <div className="w-full flex justify-between items-center mx-auto"> 
+        <motion.div
+          ref={ targetRef }
+          style={{
+            paddingTop,
+            transition: "300ms ease-in-out 300ms",
+          }}
+          className={twMerge(styles.paddingX, "w-full flex justify-between items-center mx-auto")}
+        > 
           {/* web - menu */}
           <motion.div
             variants={fadeIn("down", "spring", .1)}
@@ -115,7 +116,7 @@ const Navbar = ({ loading }) => {
             toggle={toggle}
             setToggle={setToggle}
           />
-        </div>
+        </motion.div>
       </motion.nav>
     </>
   )
