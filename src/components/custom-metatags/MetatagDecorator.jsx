@@ -26,7 +26,6 @@ const MetatagDecorator = ({
     />
     <meta name="twitter:card" content={twitterCard} />
     <meta property="twitter:image:alt" content={twitterImageAlt} />
-
   </Helmet>
 );
 
