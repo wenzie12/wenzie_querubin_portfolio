@@ -37,7 +37,9 @@ const App = () => {
           {loading && <LandingPageLoader />}
         </AnimatePresence>
         {!loading &&
-          <div className="dark:font-light font-normal relative subpixel-antialiased overflow-hidden"> 
+          <div
+            // style={{ transition: "300ms ease-in-out 300ms" }}
+            className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative subpixel-antialiased overflow-hidden theme-transition"> 
             <div>
               <Navbar loading={loading} />
               <Hero loading={loading}/>

@@ -28,7 +28,7 @@ const MenuContainer = ({ toggle, setToggle }) => {
 
 	return (
 		<motion.div
-			initial={false}
+			initial="hidden"
 			animate={toggle ? "show" : "hidden"}
 			className="md:hidden flex flex-1 justify-end items-center"
 		>
@@ -57,7 +57,12 @@ const MenuContainer = ({ toggle, setToggle }) => {
 				variants={menuContainerVariants}
 				initial="hidden"
 				animate={toggle ? "show" : "hidden"}
-				className={twMerge(styles.padding, "bg-gradient-to-b dark:to-primary dark:from-accent-1/[.95] to-primary-lt from-accent-1-lt/[.95] absolute top-0 right-0 bottom-0 z-10 w-full h-screen")}
+				className={twMerge(styles.padding, `
+					bg-gradient-to-b dark:to-primary dark:from-accent-1/[.95] to-primary-lt from-accent-1-lt/[.95] 
+					absolute top-0 right-0 bottom-0
+					w-full h-screen
+					z-10 
+				`)}
 			>
 				<div className="mt-20 px-5">
 					<MenuLinks />

@@ -4,27 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  :root {
-    --color-primary: 16 27 41;
-    --color-secondary: #D4494C;
-    --color-tertiary: 123 140 166;
-    --color-accent-1: 29 38 57;
-    --color-accent-2: 63 79 105;
-    --color-accent-3: 243 243 243;
-  }
-} */
-
-/* #root {
-  // Scss variables to assign using JavaScript in reactJS / default
-  --cms-primary: #4c6085;
-  $cms-primary-light: #4c6085;
-  $cms-secondary: #6c757d; // #004277;
-  $cms-muted: #e3e4e5;
-  $cms-muted-secondary: #6c757d;
-  $cms-light: rgba(239,239,239,0.3);
-} */
-
 * {
   margin: 0;
   padding: 0;
