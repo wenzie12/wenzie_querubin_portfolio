@@ -61,13 +61,16 @@ const Hero = ({ loading }) => {
         })}
         onMouseLeave={leaveHover}
         style={{ ...animateOnLargeDevice(), height: "100dvh", transition: "ease-in-out" }}
-        className="relative w-full flex items-center"
+        className="relative w-full flex items-center overflow-anchor-auto"
       > 
         <motion.div
           variants={staggerContainer(.2)}
           initial={false}
           whileInView="show"
-          className={twMerge(styles.paddingXHero, 'absolute top-[180px] xs:top-[200px] md:relative md:top-0 lg:max-w-5xl mx-auto flex flex-row items-start justify-center gap-5')}
+          className={twMerge(
+            styles.paddingXHero,
+            'absolute top-[180px] xs:top-[200px] md:relative md:top-0 lg:max-w-5xl mx-auto flex flex-row items-start justify-center gap-5'
+          )}
         >
           {/* vertical icons */}
           <motion.div className="flex flex-col justify-center items-center">

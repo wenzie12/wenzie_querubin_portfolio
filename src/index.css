@@ -15,7 +15,10 @@
 body {
   cursor: url('assets/cursor-assets/custom_pointer_default.svg'), default;
   background-color: var(--color-primary); 
-  overflow-anchor: none;
+}
+
+.overflow-anchor-auto {
+  overflow-anchor: auto;
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */

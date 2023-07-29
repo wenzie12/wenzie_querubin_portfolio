@@ -66,8 +66,6 @@ const About = () => {
               <i className='dark:text-secondary text-secondary-lt'> Multisys Technologies Corporation</i>.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
-              {/* With a passion for crafting exceptional user experiences, 
-              I thrive in the world of frontend web development. */}
               As a frontend developer, I thrive on blending creativity and functionality 
               to craft seamless, visually appealing interfaces. With expertise in
               <HighlightedText className="text-accent-3 px-1" delay={0.6}>ReactJS</HighlightedText>,
@@ -77,7 +75,7 @@ const About = () => {
             </motion.span>
             
             <motion.quote className="inline-block mb-3 italic" variants={swivelVariants}> 
-              My mission is to create seamless and captivating experiences that leave a lasting impression on users.
+              My goal is to create seamless and captivating experiences that leave a lasting impression on users.
             </motion.quote>
             <motion.span className="inline-block" variants={swivelVariants}>
             Outside of work, I find joy in Woodworking as a creative outlet. Additionally, Aquascaping is another passion of mine.
