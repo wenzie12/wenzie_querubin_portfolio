@@ -43,7 +43,7 @@ const Contact = () => {
     <>
       <motion.div ref={ref} inView={inView} className={twMerge(styles.contentContainer, "")}>
         <motion.div variants={textVariant()}>
-          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt text-center")} >SEND ME A MESSAGE</p>
+          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt text-center")}>GET IN TOUCH</p>
           <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt text-center")}>Contact</h2>
         </motion.div>
         {/* left section */}
