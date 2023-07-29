@@ -36,7 +36,7 @@ const ProjectLinks = ({
         onMouseEnter={() => enterHover("", {
           ...cursorText,
           offset: 75,
-          text: "live server",
+          text: "Live Server",
           // color: "#D4494C",
         })}
         onMouseLeave={() => { 
@@ -60,7 +60,7 @@ const ProjectLinks = ({
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,
-            text: "playstore",
+            text: "Playstore",
             // color: "#D4494C",
           })}
           onMouseLeave={() => { 
@@ -85,7 +85,7 @@ const ProjectLinks = ({
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,
-            text: "appstore",
+            text: "Appstore",
             // color: "#D4494C",
           })}
           onMouseLeave={() => { 

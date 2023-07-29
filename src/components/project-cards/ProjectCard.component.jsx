@@ -109,7 +109,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         isMotion
                         onMouseEnter={() => enterHover(toggleDarkMode ? "anchorBlended" : "anchor", {
                           ...cursorText,
-                          text: "live server",
+                          text: "Live Server",
                         })}
                         onMouseLeave={leaveHover}
                         src={image}
@@ -138,7 +138,7 @@ const ProjectCard = ({data=[], className="" }) => {
           name="more projects"
           onMouseEnter={() => enterHover("", {
             ...cursorText,
-            text: "coming soon! :D",
+            text: "Coming Soon! :D",
           })}
           onMouseLeave={leaveHover}
         />
