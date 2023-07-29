@@ -4,8 +4,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { twMerge } from 'tailwind-merge';
 import { SectionWrapper } from '../../hoc'
+import SectionHeader from '../section-headers/SectionHeader.component'
 
-import { textVariant, fadeIn, raiseUp, zoomIn, swivelVariants, chevronVariant } from '../../utils/motion'
+import { fadeIn, raiseUp, zoomIn, swivelVariants, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { HighlightedText, HashtagText } from '../custom-text';
 import { ImageContainer } from '../image-container'
@@ -46,11 +47,10 @@ const About = () => {
       inView={inView}
       className={twMerge(styles.contentContainer, "")}
     >
-      <motion.div variants={textVariant()}>
-        <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")}>Introduction</p>
-        <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>About Me</h2>
-      </motion.div>
-      
+      <SectionHeader
+        header="About Me"
+        sub="Introduction"
+      />
       <div ref={ref} className="flex-col-reverse md:flex-row flex gap-x-10">
         {/* left section */}
         <div className="flex flex-col md:w-1/2 text-justify">
@@ -118,6 +118,7 @@ const About = () => {
             variants={fadeIn("up", "spring", 0.3, 0.8)}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
             className="group"
           >
           <motion.div
@@ -126,14 +127,21 @@ const About = () => {
               initial: "initial",
               whileHover: "animate",
             })}
-            className={twMerge(styles.profileImage, styles.dropShadow2xl, "overflow-hidden flex justify-center mx-auto")}
+            className={twMerge(
+              styles.profileImage,
+              styles.dropShadow2xl,
+              "overflow-hidden flex justify-center mx-auto"
+            )}
           >
             <ImageContainer
               onMouseEnter={() => enterHover("hideHover")}
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
-              className={twMerge(styles.profileImage, "aspect-auto rounded-sm dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0")}
+              className={twMerge(
+                styles.profileImage,
+                "aspect-auto rounded-sm dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0"
+              )}
             />
           </motion.div>
           </motion.div>

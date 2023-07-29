@@ -3,7 +3,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { twMerge } from 'tailwind-merge';
 
-import { textVariant, fadeIn } from '../../utils/motion'
+import SectionHeader from '../section-headers/SectionHeader.component';
+
+import { fadeIn } from '../../utils/motion'
 import { styles } from '../../styles'
 import { experiences } from '../../constants'
 
@@ -33,11 +35,10 @@ const Experience = () => {
       ref={ref}
       className={twMerge(styles.contentContainer, "")}
     >
-      <motion.div variants={textVariant()}>
-        <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")} >What I&apos;ve done so far</p>
-        <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>Experience</h2>
-      </motion.div>
-
+      <SectionHeader
+        header="Experience"
+        sub="What I&apos;ve done so far"
+      />
       <motion.div
         variants={fadeIn("", "", 0.2, 1)}
         className={twMerge(styles.contentSpacing, "mt-4 flex flex-col")}

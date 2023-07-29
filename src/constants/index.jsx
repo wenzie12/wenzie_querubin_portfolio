@@ -220,22 +220,22 @@ import {
 
   const social_links = [
     // {
-    //   name: "facebook",
+    //   name: "Facebook",
     //   icon: facebook,
     //   link: contacts?.links.facebook,
     // },
     // {
-    //   name: "codepen",
+    //   name: "Codepen",
     //   icon: codepen,
     //   link: contacts?.links.codepen,
     // },
     {
-      name: "linkedin",
+      name: "Linkedin",
       icon: (props) => <Linkedin {...props} />,
       link: contacts?.links.linkedin,
     },
     {
-      name: "github",
+      name: "Github",
       icon: (props) => <Github {...props} />,
       link: contacts?.links.github,
     },

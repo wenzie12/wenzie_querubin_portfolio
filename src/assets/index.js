@@ -4,9 +4,9 @@ export { default as menu }  from "./menu.svg";
 export { default as close }  from "./close.svg";
 
 // about
-export { default as profile }  from "./about-assets/profile-img-mini.webp"
+// export { default as profile }  from "./about-assets/profile-img-mini.webp"
 // cloud
-// export const profile = "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658291/profile-img-mini_nmfh8x.webp"
+export const profile = "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658291/profile-img-mini_nmfh8x.webp"
 
 // technologies
 export { default as bootstrap } from "./tech-assets/devs/bootstrap.svg"
@@ -30,14 +30,15 @@ export { default as git } from "./tech-assets/others/git.svg"
 export { default as github_others } from "./tech-assets/others/github.svg"
 export { default as jira } from "./tech-assets/others/jira.svg"
 
+
 // projects
-export { default as gomanilaLandingPage } from './projects-assets/go-manila-landing-page-mini.webp'
-export { default as manilaZooLandingPage } from './projects-assets/manila-zoo-landing-page-mini.webp'
-export { default as canstarLandingPage } from './projects-assets/canstar-landing-page-mini.webp'
+// export { default as gomanilaLandingPage } from './projects-assets/go-manila-landing-page-mini.webp'
+// export { default as manilaZooLandingPage } from './projects-assets/manila-zoo-landing-page-mini.webp'
+// export { default as canstarLandingPage } from './projects-assets/canstar-landing-page-mini.webp'
 // cloud
-// export const gomanilaLandingPage =  "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658325/go-manila-landing-page-mini_lyyyon.webp"
-// export const manilaZooLandingPage =  "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658325/manila-zoo-landing-page-mini_fzibhq.webp"
-// export const canstarLandingPage = "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658324/canstar-landing-page-mini_gqaw5s.webp"
+export const gomanilaLandingPage =  "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658325/go-manila-landing-page-mini_lyyyon.webp"
+export const manilaZooLandingPage =  "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658325/manila-zoo-landing-page-mini_fzibhq.webp"
+export const canstarLandingPage = "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658324/canstar-landing-page-mini_gqaw5s.webp"
 
 // downloadables
 export { default as resumeFile } from './downloadable-files/wenzie_querubin_2023.pdf'

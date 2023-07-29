@@ -99,7 +99,7 @@ const VerticalTimeline = ({ data }) => {
 											onMouseEnter={() => enterHover("", {
 												...cursorText,
 												offset: 75,
-												text: "go to link!",
+												text: "Go to link!",
 												// color: "#D4494C",
 											})}
 											onMouseLeave={() => { 

@@ -101,6 +101,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     variants={scaleImageVariant(0, .6)}
                     initial="hidden"
                     whileInView="show"
+                    viewport={{ once: true }}
                     className="flex justify-center items-center w-full h-full"
                   >
                     <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="flex items-center justify-center">

@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
-import { fadeIn, raiseUp, zoomIn, swivelVariants, textVariant, chevronVariant } from '../../utils/motion'
+import { fadeIn, raiseUp, zoomIn, swivelVariants, chevronVariant } from '../../utils/motion'
 import { styles } from '../../styles'
 import { ImageContainer } from '../image-container'
 import { SectionWrapper } from '../../hoc'
 import { useCustomMediaQuery } from '../../hooks'
+
+import SectionHeader from '../section-headers/SectionHeader.component'
 
 import { technologies } from '../../constants'
 import { ChevronDown } from 'lucide-react'
@@ -33,7 +35,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
       <motion.div
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className="flex flex-wrap justify-center gap-y-6 md:gap-y-8 gap-x-2 md:gap-x-6 lg:gap-6 xl:gap-8 my-4"
       >
         {techItems?.map((item, index) => {
@@ -79,10 +81,10 @@ const Tech = () => {
 
   return (
     <motion.div className={twMerge(styles.contentContainer, "")}>
-      <motion.div variants={textVariant()}>
-        <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")} >TECHNOLOGIES</p>
-        <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>Tech Stack</h2>
-      </motion.div>
+      <SectionHeader
+        header="Tech Stack"
+        sub="TECHNOLOGIES"
+      />
       <div className="flex flex-col md:w-2/3 text-justify">
         <motion.p
           variants={swivelVariants}
