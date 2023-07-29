@@ -60,8 +60,9 @@ const Hero = ({ loading }) => {
           text: "",
         })}
         onMouseLeave={leaveHover}
-        style={{ ...animateOnLargeDevice(), height: "100dvh", transition: "ease-in-out" }}
-        className="relative w-full flex items-center overflow-anchor-auto"
+        // style={{ ...animateOnLargeDevice(), height: "100dvh", transition: "ease-in-out" }}
+        style={{ ...animateOnLargeDevice(), height: "100vh", transition: "ease-in-out" }}
+        className="relative w-full flex items-center"
       > 
         <motion.div
           variants={staggerContainer(.2)}
@@ -159,8 +160,6 @@ const Hero = ({ loading }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      
-      
     </>
   )
 }
