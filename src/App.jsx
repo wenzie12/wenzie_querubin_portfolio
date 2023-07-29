@@ -37,7 +37,7 @@ const App = () => {
           {loading && <LandingPageLoader />}
         </AnimatePresence>
         {!loading &&
-          <div className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative md:subpixel-antialiased md:overflow-hidden theme-transition"> 
+          <div className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative md:subpixel-antialiased md:overflow-hidden"> 
             <div>
               <Navbar loading={loading} />
               <Hero loading={loading}/>
