@@ -27,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     // for loading screen (on page load)
-    setTimeout(() => setLoading(false), 2000)
+    setTimeout(() => setLoading(false), 1800)
   }, [loading, setLoading])
 
   return (
