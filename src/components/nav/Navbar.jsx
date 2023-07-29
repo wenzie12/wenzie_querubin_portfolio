@@ -88,7 +88,7 @@ const Navbar = ({ loading }) => {
                   onClick={() => setActive(link.title)}
                   onMouseEnter={() => enterHover("anchor")}
                   onMouseLeave={leaveHover}
-                  className="dark:text-accent-3 text-accent-3-lt custom-pointer relative text-sm"
+                  className="dark:text-accent-3 text-accent-3-lt relative text-sm"
                 >
                   <motion.a
                     whileHover="hover"

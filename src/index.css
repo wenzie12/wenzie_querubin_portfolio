@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,8 +30,6 @@ body {
 }
 
 .hash-span {
-  /* margin-top: 10vh; */
-  /* padding-bottom: 10vh; */
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
@@ -103,16 +99,4 @@ body {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-/* note in use. delete this */
-/* projects card */
-div.image-container-even {
-  -webkit-clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%);
-}
-
-div.image-container-odd {
-  -webkit-clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
 }

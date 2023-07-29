@@ -76,7 +76,7 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 							<FileDown className="w-6 h-6 dark:text-secondary text-secondary-lt"/>
 						</motion.span> :
 						<motion.div {...animateOnHover} className={`${resumeLinkOrientation === "horizontal" ? "px-2 py-1" : "py-8 px-4"} flex justify-center items-center rounded-md dark:border-secondary border-secondary-lt border-2`}>
-							<span className={twJoin(resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90", "block dark:text-accent-3 text-accent-3-lt  text-center custom-pointer relative text-xs")}>
+							<span className={twJoin(resumeLinkOrientation === "horizontal" ? "rotate-0" : "-rotate-90", "block dark:text-accent-3 text-accent-3-lt  text-center relative text-xs")}>
 								Resume
 							</span>
 						</motion.div>
