@@ -50,7 +50,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     >
                       <motion.h3
                         variants={textVariant(.2)}
-                        className={twJoin(isOdd && 'md:text-right', "text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold italic")}
+                        className={twJoin(isOdd && 'md:text-right', "text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold")}
                       >
                         {name}
                       </motion.h3>
