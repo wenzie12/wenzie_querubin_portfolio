@@ -40,8 +40,8 @@ const LandingPageLoader = () => {
 							key={i}
 							isMotion
 							variants={zoomIn(item.delay, item.duration)}
-							animate="show"
 							initial="hidden"
+							animate="show"
 							classSVG={item.class}
 							classPath={item.path}
 							fill={toggleDarkMode ? item.fill : item.fill_lt}

@@ -68,27 +68,29 @@ const About = () => {
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
               {/* With a passion for crafting exceptional user experiences, 
               I thrive in the world of frontend web development. */}
-              As a frontend developer, I find joy in blending creativity and functionality. 
-              My expertise lies in creating seamless interactions and visually appealing interfaces 
-              through UI/UX design. My expertise lies in 
+              As a frontend developer, I thrive on blending creativity and functionality 
+              to craft seamless, visually appealing interfaces. With expertise in
               <HighlightedText className="text-accent-3 px-1" delay={0.6}>ReactJS</HighlightedText>,
               <HighlightedText className="text-accent-3 px-1" delay={0.8}>Javascript</HighlightedText> and&nbsp;
               <HighlightedText className="text-accent-3" delay={1}>TypeScript</HighlightedText>, 
-              enabling me to bring innovative and intuitive designs to life.
+              I bring innovative and intuitive designs to life.
             </motion.span>
-            <motion.span className="inline-block mb-3" variants={swivelVariants}>
-            Outside of work, I enjoy Wood Working as a creative outlet where I craft tangible objects from scratch.
-            Another passion of mine is Aquascaping, which brings serenity and inspiration through the creation of stunning underwater landscapes.
-            </motion.span>
+            
+            <motion.quote className="inline-block mb-3 italic" variants={swivelVariants}> 
+              My mission is to create seamless and captivating experiences that leave a lasting impression on users.
+            </motion.quote>
             <motion.span className="inline-block" variants={swivelVariants}>
-              I am always eager to take on new challenges, collaborate with like-minded individuals,
-              and push the boundaries of what is possible in frontend development. 
-              {/* Let&apos;s connect and bring your ideas to life! */}
+            Outside of work, I find joy in Woodworking as a creative outlet. Additionally, Aquascaping is another passion of mine.
             </motion.span>
           </motion.p>
           <motion.p
             variants={fadeIn("", "", 0.2, 1)}
-            className={twMerge(styles.sectionText, styles.contentSpacing, "hidden lg:flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt")}
+            className={twMerge(
+              styles.sectionText,
+              styles.contentSpacing,
+              // "hidden lg:flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt"
+              "flex flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt"
+            )}
           >
             <motion.span
               variants={chevronVariant}
@@ -126,39 +128,12 @@ const About = () => {
             })}
             className={twMerge(styles.profileImage, styles.dropShadow2xl, "overflow-hidden flex justify-center mx-auto")}
           >
-            {/* image backdrop */}
-            {/* <motion.span
-              variants={fadeIn("up", "spring",0.4, .8)}
-              className={`${styles.profileImage} absolute top-16 right-1 rounded-sm w-full h-full max-h-[24rem] lg:max-h-[28rem] dark:bg-accent-1 bg-accent-1-lt`}
-            /> */}
             <ImageContainer
               onMouseEnter={() => enterHover("hideHover")}
               onMouseLeave={leaveHover}
               src={profile}
               alt="profile"
               className={twMerge(styles.profileImage, "aspect-auto rounded-sm dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0")}
-            />
-          </motion.div>
-          <motion.div className='mt-2'>
-            <motion.p
-              variants={fadeIn("", "", 0.2, 1)}
-              className={twMerge(styles.sectionText, styles.contentSpacing, "hidden md:flex lg:hidden flex-row gap-2 text-normal dark:text-tertiary text-tertiary-lt overflow-hidden")}
-            >
-              <motion.span
-                variants={chevronVariant}
-                initial="initial"
-                whileInView="animate"
-              >
-                <ChevronDown className="w-6 h-6 dark:text-secondary text-secondary-lt" />
-              </motion.span>
-              HOBBIES & INTERESTS
-            </motion.p>
-            <InterestsGroup
-              data={interests}
-              enterHover={enterHover}
-              leaveHover={leaveHover}
-              className=" hidden md:flex lg:hidden flex-wrap gap-4"
-              // className="md:hidden flex flex-wrap gap-4"
             />
           </motion.div>
           </motion.div>
@@ -168,8 +143,7 @@ const About = () => {
         data={interests}
         enterHover={enterHover}
         leaveHover={leaveHover}
-        className="md:hidden flex flex-wrap gap-4"
-        // className="md:hidden flex flex-wrap gap-4"
+        className="lg:hidden flex flex-wrap gap-4"
       />
     </motion.div>
   )

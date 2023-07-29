@@ -1,18 +1,21 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
-import { twMerge } from "tailwind-merge"
+import { twMerge } from 'tailwind-merge'
 import { useCustomMediaQuery } from '../../hooks'
 
+import { scaleHeight, staggerContainer, swivelVariants, fadeIn } from '../../utils/motion'
 import { styles } from '../../styles'
-import { scaleHeight, staggerContainer, swivelVariants } from '../../utils/motion'
-import { ScrollButton } from '../custom-buttons'
+
 import SocialMediaVerticalContainer from '../social-medias/SocialMediaVerticalContainer.component'
+import { ScrollButton, ActionButton } from '../custom-buttons'
 
 import { ChevronDown } from 'lucide-react';
 // context
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
+
+import { contacts } from '../../constants'
 
 const Hero = ({ loading }) => {
   const { isTabletOrMobile } = useCustomMediaQuery()
@@ -40,6 +43,13 @@ const Hero = ({ loading }) => {
     return { opacity, scale, y }
   }
 
+// TODO: import in an common file (same fx as in Contact)
+  const handleContact = e => { 
+    const {email, subject, body} = contacts
+    window.location.href = `mailto:${email || ""}?subject=${subject || ""}&body=${body}`;
+    e.preventDefault();
+  }
+
   return (
     <>
       <motion.section
@@ -51,8 +61,7 @@ const Hero = ({ loading }) => {
         })}
         onMouseLeave={leaveHover}
         style={{ ...animateOnLargeDevice(), height: "100dvh", transition: "ease-in-out" }}
-        className="relative w-full flex items-center select-none"
-        // className={` relative w-full h-screen flex items-center bg-gradient-to-tl to-primary from-accent-1`}
+        className="relative w-full flex items-center"
       > 
         <motion.div
           variants={staggerContainer(.2)}
@@ -90,7 +99,7 @@ const Hero = ({ loading }) => {
             >
               <motion.span variants={swivelVariants}>Hi, I&apos;m</motion.span>
               <motion.span variants={swivelVariants} className={`${styles.heroHeadText} dark:text-secondary text-secondary-lt block w-full`}>
-                Wenzie
+                Wenzie.
               </motion.span>
             </motion.h1>
             <motion.span
@@ -117,10 +126,23 @@ const Hero = ({ loading }) => {
               variants={swivelVariants}
               className={twMerge(styles.heroSubText, "inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4")}
             >
-              Frontend Developer with a passion
-              for creating dynamic, user-friendly web
-              applications using ReactJs.
+              Frontend Developer with a passion for creating dynamic,
+              user-friendly web applications specializing in ReactJs and related frameworks.
             </motion.span>
+            {/* contact button */}
+            <motion.div
+              variants={fadeIn("", "", 0.2, 1)}
+              className="flex justify-start w-full py-4 dark:text-secondary text-secondary-lt"
+            >
+              <ActionButton
+                label="Let's Connect!"
+                name="contact"
+                type="button"
+                onClick={handleContact}
+                onMouseEnter={() => enterHover("hideHover")}
+                onMouseLeave={leaveHover} 
+              />
+            </motion.div>
           </motion.div>
         </motion.div>
  
