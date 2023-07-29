@@ -4,7 +4,9 @@ import { useInView } from 'react-intersection-observer'
 import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
 
-import { textVariant, swivelVariants } from '../../utils/motion'
+import SectionHeader from '../section-headers/SectionHeader.component'
+
+import { swivelVariants } from '../../utils/motion'
 import { styles } from '../../styles'
 import { ProjectCard } from '../project-cards'
 
@@ -37,12 +39,10 @@ const Projects = () => {
         ref={ref}
         className={twMerge(styles.contentContainer, "")}
       >
-        <motion.div variants={textVariant()}>
-          {/* header */}
-          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt")} >MY WORK</p>
-          <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt")}>Projects</h2>
-        </motion.div>
-
+        <SectionHeader
+          header="Projects"
+          sub="MY WORK"
+        />
         <div className="">
           <div className="flex flex-col md:w-2/3 mb-2 md:mb-8">
             <motion.p

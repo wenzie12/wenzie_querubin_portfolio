@@ -62,7 +62,7 @@ const ScrollButton = ({ href='', loading })  => {
         onMouseEnter={() => enterHover("anchor", {
           ...cursorText,
           offset: 70,
-          text: "scroll down",
+          text: "Scroll Down",
         })}
         onMouseLeave={leaveHover}
       >

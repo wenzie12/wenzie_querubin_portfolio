@@ -111,7 +111,7 @@ const Hero = ({ loading }) => {
               onMouseEnter={() => enterHover("", {
                 ...cursorText,
                 offset: 75,
-                text: "go to link!",
+                text: "Go to link!",
               })}
                 onMouseLeave={leaveHover}
                 href="https://www.multisyscorp.com/"
@@ -135,7 +135,7 @@ const Hero = ({ loading }) => {
               className="flex justify-start w-full py-4 dark:text-secondary text-secondary-lt"
             >
               <ActionButton
-                label="Let's Connect!"
+                label="Let's Connect"
                 name="contact"
                 type="button"
                 onClick={handleContact}

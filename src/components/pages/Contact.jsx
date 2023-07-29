@@ -2,9 +2,11 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
-import { useInView } from 'react-intersection-observer' 
+import { useInView } from 'react-intersection-observer'
 
-import { textVariant, fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
+import SectionHeader from '../section-headers/SectionHeader.component'
+
+import { fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
 import { styles } from '../../styles'
 import { contacts } from '../../constants'
 import { ActionButton } from '../custom-buttons'
@@ -42,10 +44,11 @@ const Contact = () => {
   return (
     <>
       <motion.div ref={ref} inView={inView} className={twMerge(styles.contentContainer, "")}>
-        <motion.div variants={textVariant()}>
-          <p className={twMerge(styles.sectionSubText, "dark:text-tertiary text-tertiary-lt text-center")}>GET IN TOUCH</p>
-          <h2 className={twMerge(styles.sectionHeadText, "dark:text-secondary text-secondary-lt text-center")}>Contact</h2>
-        </motion.div>
+        <SectionHeader
+          header="Contact"
+          sub="GET IN TOUCH"
+          textJustify='text-center'
+        />
         {/* left section */}
         <motion.div className="flex-col-reverse md:flex-row flex">
           <div  className="flex flex-col text-justify">
