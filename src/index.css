@@ -15,9 +15,6 @@
 body {
   cursor: url('assets/cursor-assets/custom_pointer_default.svg'), default;
   background-color: var(--color-primary); 
-}
-
-.overflow-anchor-auto {
   overflow-anchor: auto;
 }
 
