@@ -33,12 +33,11 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {loading && <LandingPageLoader />}
         </AnimatePresence>
         {!loading &&
-          <div
-            className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative subpixel-antialiased overflow-hidden theme-transition"> 
+          <div className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative md:subpixel-antialiased md:overflow-hidden theme-transition"> 
             <div>
               <Navbar loading={loading} />
               <Hero loading={loading}/>

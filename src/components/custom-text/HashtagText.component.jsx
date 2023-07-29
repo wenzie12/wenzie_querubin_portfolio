@@ -16,8 +16,7 @@ const HashtagText = ({ label }) => {
         })}
         className="flex flex-row items-center"
       >
-        {/* <i className="dark:text-secondary text-secondary-lt mr-1">#</i> */}
-        <Hash className="dark:text-secondary text-secondary-lt w-4 h-4 mr-1" />
+        <Hash className="dark:text-secondary text-secondary-lt w-4 h-4" />
         <span className="dark:text-accent-2 text-accent-2-lt">{label}</span>
       </motion.div>
   )
