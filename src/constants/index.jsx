@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { Github, Linkedin, } from "lucide-react";  
+import { Github, Linkedin } from "lucide-react";  
 import { colors } from '../themes/constants'
 import {
   // tech
@@ -43,16 +42,16 @@ import {
     },
   ];
 
-  const interests = [
+  export const interests = [
     "Web Development",
-    "UI Design",
+    "UI Design/ Logo Design",
     "Wood Working",
     "Gaming",
     "Aquascaping",
     "Coffee",
   ]
     
-  const technologies = {
+  export const technologies = {
   tech: [
       { name: "HTML5", icon: html5, },
       { name: "CSS3", icon: css3, },
@@ -80,7 +79,7 @@ import {
     ],
   }
   
-  const experiences = [
+  export const experiences = [
     {
       title: "Frontend Software Engineer",
       company_name: "Multisys Technologies Corp.",
@@ -122,7 +121,7 @@ import {
     },
   ];
     
-  const projects = [
+  export const projects = [
     {
       name: "GoManila App",
       description:
@@ -204,7 +203,7 @@ import {
     // },
   ];
 
-  const contacts = {
+  export const contacts = {
     email: "wenzie12sg@gmail.com",
     subject: "Hello Wenzie!" ,
     body: "",
@@ -218,15 +217,15 @@ import {
     },
   }
 
-  const social_links = [
+  export const social_links = [
     // {
     //   name: "Facebook",
-    //   icon: facebook,
+    //   icon: (props) => <Facebook {...props} />,
     //   link: contacts?.links.facebook,
     // },
     // {
     //   name: "Codepen",
-    //   icon: codepen,
+    //   icon: (props) => <Codepen {...props} />,
     //   link: contacts?.links.codepen,
     // },
     {
@@ -241,16 +240,6 @@ import {
     },
   ]
 
-  const downloadables = {
+  export const downloadables = {
     resume: resumeFile
   }
-
-  export {
-    social_links,
-    interests,
-    technologies,
-    experiences,
-    projects,
-    contacts,
-    downloadables,
-  };
