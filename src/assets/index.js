@@ -5,8 +5,12 @@ export { default as close }  from "./close.svg";
 
 // about
 // export { default as profile }  from "./about-assets/profile-img-mini.webp"
+// export { default as profileDark }  from "./about-assets/profile-img-mini-dark.webp"
+// export { default as profilemobile }  from "./about-assets/profile-img-mobile-mini.webp"
 // cloud
 export const profile = "https://res.cloudinary.com/wenzie12sg/image/upload/v1689658291/profile-img-mini_nmfh8x.webp"
+// export const profileDark = "https://res.cloudinary.com/wenzie12sg/image/upload/v1690766822/profile-img-mini-dark_bauepp.webp"
+export const profileMobile = "https://res.cloudinary.com/wenzie12sg/image/upload/v1690775959/profile-image-mobile-mini_apjy7l.webp"
 
 // technologies
 export { default as bootstrap } from "./tech-assets/devs/bootstrap.svg"

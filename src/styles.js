@@ -21,10 +21,9 @@ export const styles = {
     borderBox: "rounded-md border-2 px-3",
     
     profileImage: `
-      w-[192px] h-[272.76px]
-      sm:w-[270.28px] sm:h-[383.98px]
       md:w-[296px] md:h-[410px]
       lg:w-[315.31px] lg:h-[447.97px]`,
+    profileImageMobile: 'w-[200px] h-full',
     
     ProjectImage: `
       w-full h-full

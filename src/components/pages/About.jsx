@@ -14,7 +14,7 @@ import { useCustomMediaQuery } from '../../hooks'
 
 import { ChevronDown } from 'lucide-react';
 
-import { profile } from '../../assets'
+import { profile, profileMobile } from '../../assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'
@@ -24,12 +24,12 @@ import { interests } from '../../constants'
 
 const About = () => {
   const { isTabletOrMobile } = useCustomMediaQuery()
+  const { activeState: { active, setActive } } = useGlobalStateContext()
   const {
     cursorTextState: { cursorText, setCursorText },
     cursorVariantState : { setCursorVariant },
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
-  const { activeState: { active, setActive }, } = useGlobalStateContext()
 
   // intersection observer
   const { ref, inView } = useInView({
@@ -126,7 +126,6 @@ const About = () => {
               whileHover: "animate",
             })}
             className={twMerge(
-              styles.profileImage,
               styles.dropShadow2xl,
               "overflow-hidden flex justify-center mx-auto"
             )}
@@ -134,11 +133,12 @@ const About = () => {
             <ImageContainer
               onMouseEnter={() => enterHover("hideHover")}
               onMouseLeave={leaveHover}
-              src={profile}
+              src={isTabletOrMobile ? profileMobile : profile}
               alt="profile"
               className={twMerge(
-                styles.profileImage,
-                "aspect-auto rounded-sm dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0"
+                isTabletOrMobile ? styles.profileImageMobile : styles.profileImage,
+                isTabletOrMobile ? 'rounded-full' : 'rounded-sm',
+                "aspect-auto dark:bg-accent-2 bg-accent-2-lt/80 grayscale-0 md:grayscale group-hover:grayscale-0"
               )}
             />
           </motion.div>
