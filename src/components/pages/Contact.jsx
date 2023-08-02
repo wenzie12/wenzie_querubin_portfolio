@@ -1,14 +1,18 @@
-import { useEffect } from 'react'
+/* eslint-disable no-unused-vars */
+import { useEffect, lazy, useTransition } from 'react'
 import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
 import { useInView } from 'react-intersection-observer'
 
+import NiceModal from '@ebay/nice-modal-react';
+const Modal = lazy(() => import('../modal/modal-components/ModalContainer.container'))
+import { ContactFormModal } from '../modal'
+
 import SectionHeader from '../section-headers/SectionHeader.component'
 
 import { fadeIn, swivelVariants, staggerContainer } from '../../utils/motion'
 import { styles } from '../../styles'
-import { contacts } from '../../constants'
 import { ActionButton } from '../custom-buttons'
 
 import SocialLinks from '../social-medias/SocialLinks.component'
@@ -18,6 +22,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Contact = () => {
+  const [isPending, startTransition] = useTransition()
   const {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
@@ -35,10 +40,14 @@ const Contact = () => {
     if (!inView && active === "Contact") setActive("")
   }, [inView, active, setActive])
 
-  const handleContact = e => { 
-    const {email, subject, body} = contacts
-    window.location.href = `mailto:${email || ""}?subject=${subject || ""}&body=${body}`;
-    e.preventDefault();
+  const toggleContactFormModal = () => {
+    startTransition(() => {
+      NiceModal.show(Modal, {
+        children: <ContactFormModal />,
+        modalSize: styles.modalSm,
+      })
+      document.body.classList.add('modal-open')
+    }) 
   }
 
   return (
@@ -79,14 +88,13 @@ const Contact = () => {
           variants={fadeIn("", "", 0.2, 1)}
           className="flex justify-center w-full p-4 dark:text-secondary text-secondary-lt"
         >
-          {/* TODO: - convert to forms modal instead (of ease of use) */}
           <ActionButton
             label="Say Hello!"
             name="contact"
             type="button"
-            onClick={handleContact}
             onMouseEnter={() => enterHover("hideHover")}
-            onMouseLeave={leaveHover} 
+            onMouseLeave={leaveHover}     
+            onClick={toggleContactFormModal}
           />
         </motion.div>
       </motion.div>

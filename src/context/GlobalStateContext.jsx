@@ -11,12 +11,12 @@ export const GlobalStateProvider = ({ children }) => {
 
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
+  const [toggleModal, setToggleModal] = useState(false)
   const [toggleDarkMode, setToggleDarkMode] = useState(() => {
     if (localStorage.getItem('theme')) {
       if (localStorage.getItem('theme') === 'dark') return true
       if (localStorage.getItem('theme') === 'light') return false
     }
-
     // dark is default
     return true
   })
@@ -26,6 +26,7 @@ export const GlobalStateProvider = ({ children }) => {
       value={{
         activeState: { active, setActive },
         toggleState: { toggle, setToggle },
+        toggleModalState: { toggleModal, setToggleModal },
         toggleThemeState: { toggleDarkMode, setToggleDarkMode },
       }}
     >

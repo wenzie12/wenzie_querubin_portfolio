@@ -74,9 +74,9 @@ const About = () => {
               I bring innovative and intuitive designs to life.
             </motion.span>
             
-            <motion.quote className="inline-block mb-3 italic" variants={swivelVariants}> 
+            <motion.span className="inline-block mb-3" variants={swivelVariants}> 
               My goal is to create seamless and captivating experiences that leave a lasting impression on users.
-            </motion.quote>
+            </motion.span>
             <motion.span className="inline-block" variants={swivelVariants}>
             Outside of work, I find joy in Woodworking as a creative outlet. Additionally, Aquascaping is another passion of mine.
             </motion.span>
