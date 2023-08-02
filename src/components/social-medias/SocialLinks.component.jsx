@@ -10,7 +10,7 @@ import { FileDown } from 'lucide-react'
 // context
 import { useCursorContext } from '../../context/HOCContext'
 
-const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) => {
+const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false, disableHoverEffect=false }) => {
 	const { isTabletOrMobile } = useCustomMediaQuery()
 	const {
     cursorTextState: { cursorText },
@@ -41,12 +41,14 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 						target="_blank"
 						rel="noreferrer"
 						hrefLang="en-us"
-						onMouseEnter={() => enterHover("anchor", {
-							...cursorText,
-							offset: 15,
-							text: name,
+						{...(!disableHoverEffect && {
+							onMouseEnter:() => enterHover("anchor", {
+								...cursorText,
+								offset: 15,
+								text: name,
+							}),
+							onMouseLeave:leaveHover
 						})}
-						onMouseLeave={leaveHover}
 						className="py-3 w-10 flex justify-center items-center"
 					>
 						<motion.span {...animateOnHover}>
@@ -61,12 +63,14 @@ const SocialLinks = ({ resumeLinkOrientation="vertical", isResumeIcon=false }) =
 				aria-label="resume"
 				target="_blank"
 				rel="noopener noreferrer"
-				onMouseEnter={() => enterHover("anchor", {
-					...cursorText,
-					offset: 15,
-					text: isResumeIcon ? "Download Resume" : "Download",
+				{...(!disableHoverEffect && {
+					onMouseEnter:() => enterHover("anchor", {
+						...cursorText,
+						offset: 15,
+						text: isResumeIcon ? "Download Resume" : "Download",
+					}),
+					onMouseLeave:leaveHover
 				})}
-				onMouseLeave={leaveHover}
 				download
 				className={twJoin(isResumeIcon ? 'flex flex-col gap-y-2 justify-center items-center py-0 w-10' : 'py-3', "")}
 			>

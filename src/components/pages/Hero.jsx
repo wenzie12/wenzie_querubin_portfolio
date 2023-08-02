@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react"
+import { useRef, lazy, useTransition } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { useCustomMediaQuery } from '../../hooks'
+
+import NiceModal from "@ebay/nice-modal-react"
+const Modal = lazy(() => import('../modal/modal-components/ModalContainer.container'))
+import { ContactFormModal } from "../modal"
 
 import { scaleHeight, staggerContainer, swivelVariants, fadeIn } from '../../utils/motion'
 import { styles } from '../../styles'
@@ -15,9 +19,8 @@ import { ChevronDown } from 'lucide-react';
 import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
-import { contacts } from '../../constants'
-
 const Hero = ({ loading }) => {
+  const [isPending, startTransition] = useTransition()
   const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText },
@@ -43,13 +46,16 @@ const Hero = ({ loading }) => {
     return { opacity, scale, y }
   }
 
-// TODO: import in an common file (same fx as in Contact)
-  const handleContact = e => { 
-    const {email, subject, body} = contacts
-    window.location.href = `mailto:${email || ""}?subject=${subject || ""}&body=${body}`;
-    e.preventDefault();
+  const toggleContactFormModal = () => {
+    startTransition(() => {
+      NiceModal.show(Modal, {
+        children: <ContactFormModal />,
+        modalSize: styles.modalSm,
+      })
+      document.body.classList.add('modal-open')
+    }) 
   }
-
+  
   return (
     <>
       <motion.section
@@ -103,7 +109,7 @@ const Hero = ({ loading }) => {
             >
               <motion.span variants={swivelVariants}>Hi, I&apos;m</motion.span>
               <motion.span variants={swivelVariants} className={`${styles.heroHeadText} dark:text-secondary text-secondary-lt block w-full`}>
-                Wenzie.
+                Wenzie
               </motion.span>
             </motion.h1>
             <motion.span
@@ -142,7 +148,7 @@ const Hero = ({ loading }) => {
                 label="Let's Connect"
                 name="contact"
                 type="button"
-                onClick={handleContact}
+                onClick={toggleContactFormModal}
                 onMouseEnter={() => enterHover("hideHover")}
                 onMouseLeave={leaveHover} 
               />

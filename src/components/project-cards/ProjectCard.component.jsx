@@ -30,13 +30,16 @@ const ProjectCard = ({data=[], className="" }) => {
           const { name, description, tags, image, source_code_link, playstore, appstore, website } = item
           const isOdd = index % 2 !== 0
           return (
-              // ${!isOdd && 'border-b-4 border-accent-1'}
               <motion.div
                 key={index}
                 variants={fadeIn("", "", 0, 0.8)}
                 initial="hidden"
                 whileInView="show"
-                className={twMerge(className, isOdd && 'flex-row-reverse', "flex w-full dark:lg:bg-accent-1/50 lg:bg-accent-1-lt/80 rounded-md")}
+                className={twMerge(
+                  isOdd && 'flex-row-reverse',
+                  styles.dropShadowMd,
+                  className,
+                  "flex w-full dark:lg:bg-accent-1/50 lg:bg-accent-1-lt/80 rounded-md")}
               >
                 <motion.section
                   className="p-6 md:px-4 my-4 md:my-0 dark:bg-accent-1/50 bg-accent-1-lt/80 md:bg-transparent dark:md:bg-transparent rounded-md section-1 flex justify-center w-full md:w-1/2"
@@ -50,7 +53,10 @@ const ProjectCard = ({data=[], className="" }) => {
                     >
                       <motion.h3
                         variants={textVariant(.2)}
-                        className={twJoin(isOdd && 'md:text-right', "text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold")}
+                        className={twJoin(
+                          isOdd && 'md:text-right',
+                          "text-[1.25rem] lg:text-[1.5rem] dark:text-secondary text-secondary-lt font-semibold"
+                        )}
                       >
                         {name}
                       </motion.h3>
@@ -59,7 +65,10 @@ const ProjectCard = ({data=[], className="" }) => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={twMerge(styles.cardSpacing, "text-justify text-sm leading-[25px] py-4 dark:text-tertiary text-tertiary-lt")}
+                        className={twMerge(
+                          styles.cardSpacing,
+                          "text-justify text-sm leading-[25px] py-4 dark:text-tertiary text-tertiary-lt"
+                        )}
                       >
                         {description}
                       </motion.p>
@@ -129,19 +138,24 @@ const ProjectCard = ({data=[], className="" }) => {
         variants={fadeIn("", "", 0, 0.8)}
         initial="hidden"
         whileInView="show"
-        className="flex justify-center w-full mt-12 md:mt-20"
+        className="flex justify-center mt-12 md:mt-20"
       >
-        <ActionButton
-          label="More Projects"
-          isDisabled
-          type="button"
-          name="more projects"
+        <span
+          className="p-2"
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             text: "Coming Soon! :D",
           })}
           onMouseLeave={leaveHover}
-        />
+        >
+          <ActionButton
+            label="More Projects"
+            isDisabled
+            type="button"
+            name="more projects"
+            className="relative"
+          />
+        </span>
       </motion.div>
     </>
   )

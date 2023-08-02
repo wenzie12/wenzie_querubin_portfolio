@@ -18,6 +18,10 @@ body {
   overflow-anchor: auto;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -41,6 +45,11 @@ body {
   font-size: 1.2em;
   margin-right: 8px;
   color: var(--color-accent-2);
+}
+
+.animate-once {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
 /* for customCursor */  
@@ -84,6 +93,7 @@ body {
   -moz-animation: spin 10s linear infinite;
   animation: spin 10s linear infinite;
 }
+
 @-moz-keyframes spin {
   100% {
     -moz-transform: rotate(360deg);

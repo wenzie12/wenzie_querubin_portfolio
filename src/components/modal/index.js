@@ -1,0 +1,1 @@
+export { default as ContactFormModal } from './modal-pages/contacts/ContactFormModal.component'

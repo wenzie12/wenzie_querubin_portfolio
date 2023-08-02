@@ -19,6 +19,10 @@ export const styles = {
     sectionSubText: "text-sm uppercase tracking-wider",
     sectionText: "text-sm leading-[30px]",
     borderBox: "rounded-md border-2 px-3",
+
+    // modal header
+    modalHeadText: "font-[550] md:text-[2.62rem] text-[2rem] leading-tight",
+    modalSubText: "text-sm uppercase tracking-wider",
     
     profileImage: `
       md:w-[296px] md:h-[410px]
@@ -30,7 +34,12 @@ export const styles = {
       lg:w-[544.01px] lg:h-[367.99px]`,
 
     dropShadow2xl: "dark:drop-shadow-none drop-shadow-2xl drop-shadow-accent-3-lt",
-    // dropShadowMd: "dark:drop-shadow-none drop-shadow-md drop-shadow-accent-3-lt",
+    dropShadowMd: "dark:drop-shadow-none drop-shadow-md drop-shadow-accent-3-lt",
     // dropShadowSm: "dark:drop-shadow-none drop-shadow-sm drop-shadow-accent-3-lt",
     // dropShadowLg: "dark:drop-shadow-none drop-shadow-lg drop-shadow-accent-3-lt",
+
+    // modal size:
+    modalSm: 'xl:w-5/12 lg:w-6/12 md:w-7/12 w-10/12',
+    modalMd: 'w-9/12',
+    modalLg: 'w-10/12',
   };

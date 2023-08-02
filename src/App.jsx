@@ -19,7 +19,6 @@ import { Navbar } from './components/nav'
 // context
 import { useLoadingContext } from './context/HOCContext'
 
-
 const App = () => {
   const { loadingState: { loading, setLoading }} = useLoadingContext()
   // let { scrollYProgress } = useScroll()
@@ -33,11 +32,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {loading && <LandingPageLoader />}
         </AnimatePresence>
         {!loading &&
           <div className="dark:font-light font-normal dark:bg-primary bg-primary-lt relative md:subpixel-antialiased md:overflow-hidden"> 
+            {/* landing */}
             <div>
               <Navbar loading={loading} />
               <Hero loading={loading}/>

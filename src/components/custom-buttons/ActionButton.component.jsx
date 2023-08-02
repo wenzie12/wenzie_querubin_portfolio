@@ -6,7 +6,7 @@ import { raiseUp } from '../../utils/motion'
 
 import { useCustomMediaQuery } from '../../hooks'
 
-const ActionButton = ({ label="", isDisabled=false, ...otherProps}) => {
+const ActionButton = ({ label="", type="button", isDisabled=false, className="", ...otherProps}) => {
   const { isTabletOrMobile } = useCustomMediaQuery()
 
   return (
@@ -16,8 +16,13 @@ const ActionButton = ({ label="", isDisabled=false, ...otherProps}) => {
         initial: "initial",
         ...(!isTabletOrMobile && { whileHover: "animate", })
       })}
-      type="button"
-      className={twMerge(styles.borderBox, ` ${!isDisabled ? 'dark:border-secondary border-secondary-lt' : 'dark:border-accent-1 border-accent-1-lt cursor-not-allowed'} flex items-center justify-center rounded-md h-[40px] text-xs`) }
+      disabled={isDisabled}
+      type={type}
+      className={twMerge(
+        styles.borderBox,
+        ` ${!isDisabled ? 'dark:border-secondary border-secondary-lt' : 'dark:border-accent-2 border-accent-2-lt cursor-not-allowed'} flex items-center justify-center rounded-md h-[40px] text-xs`,
+        className,
+      )}
       { ...otherProps }
     >
       <span className={`${isDisabled ? 'dark:text-accent-2 text-accent-2-lt' : 'dark:text-accent-3 text-accent-3-lt'}`}>

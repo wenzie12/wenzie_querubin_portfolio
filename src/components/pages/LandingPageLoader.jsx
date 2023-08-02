@@ -19,37 +19,35 @@ const LandingPageLoader = () => {
 	} = useCursorContext()
 
   return (
-		<>
+		<motion.div
+			style={{ height: "100dvh", backgroundColor: `${toggleDarkMode ? colors['primary'] : colors['primary-lt']}` }}
+			className="grid place-items-center absolute top-0 left-0 right-0 w-full scrollbar-hide"
+			onMouseEnter={() => enterHover("anchor", {
+				...cursorText,
+				offset: 85,
+				text: "Loading",
+			})}
+			onMouseLeave={leaveHover}
+		>
 			<motion.div
-				style={{ height: "100dvh", backgroundColor: `${toggleDarkMode ? colors['primary'] : colors['primary-lt']}` }}
-				className="grid place-items-center absolute top-0 left-0 right-0 w-full scrollbar-hide"
-				onMouseEnter={() => enterHover("anchor", {
-					...cursorText,
-					offset: 85,
-					text: `Loading`,
-				})}
-				onMouseLeave={leaveHover}
+				initial={{ scale: 1, opacity: 1, }}
+				exit={{ scale: 0, opacity: 0, transition: { duration: .35 } }}
+				className="flex gap-2 items-center"
 			>
-				<motion.div
-					initial={{ scale: 1, opacity: 1, }}
-					exit={{ scale: 0, opacity: 0, transition: { duration: .35 } }}
-					className="flex gap-2 items-center"
-				>
-					{LOGO_DATA?.map((item, i) => (
-						<ProfileLogo
-							key={i}
-							isMotion
-							variants={zoomIn(item.delay, item.duration)}
-							initial="hidden"
-							animate="show"
-							classSVG={item.class}
-							classPath={item.path}
-							fill={toggleDarkMode ? item.fill : item.fill_lt}
-						/>
-					))}
-				</motion.div>
+				{LOGO_DATA?.map((item, i) => (
+					<ProfileLogo
+						key={i}
+						isMotion
+						variants={zoomIn(item.delay, item.duration)}
+						initial="hidden"
+						animate="show"
+						classSVG={item.class}
+						classPath={item.path}
+						fill={toggleDarkMode ? item.fill : item.fill_lt}
+					/>
+				))}
 			</motion.div>
-		</>
+		</motion.div>
   )
 }
 
