@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, lazy, useTransition } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { SectionWrapper } from '../../hoc'
 import { useInView } from 'react-intersection-observer'
 
 import NiceModal from '@ebay/nice-modal-react';
-const Modal = lazy(() => import('../modal/modal-components/ModalContainer.container'))
+// TODO: fix issue on lazy load error on prod
+// const Modal = lazy(() => import('../modal/modal-components/ModalContainer.container'))
+import Modal from "../modal/modal-components/ModalContainer.container"
 import { ContactFormModal } from '../modal'
 
 import SectionHeader from '../section-headers/SectionHeader.component'
@@ -22,7 +24,7 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Contact = () => {
-  const [isPending, startTransition] = useTransition()
+  // const [isPending, startTransition] = useTransition()
   const {
     hoverEvents: { enterHover, leaveHover },
   } = useCursorContext()
@@ -41,13 +43,19 @@ const Contact = () => {
   }, [inView, active, setActive])
 
   const toggleContactFormModal = () => {
-    startTransition(() => {
-      NiceModal.show(Modal, {
-        children: <ContactFormModal />,
-        modalSize: styles.modalSm,
-      })
-      document.body.classList.add('modal-open')
-    }) 
+    // startTransition(() => {
+    //   NiceModal.show(Modal, {
+    //     children: <ContactFormModal />,
+    //     modalSize: styles.modalSm,
+    //   })
+    //   document.body.classList.add('modal-open')
+    // }) 
+
+    NiceModal.show(Modal, {
+      children: <ContactFormModal />,
+      modalSize: styles.modalSm,
+    })
+    document.body.classList.add('modal-open')
   }
 
   return (

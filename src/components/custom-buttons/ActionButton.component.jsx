@@ -26,7 +26,7 @@ const ActionButton = ({ label="", type="button", isDisabled=false, className="",
       { ...otherProps }
     >
       <span className={`${isDisabled ? 'dark:text-accent-2 text-accent-2-lt' : 'dark:text-accent-3 text-accent-3-lt'}`}>
-        {isDisabled && `// `}{label}
+        {label}
       </span>
     </motion.button>
   )

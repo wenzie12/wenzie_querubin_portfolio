@@ -149,7 +149,7 @@ const ProjectCard = ({data=[], className="" }) => {
           onMouseLeave={leaveHover}
         >
           <ActionButton
-            label="More Projects"
+            label="// More Projects"
             isDisabled
             type="button"
             name="more projects"

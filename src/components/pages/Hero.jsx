@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useRef, lazy, useTransition } from "react"
+import { useRef } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { useCustomMediaQuery } from '../../hooks'
 
 import NiceModal from "@ebay/nice-modal-react"
-const Modal = lazy(() => import('../modal/modal-components/ModalContainer.container'))
+import Modal from "../modal/modal-components/ModalContainer.container"
 import { ContactFormModal } from "../modal"
 
 import { scaleHeight, staggerContainer, swivelVariants, fadeIn } from '../../utils/motion'
@@ -20,7 +20,6 @@ import { useCursorContext } from '../../context/HOCContext'
 import { useGlobalStateContext } from '../../context/GlobalStateContext'
 
 const Hero = ({ loading }) => {
-  const [isPending, startTransition] = useTransition()
   const { isTabletOrMobile } = useCustomMediaQuery()
   const {
     cursorTextState: { cursorText },
@@ -47,13 +46,11 @@ const Hero = ({ loading }) => {
   }
 
   const toggleContactFormModal = () => {
-    startTransition(() => {
-      NiceModal.show(Modal, {
-        children: <ContactFormModal />,
-        modalSize: styles.modalSm,
-      })
-      document.body.classList.add('modal-open')
-    }) 
+    NiceModal.show(Modal, {
+      children: <ContactFormModal />,
+      modalSize: styles.modalSm,
+    })
+    document.body.classList.add('modal-open')
   }
   
   return (
