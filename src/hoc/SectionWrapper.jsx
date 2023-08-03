@@ -12,7 +12,8 @@ const SectionWrapper = (Component, idName) =>
           variants={staggerContainer()}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: false }}
+          // viewport={{ once: false, amount: 0.25 }}
           className={twMerge(styles.padding, "max-w-7xl mx-auto z-0")}
         >
           {/* scrolls to this invisible span via scroll button */}

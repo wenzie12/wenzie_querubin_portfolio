@@ -1,5 +1,5 @@
-import { useEffect, Fragment } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, Fragment } from 'react'
+import { motion } from 'framer-motion'
 import NiceModal, { useModal } from "@ebay/nice-modal-react"
 import { twMerge } from 'tailwind-merge'
 import { X } from 'lucide-react'
@@ -12,6 +12,7 @@ const Modal = NiceModal.create(({
   modalSize="w-10/12",
 }) => {
   const modal = useModal()
+  const [exitAnimation, setExitAnimation] = useState(false)
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -24,46 +25,49 @@ const Modal = NiceModal.create(({
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-
   },[modal])
   
   return (
-    <AnimatePresence>
+    <>
+      <motion.div
+        key="modal"
+        initial="hidden"
+        animate={!exitAnimation ? "show" : "hidden"}
+        className="fixed top-0 z-50 w-full h-full flex items-center justify-center dark:bg-primary/95 bg-primary-lt/75 overflow-y-auto scrollbar-hide m-auto"
+      >
+        {/* container */}
         <motion.div
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="fixed top-0 z-50 w-full h-full flex items-center justify-center dark:bg-primary/95 bg-primary-lt/75 overflow-y-auto scrollbar-hide m-auto"
+          variants={fadeIn("up", "spring", 0, .8)}
+          className={twMerge(
+            styles.dropShadow2xl,
+            modalSize,
+            "dark:bg-accent-1 bg-accent-1-lt border-md relative rounded-md",
+          )}
         >
-          {/* container */}
-          <motion.div
-            variants={fadeIn("up", "spring", 0, .4)}
-            className={twMerge(
-              styles.dropShadow2xl,
-              modalSize,
-              "dark:bg-accent-1 bg-accent-1-lt border-md relative rounded-md",
-            )}
-          >
-            {/* toggle close */}
-            <div className="absolute top-0 right-0 p-4 z-10 hover:animate-pulse">
-              <button
-                type="button"
-                id="close"
-                aria-label="close-modal"
-                className="dark:border-secondary border-secondary-lt"
-                onClick={() => {
-                  // modal.remove()
+          {/* toggle close */}
+          <div className="absolute top-0 right-0 p-4 z-10 hover:animate-pulse">
+            <button
+              type="button"
+              id="close"
+              aria-label="close-modal"
+              className="dark:border-secondary border-secondary-lt"
+              onClick={() => {
+                setExitAnimation(true)
+                
+                // temporary workaround to fix exit animation (AnimatePresence not working here)
+                setTimeout(() => {
                   modal.remove()
                   document.body.classList.remove('modal-open')
-                }}
-              >
-                <X className="w-7 h-7 dark:text-accent-3 text-accent-3-lt" />
-              </button>
-            </div>
-            { children }
-          </motion.div>
+                }, 100)
+              }}
+            >
+              <X className="w-7 h-7 dark:text-accent-3 text-accent-3-lt" />
+            </button>
+          </div>
+          { children }
         </motion.div>
-    </AnimatePresence>
+      </motion.div>
+    </>
   )
 })
 

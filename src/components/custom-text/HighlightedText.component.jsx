@@ -44,7 +44,7 @@ const HighlightedText = ({
 			variants={highlightVariants}
 			initial="initial"
 			whileInView="animate"
-			viewport={{ once: false, amount: 0.25 }}
+			viewport={{ once: false }}
 			className={twMerge("inline-block", className)}
     >
      {children}
