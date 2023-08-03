@@ -35,7 +35,7 @@ const TechStack = ({ label, className, imgClassName, enterHover, leaveHover, tec
       <motion.div
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true }}
         className="flex flex-wrap justify-center gap-y-6 md:gap-y-8 gap-x-2 md:gap-x-6 lg:gap-6 xl:gap-8 my-4"
       >
         {techItems?.map((item, index) => {
