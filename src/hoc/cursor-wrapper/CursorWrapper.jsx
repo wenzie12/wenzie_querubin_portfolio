@@ -22,7 +22,7 @@ function HOC() {
   if (isTabletOrMobile) return <Component />
 
   if (!isTabletOrMobile) return (
-    <div {...(!isTabletOrMobile && { ref })}>
+    <div ref={ref}>
       {!isTabletOrMobile &&
         <motion.div
           variants={variants}
