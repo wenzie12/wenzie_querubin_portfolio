@@ -105,7 +105,7 @@ const ContactFormModal = () => {
           htmlFor="name"
           // input props
           { ...register("name")}
-          placeholder="John, Juan, The Company, Batman :)"
+          placeholder="First Last"
           name="name"
           id="name"
           type="text"
@@ -122,7 +122,7 @@ const ContactFormModal = () => {
           htmlFor="email"
           // input props
           { ...register("email")}
-          placeholder="awesome@mail.com"
+          placeholder="name@example.com"
           name="email"
           id="email"
           type="text"
@@ -139,7 +139,7 @@ const ContactFormModal = () => {
           htmlFor="message"
           // input props
           { ...register("message")}
-          placeholder="Hello Wenzie!"
+          placeholder="Hello Wenz!"
           name="message"
           id="message"
           type="text"
