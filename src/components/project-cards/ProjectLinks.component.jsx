@@ -110,7 +110,7 @@ const ProjectLinks = ({
           onMouseEnter={() => enterHover("", {
             ...cursorText,
             offset: 75,
-            text: "source code",
+            text: "Source Code",
             // color: "#D4494C",
           })}
           onMouseLeave={() => { 
@@ -124,7 +124,7 @@ const ProjectLinks = ({
           hrefLang="en-us"
           className="p-3"
         >
-          <motion.span variants={raiseUp}>
+          <motion.span variants={raiseUp} className="inline-block">
             <Code2 className='dark:text-secondary text-secondary-lt' />
           </motion.span>
         </motion.a>

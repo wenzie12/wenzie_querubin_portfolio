@@ -113,7 +113,7 @@ const ProjectCard = ({data=[], className="" }) => {
                     viewport={{ once: true }}
                     className="flex justify-center items-center w-full h-full"
                   >
-                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="flex items-center justify-center">
+                    <a href={website} target="_blank" rel="noreferrer" hrefLang="en-us" className="flex items-center justify-center lg:w-full lg:h-full">
                       <ImageContainer
                         isMotion
                         onMouseEnter={() => enterHover(toggleDarkMode ? "anchorBlended" : "anchor", {
@@ -123,7 +123,7 @@ const ProjectCard = ({data=[], className="" }) => {
                         onMouseLeave={leaveHover}
                         src={image}
                         alt="project"
-                        className={twMerge(styles.ProjectImage, "aspect-auto object-fit object-center grayscale hover:grayscale-0 dark:border-0 border-2")}
+                        className={twMerge(styles.ProjectImage, "aspect-auto object-fit object-center grayscale hover:grayscale-0 dark:border-0 border-2 lg:object-cover")}
                       />
                     </a>
                   </motion.div>
