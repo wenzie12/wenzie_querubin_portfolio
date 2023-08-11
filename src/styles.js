@@ -30,8 +30,8 @@ export const styles = {
     profileImageMobile: 'w-[200px] h-full',
     
     ProjectImage: `
-      w-full h-full
-      lg:w-[544.01px] lg:h-[367.99px]`,
+      w-full h-full`,
+      // lg:w-[544.01px] lg:h-[367.99px]`,
 
     dropShadow2xl: "dark:drop-shadow-none drop-shadow-2xl drop-shadow-accent-3-lt",
     dropShadowMd: "dark:drop-shadow-none drop-shadow-md drop-shadow-accent-3-lt",

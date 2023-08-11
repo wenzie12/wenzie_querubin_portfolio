@@ -11,6 +11,7 @@ import {
   gomanilaLandingPage,
   // canstarLandingPage,
   manilaZooLandingPage,
+  portfolioLandingPage,
   // downloadables,
   resumeFile,
   } from "../assets";
@@ -126,6 +127,12 @@ import {
       name: "GoManila App",
       description:
         "An electronic Business Permit and Licensing System that allows taxpayers to pay their Business Taxes and secure business permits online or thru mobile app.",
+      image: gomanilaLandingPage,
+      imageMobile: "", 
+      source_code_link: "",
+      appstore: "https://apps.apple.com/us/app/gomanila/id1533414915",
+      playstore: "https://play.google.com/store/apps/details?id=net.gomanila.app&hl=en&gl=US",
+      website: "https://www.gomanila.com/",
       tags: [
         {
           name: "react",
@@ -140,17 +147,17 @@ import {
           color: "",
         },
       ],
-      image: gomanilaLandingPage,
-      imageMobile: "", 
-      source_code_link: "",
-      appstore: "https://apps.apple.com/us/app/gomanila/id1533414915",
-      playstore: "https://play.google.com/store/apps/details?id=net.gomanila.app&hl=en&gl=US",
-      website: "https://www.gomanila.com/"
     },
     {
       name: "Manila Zoo Ticket System",
       description:
         "The Manila Zoo Ticketing System is an online ticket booking system that enables you to purchase your entrance ticket online as well as book your visit to the park.",
+      image: manilaZooLandingPage,
+      imageMobile: "", 
+      source_code_link: "",
+      appstore: "",
+      playstore: "https://play.google.com/store/apps/details?id=com.LotDesigns.ManilaZooBotanicalGarden&hl=en&gl=US",
+      website: "https://www.manilazoo.ph/",
       tags: [
         {
           name: "react",
@@ -165,17 +172,16 @@ import {
           color: "",
         },
       ],
-      image: manilaZooLandingPage,
-      imageMobile: "", 
-      source_code_link: "",
-      appstore: "",
-      playstore: "https://play.google.com/store/apps/details?id=com.LotDesigns.ManilaZooBotanicalGarden&hl=en&gl=US",
-      website: "https://www.manilazoo.ph/"
     },
-    // {
+      // {
     //   name: "Canstar",
-    //   description:
-    //     "Canstar is Australia's original & biggest financial comparison site. Our expert ratings help you compare Home Loans, Credit Cards, Health Insurance & more.",
+    //   description: "Canstar is Australia's original & biggest financial comparison site. Our expert ratings help you compare Home Loans, Credit Cards, Health Insurance & more.",
+    //   image: canstarLandingPage,
+    //   imageMobile: "", 
+    //   appstore: "",
+    //   playstore: "",
+    //   source_code_link: "",
+    //   website: "https://www.canstar.com.au/",
     //   tags: [
     //     {
     //       name: "angular",
@@ -194,13 +200,35 @@ import {
     //       color: "",
     //     },
     //   ],
-    //   image: canstarLandingPage,
-    //   imageMobile: "", 
-    //   appstore: "",
-    //   playstore: "",
-    //   source_code_link: "",
-    //   website: "https://www.canstar.com.au/"
     // },
+    {
+      name: "My Portfolio",
+      description: "My personal portfolio, which I've developed to showcase the skills and projects I've worked on throughout my development journey. The technologies I've used include Vite, ReactJS, Framer Motion, and Tailwind.",
+      image: portfolioLandingPage,
+      imageMobile: "", 
+      appstore: "",
+      playstore: "",
+      source_code_link: "https://github.com/wenzie12/wenzie_querubin_portfolio/tree/main",
+      website: "https://www.wenziequerubin.com",
+      tags: [
+        {
+          name: "reactjs",
+          color: "",
+        },
+        {
+          name: "tailwind",
+          color: "",
+        },
+        {
+          name: "framer motion",
+          color: "",
+        },
+        {
+          name: "context api",
+          color: "",
+        },
+      ],
+    },
   ];
 
   export const contacts = {

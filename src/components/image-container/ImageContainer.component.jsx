@@ -60,3 +60,5 @@ const BrokenImgComponent = ({ className }) => (
 )
 
 export default ImageContainer
+
+// TODO: moved all cloudinary assets to env. and install cloudinary-react for image/video render
