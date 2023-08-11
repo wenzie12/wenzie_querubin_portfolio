@@ -63,7 +63,8 @@ Landing page: MOBILE VIEW | Light mode
 ![image](https://github.com/wenzie12/wenzie_querubin_portfolio/assets/28808129/29752b6d-44ed-4f44-921b-961b2c961ee3)
 
 Landing page: MOBILE VIEW | Dark mode
-![Uploading image.png…]()
+![image](https://github.com/wenzie12/wenzie_querubin_portfolio/assets/28808129/7c141715-41c7-4be7-ab2b-e367f8d28499)
+
 
 
 
