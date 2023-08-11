@@ -1,7 +1,6 @@
 ---<!-- <a href="https://iconscout.com/icons/adobe" target="_blank">Free Adobe Icon</a> by <a href="https://iconscout.com/contributors/comcomtelecom" target="_blank">Oleksandr Panasovskyi</a> -->
+# Welcome to My Portfolio
 ![image](https://github.com/wenzie12/wenzie_querubin_portfolio/assets/28808129/6efb37fe-8d9e-49ff-bee0-2ce6ccb3eed4)
-
-# My Portfolio
 
 Welcome to my personal portfolio! This portfolio showcases my projects, skills, and achievements.
 
