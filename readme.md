@@ -59,3 +59,11 @@ Landing page: Light mode
 Landing Page: Dark mode
 ![image](https://github.com/wenzie12/wenzie_querubin_portfolio/assets/28808129/dba7d232-ae65-4f2c-b042-c24a0b087eda)
 
+Landing page: MOBILE VIEW | Light mode
+![image](https://github.com/wenzie12/wenzie_querubin_portfolio/assets/28808129/29752b6d-44ed-4f44-921b-961b2c961ee3)
+
+Landing page: MOBILE VIEW | Dark mode
+![Uploading image.png…]()
+
+
+
