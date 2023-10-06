@@ -15,6 +15,7 @@ import {
 } from './components/pages'
 
 import { Navbar } from './components/nav'
+import ConnectivityStatus from './components/connectivity-status/ConnectivityStatus.component'
 
 // context
 import { useLoadingContext } from './context/HOCContext'
@@ -31,6 +32,7 @@ const App = () => {
 
   return (
     <>
+      <ConnectivityStatus />
       <BrowserRouter>
         <AnimatePresence>
           {loading && <LandingPageLoader />}
