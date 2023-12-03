@@ -2,7 +2,7 @@ import { Github, Linkedin } from "lucide-react";
 import { colors } from '../themes/constants'
 import {
   // tech
-  bootstrap, css3, framerMotion, html5, javascript, typescript, nodejs, redux, reactjs, sass, tailwind,
+  bootstrap, css3, framerMotion, html5, javascript, typescript, nodejs, reactQuery, redux, reactjs, sass, tailwind,
   // design
   illustrator, xd, photoshop, figma,
   // general
@@ -65,6 +65,8 @@ import {
       { name: "TypeScript", icon: typescript, },
       { name: "Redux", icon: redux, },
       { name: "Node JS", icon: nodejs, },
+      // TODO: add react-query, mui
+      { name: "reactQuery", icon: reactQuery, },
     ],
     design: [
       { name: "Photoshop", icon: photoshop, },
@@ -82,11 +84,22 @@ import {
   
   export const experiences = [
     {
+      title: "Frontend Developer",
+      company_name: "Moreton Blue Software",
+      company_summary: "a Brisbane based software company, delivering solutions for our clients using our embrace technology and methodology.",
+      img_bg: gomanilaLandingPage,
+      date: "Nov 2023 - Present",
+      link: 'https://www.moretonblue.com/',
+      points: [
+        "Collaborated closely with cross-functional teams to gather client requirements, ensuring a comprehensive understanding of their business processes and objectives."
+      ], // TODO: add more.. (at least 2 more...)
+    },
+    {
       title: "Frontend Software Engineer",
       company_name: "Multisys Technologies Corp.",
       company_summary: "Multisys is a software engineering solutions firm that provides a wide range, cost- effective, and full scale service to tailor-fit and empower businesses",
       img_bg: gomanilaLandingPage,
-      date: "Jan 2021 - Present",
+      date: "Jan 2021 - Nov 2023",
       link: 'https://www.multisyscorp.com/',
       points: [
         "Enhancing system quality by identifying issues and common patterns, and establishing standard operating procedures.",

@@ -22,6 +22,7 @@ export { default as typescript } from "./tech-assets/devs/typescript.svg"
 export { default as nodejs } from "./tech-assets/devs/node-js.svg"
 export { default as redux } from "./tech-assets/devs/react-redux.svg"
 export { default as reactjs } from "./tech-assets/devs/react.svg"
+export { default as reactQuery } from "./tech-assets/devs/react-query.svg"
 export { default as sass } from "./tech-assets/devs/sass.svg"
 export { default as tailwind } from "./tech-assets/devs/tailwind-css.svg"
 
@@ -49,3 +50,4 @@ export const portfolioLandingPage = "https://res.cloudinary.com/wenzie12sg/image
 export { default as resumeFile } from './downloadable-files/wenzie_querubin_2023.pdf'
 
 // TODO: moved all cloudinary assets to env. and install cloudinary-react for image/video render
+// get icons from here: https://www.figma.com/file/853axEG4Sv3BYgZ5xsG8d6/Tech-Stack-Icons-%26-Design-Stack-Icons-(Community)?type=design&node-id=301-3161&mode=design&t=fhMloNy9hwli3250-0

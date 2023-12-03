@@ -22,7 +22,7 @@ const ScrollButton = ({ href='', loading })  => {
       offset: ["end end", "end start"],
     })
   
-    // todo: move to a global variant files
+    // TODO: move to a global variant files
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
 

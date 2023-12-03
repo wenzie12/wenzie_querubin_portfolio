@@ -121,12 +121,12 @@ const Hero = ({ loading }) => {
                 text: "Go to link!",
               })}
                 onMouseLeave={leaveHover}
-                href="https://www.multisyscorp.com/"
+                href="https://www.moretonblue.com/"
                 target="_blank"
                 className="dark:text-secondary text-secondary-lt italic font-semibold"
                 rel="noreferrer"
               >
-                Multisys
+                MoretonBlue
               </a>
             </motion.span>
             <motion.span
