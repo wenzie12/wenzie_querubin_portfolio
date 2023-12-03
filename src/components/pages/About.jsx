@@ -62,8 +62,8 @@ const About = () => {
             className={twMerge(styles.sectionText, styles.contentSpacing, "dark:text-tertiary text-tertiary-lt")}
           >
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
-              I&apos;m Wenzie, a Frontend Software Developer currently working at
-              <i className='dark:text-secondary text-secondary-lt'> Multisys Technologies Corporation</i>.
+              I&apos;m Wenzie, a Frontend Developer currently working at
+              <i className='dark:text-secondary text-secondary-lt'> Moreton Blue Software</i>.
             </motion.span>
             <motion.span className="inline-block mb-3" variants={swivelVariants}>
               As a frontend developer, I thrive on blending creativity and functionality 
