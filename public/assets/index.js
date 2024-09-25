@@ -47,7 +47,7 @@ export const canstarLandingPage = "https://res.cloudinary.com/wenzie12sg/image/u
 export const portfolioLandingPage = "https://res.cloudinary.com/wenzie12sg/image/upload/v1691733407/wenziequerubin-portfolio-assets/wenziequerubin-portfolio-landing-page-light_al7rfu.webp"
 
 // downloadables
-export { default as resumeFile } from './downloadable-files/wenzie_querubin_2023.pdf'
+export { default as resumeFile } from './downloadable-files/wenzie_querubin_2024.pdf'
 
 // TODO: moved all cloudinary assets to env. and install cloudinary-react for image/video render
 // get icons from here: https://www.figma.com/file/853axEG4Sv3BYgZ5xsG8d6/Tech-Stack-Icons-%26-Design-Stack-Icons-(Community)?type=design&node-id=301-3161&mode=design&t=fhMloNy9hwli3250-0

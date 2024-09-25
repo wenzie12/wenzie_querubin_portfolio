@@ -14,7 +14,7 @@ import { useCustomMediaQuery } from '../../hooks'
 
 import { ChevronDown } from 'lucide-react';
 
-import { profile, profileMobile } from '../../assets'
+import { profile, profileMobile } from '../../../public/assets'
 
 // context
 import { useCursorContext } from '../../context/HOCContext'

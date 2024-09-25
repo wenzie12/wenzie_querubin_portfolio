@@ -14,7 +14,7 @@ import {
   portfolioLandingPage,
   // downloadables,
   resumeFile,
-  } from "../assets";
+  } from "../../public/assets";
 
   export const LOGO_DATA = [
 		{ fill: colors['accent-2'], fill_lt: colors['accent-2-lt'], class: "w-6 h-6", path: "opacity-60", delay: 1.2, duration: .3, },
