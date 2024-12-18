@@ -76,9 +76,8 @@ const Contact = () => {
               viewport={{ once: true }}
               className={twMerge(styles.sectionText, styles.contentSpacing, "dark:text-tertiary text-tertiary-lt text-center px-0 md:px-10 lg:px-20")}
             >
-              {`While I'm not actively seeking new opportunities at the moment, 
-              I'm always available in my inbox. Whether you have any inquiries or simply want to greet, 
-              I'll make an effort to respond as promptly as possible.`}
+              {`Feel free to drop me a message! Whether you have a question, a project idea, or just want to say hi, my inbox is always open. 
+               I’ll do my best to get back to you as soon as I can.`}
             </motion.p>
           </div>
         </motion.div>

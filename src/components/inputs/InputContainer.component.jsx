@@ -26,14 +26,14 @@ const InputContainer = React.forwardRef((props, ref) => {
         )}
       >
         {label}
-        <motion.i
+        <motion.span
           variants={fadeIn("up", "spring", .1, .4)}
           initial="hidden"
           animate={errorMessage ? "show" : "hidden"}
           className="text-secondary text-xs"
         >
           {errorMessage}
-        </motion.i>
+        </motion.span>
       </label>
       {!isTextArea ? (
         <input
