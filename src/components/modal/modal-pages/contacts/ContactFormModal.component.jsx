@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { motion,AnimatePresence } from 'framer-motion'
 import { twMerge } from "tailwind-merge"
 import emailjs from '@emailjs/browser'
-import { CheckCircle2, Send, XOctagon, AlertTriangle } from 'lucide-react'
+import { CheckCircle2, MailCheck, Send, XOctagon, AlertTriangle } from 'lucide-react'
 
 import { ModalHeader } from '../../modal-components'
 import InputContainer from '../../../inputs/InputContainer.component'
@@ -28,7 +28,7 @@ const ContactFormModal = () => {
     reset,
     register,
     handleSubmit,
-    formState: { errors,},
+    formState: { errors, isValid },
   } = useForm({
     resolver: zodResolver(c.FormSchema),
     defaultValues: c.FORM_DATA,
@@ -109,11 +109,7 @@ const ContactFormModal = () => {
           name="name"
           id="name"
           type="text"
-          errorMessage={errors.name &&
-            <i className="dark:text-secondary text-secondary-lt">
-              {errors.name.message}
-            </i>
-          }
+          errorMessage={errors.name && errors.name.message}
         />
 
         <InputContainer
@@ -126,11 +122,7 @@ const ContactFormModal = () => {
           name="email"
           id="email"
           type="text"
-          errorMessage={errors.email &&
-            <i className="dark:text-secondary text-secondary-lt">
-              {errors.email.message}
-            </i>
-          }
+          errorMessage={errors.email && errors.email.message}
         />
         <InputContainer
           isTextArea
@@ -147,11 +139,7 @@ const ContactFormModal = () => {
           cols={24}
           style={{ resize: "none" }}
           inputClassName=""
-          errorMessage={errors.message &&
-            <i className="dark:text-secondary text-secondary-lt">
-              {errors.message.message}
-            </i>
-          }
+          errorMessage={errors.message && errors.message.message}
         />
 
         <motion.div
@@ -168,8 +156,9 @@ const ContactFormModal = () => {
             variants={fadeIn("", "", 0.2, 1)}
             className="flex justify-between w-full"
           >
-            {(isLoading) &&  <Send className={twMerge(!isLoading && "animate-once", "w-6 h-6 dark:text-accent-2 text-accent-2-lt animate-bounce")} />}
-            {submitStatus.status === 200 && submitStatus.text === "OK" &&  <CheckCircle2  className="w-6 h-6 text-green-600 animate-ping animate-once" />}
+            {isLoading &&  <Send className={twMerge(!isLoading && "animate-once", "w-6 h-6 dark:text-accent-2 text-accent-2-lt animate-bounce")} />}
+            {submitStatus.status === 200 && submitStatus.text === "OK" && <MailCheck  className="w-6 h-6 text-green-600 animate-ping animate-once" />}
+            {(isValid && !isLoading) && <CheckCircle2 className="w-6 h-6 text-green-400 animate-ping animate-once" />}
           </motion.span>
 
           <div className="flex flex-row absolute right-0 my-auto">

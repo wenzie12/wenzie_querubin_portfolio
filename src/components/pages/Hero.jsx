@@ -131,10 +131,10 @@ const Hero = ({ loading }) => {
             </motion.span>
             <motion.span
               variants={swivelVariants}
-              className={twMerge(styles.heroSubText, "inline-block mt-2 dark:text-tertiary text-tertiary-lt md:w-3/4")}
+              className={twMerge(styles.heroSubText, "inline-block my-2 dark:text-tertiary text-tertiary-lt md:w-3/4")}
             >
-              Frontend Developer with a passion for creating dynamic,
-              user-friendly web applications specializing in ReactJs and related frameworks.
+            Driven to build dynamic and user-friendly web applications.
+            I specialize in React and its ecosystem, crafting experiences that look great and work seamlessly.
             </motion.span>
             {/* contact button */}
             <motion.div
