@@ -113,8 +113,8 @@ const Hero = ({ loading }) => {
               variants={swivelVariants}
               className={twMerge(styles.heroSubText, "inline-block dark:text-accent-2 text-accent-2-lt font-normal")}
             >
-              Frontend Software Engineer @
-              <a
+              Frontend Software Engineer
+              {/* <a
               onMouseEnter={() => enterHover("", {
                 ...cursorText,
                 offset: 75,
@@ -127,7 +127,7 @@ const Hero = ({ loading }) => {
                 rel="noreferrer"
               >
                 MoretonBlue
-              </a>
+              </a> */}
             </motion.span>
             <motion.span
               variants={swivelVariants}
